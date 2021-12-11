@@ -9,7 +9,6 @@ body {
 
 body {
   background-color: #121112;
-  background-color: #252e29;
   color: white;
   font-family: Lato, sans-serif;
   font-size: 18px;
@@ -120,7 +119,6 @@ main {
   grid-template-columns: auto auto;
   grid-template-rows: auto;
   padding-left: 120px;
-  background-color: #252e29c0;
   padding-bottom: 100px;  
 }
 
@@ -166,7 +164,7 @@ ol li::before {
 }
 
 aside {
-  background-color: #a7822f;
+  background-color: hsl(122deg 20% 26%);
   margin-top: -100px;
   box-sizing: border-box;
   padding: 20px;
