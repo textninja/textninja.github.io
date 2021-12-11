@@ -60,4 +60,14 @@
     </ol>
   </section>
 </main>
+<div id="dimmer"></div>
+<script>
+  document.querySelector("header input[type=search]").addEventListener("focus", () => {
+    document.querySelector("#dimmer").style.display = "block";
+  });
+
+  document.querySelector("header input[type=search]").addEventListener("blur", () => {
+    document.querySelector("#dimmer").style.display = "none";
+  });
+</script>
 </body>

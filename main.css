@@ -81,15 +81,20 @@ header input[type="search"] {
   border-radius: 8px;
   border: 0;
   padding: 10px;
-  background-color: #19171cb0;
+  background-color: #101010b0;
   border: solid #7066703d 1px;
   color: white;
   position: relative;
-  top: 2px;
+  top: 3px;
+  z-index: 9999;
 }
 
 header input[type="search"]::placeholder {
   color: #cfcfcf;
+}
+
+header input[type="search"]:focus {
+  outline: none;
 }
 
 header input[type="search"]:focus::placeholder {
@@ -166,6 +171,7 @@ ol li::before {
 aside {
   background-color: hsl(122deg 8% 22%);
   margin-top: -100px;
+  margin-bottom: 35px;
   box-sizing: border-box;
   padding: 20px;
   width: 70%;
@@ -178,4 +184,14 @@ aside {
 
 aside p {
   margin: 0.5em;
+}
+
+#dimmer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #20342fad;
 }
