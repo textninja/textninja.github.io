@@ -4,92 +4,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Teko:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      width: 100%; height: 100%; padding: 0; border: 0; margin: 0;
-    }
-    
-    body {
-      background-color: #121112;
-      font-family: 'Teko', sans-serif;      
-    }
-    
-    header {
-      background: linear-gradient(transparent 0%, #121112 100%),
-                  radial-gradient(circle at 900px 0px, rgb(36 19 34) 0%, rgba(120,212,255,0) 80%) no-repeat,
-                  radial-gradient(circle at -100px 90px, rgba(2,40,36,0.8) 0%, rgba(120,212,255,0) 80%) no-repeat,
-                  radial-gradient(circle at 80% 90%, rgba(14, 14, 14, 0.8) 0%, rgba(14, 14, 14, 0) 80%) no-repeat,    
-                  linear-gradient(#301035, #301035);
-      display: flex;
-      align-items: center;
-      flex-flow: row wrap;
-      padding-left: 120px;
-    }
-
-    header h1 {
-      color: white;
-      line-height: 1em;
-      font-size: 82px;
-      max-width: 320px;
-      padding: 0;
-      margin: 0;
-    }
-
-    header h1, header p {
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }        
-
-    header p {
-      font-size: 32px;
-      color: #c0c0c090;
-      padding-left: 0;      
-    }
-    
-    header p strong {
-      font-weight: normal;
-      color: white;
-    }    
-    
-    header input[type=search] {
-      font-size: 16px;
-      width: 300px;
-      border-radius: 8px;
-      border: 0;
-      padding: 10px;
-      background-color: #19171cb0;
-      border: solid #7066703d 1px;
-      color: white;
-      position: relative;
-      top: 2px;
-    }
-    
-    header input[type="search"]::placeholder {
-      color: #cfcfcf;
-    }
-    
-    header input[type="search"]:focus::placeholder {
-      color: #cfcfcf80;
-    }
-
-    #logo {
-      font-family: 'Roboto Mono', monospace;
-      font-size: 32px;
-      color: white;
-      padding-right: 29px;
-      white-space: nowrap;
-    }
-    
-    #logo .highlight {
-      color: orangered;
-    }
-
-    .navbar {
-      display: flex;
-      flex-basis: 100%;
-      padding: 40px 0;
-    }    
-  </style>
+  <link rel="stylesheet" href="main.css">
   
 </head>
 <body>
@@ -105,4 +20,16 @@
     <strong>{</strong> Focus that changes with the seasons <strong>}</strong>
   </p>  
 </header>
+
+<main>
+  <h1>Articles</h1>
+  
+  <ul>
+    <li>D3 for data visualization</li>
+    <li>Pathfinding algorithms</li>
+    <li>Advent of Code solutions</li>
+    <li>Advent of Code visualizations</li>
+    <li>Constraint Satisfaction Problems</li>
+  </ul>
+</main>
 </body>
