@@ -48,10 +48,39 @@
       font-weight: normal;
       color: white;
     }
+    
+    header {
+      position: absolute;
+      padding-left: 120px;
+      padding-top: 20px;
+    }
+    
+    header input[type=search] {
+      font-size: 16px;
+      width: 300px;
+      border-radius: 8px;
+      border: 0;
+      padding: 10px;
+      background-color: #19171cb0;
+      border: solid #7066703d 1px;
+      color: white;
+    }
+    
+    input[type="search"]::placeholder {
+      color: #cfcfcf;
+    }
+    
+    input[type="search"]::placeholder:focus {
+      color: #cfcfcf90;
+    }    
+    
   </style>
   
 </head>
 <body>
+<header>
+  <input type="search" placeholder="Find articles">
+</header>
 <main>
   <h1>Textninja Developer Journal</h1>
   <p>
