@@ -20,7 +20,7 @@ input {
 }
 
 header {
-  /* background: linear-gradient(transparent 0%, #121112 100%),
+  background: linear-gradient(transparent 0%, #121112 100%),
     radial-gradient(
         circle at 900px 0px,
         rgb(36 19 34) 0%,
@@ -39,7 +39,7 @@ header {
         rgba(14, 14, 14, 0) 80%
       )
       no-repeat,
-    linear-gradient(#301035, #301035); */
+    linear-gradient(#301035, #301035);
 
   background-color: #221f30;
   display: flex;
