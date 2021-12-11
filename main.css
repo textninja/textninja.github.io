@@ -132,7 +132,7 @@ h1 {
   font-size: 56px;
 }
 
-ul {
+ul, ol {
   padding: 0;
   list-style-type: none;
   line-height: 1.75;
@@ -144,4 +144,22 @@ section h1 {
   border-bottom: solid orangered 2px;
   display: table;
   padding-right: 10%;
+}
+
+ol {
+  counter-reset: list-counter;
+}
+
+ol li {
+  counter-increment: list-counter;
+  margin-left: -40px;
+}
+
+ol li::before {
+  content: "0" counter(list-counter, decimal-leading-zero);
+  color: #a9a9a9;
+  display: inline-block;
+  width: 30px;
+  padding-right: 10px;
+  text-align: right;
 }
