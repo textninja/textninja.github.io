@@ -53,6 +53,8 @@
       position: absolute;
       padding-left: 120px;
       padding-top: 20px;
+      display: flex;
+      align-items: center;=
     }
     
     header input[type=search] {
@@ -64,6 +66,8 @@
       background-color: #19171cb0;
       border: solid #7066703d 1px;
       color: white;
+      position: relative;
+      top: 2px;      
     }
     
     input[type="search"]::placeholder {
@@ -77,8 +81,13 @@
     
     #logo {
       font-family: 'Roboto Mono', monospace;
-      font-size: 20px;
+      font-size: 32px;
       color: white;
+      padding-right: 29px;
+    }
+    
+    #logo .highlight {
+      color: crimson;
     }
     
   </style>
