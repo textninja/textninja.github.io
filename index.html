@@ -14,48 +14,42 @@
       font-family: 'Teko', sans-serif;      
     }
     
-    main {
-      /*background: linear-gradient(transparent 0%, #121112 100%),
+    header {
+      background: linear-gradient(transparent 0%, #121112 100%),
                   radial-gradient(circle at 900px 0px, rgba(40,2,36,0.8) 0%, rgba(120,212,255,0) 80%) no-repeat,
                   radial-gradient(circle at -100px 90px, rgba(2,40,36,0.8) 0%, rgba(120,212,255,0) 80%) no-repeat,
                   radial-gradient(circle at 80% 90%, rgba(14, 14, 14, 0.8) 0%, rgba(14, 14, 14, 0) 80%) no-repeat,    
-                  linear-gradient(#301035, #301035);*/
-      width: 100%;
-      height: 60vh;
+                  linear-gradient(#301035, #301035);
       display: flex;
-      flex-direction: row;
       align-items: center;
+      flex-flow: row wrap;
+      padding-left: 120px;
     }
 
-    h1 {
-      padding-left: 45px;
+    header h1 {
       color: white;
       line-height: 1em;
       font-size: 82px;
       max-width: 320px;
       padding: 0;
       margin: 0;
-      margin-left: 120px;      
     }
 
-    p {
+    header h1, header p {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }        
+
+    header p {
       font-size: 32px;
       color: #c0c0c090;
       padding-left: 0;      
     }
     
-    p strong {
+    header p strong {
       font-weight: normal;
       color: white;
-    }
-    
-    header {
-      position: absolute;
-      padding-left: 120px;
-      padding-top: 20px;
-      display: flex;
-      align-items: center;=
-    }
+    }    
     
     header input[type=search] {
       font-size: 16px;
@@ -67,42 +61,48 @@
       border: solid #7066703d 1px;
       color: white;
       position: relative;
-      top: 2px;      
+      top: 2px;
     }
     
-    input[type="search"]::placeholder {
+    header input[type="search"]::placeholder {
       color: #cfcfcf;
     }
     
-    input[type="search"]:focus::placeholder {
+    header input[type="search"]:focus::placeholder {
       color: #cfcfcf80;
-    }    
-    
-    
+    }
+
     #logo {
       font-family: 'Roboto Mono', monospace;
       font-size: 32px;
       color: white;
       padding-right: 29px;
+      white-space: nowrap;
     }
     
     #logo .highlight {
       color: orangered;
     }
-    
+
+    .navbar {
+      display: flex;
+      flex-basis: 100%;
+      padding: 40px 0;
+    }    
   </style>
   
 </head>
 <body>
 <header>
-  <div id="logo">{--}<span class="highlight">~</span></div> <input type="search" placeholder="Search textninja journal">
-</header>
-<main>
+  <div class="navbar">
+    <div id="logo">{--}<span class="highlight">~</span></div> <input type="search" placeholder="Search textninja journal">
+  </div>
+
   <h1>Textninja Developer Journal</h1>
   <p>
     <strong>{</strong> Coding for the web <strong>}</strong><br>
     <strong>{</strong> Weekly or better <strong>}</strong><br>
     <strong>{</strong> Focus that changes with the seasons <strong>}</strong>
-  </p>
-</main>
+  </p>  
+</header>
 </body>
