@@ -107,6 +107,8 @@ header input[type="search"]:focus::placeholder {
   color: white;
   padding-right: 29px;
   white-space: nowrap;
+  position: relative;
+  z-index: 9999;
 }
 
 #logo .highlight {
