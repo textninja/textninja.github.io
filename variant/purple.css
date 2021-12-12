@@ -22,7 +22,8 @@ header, footer {
 }
 
 aside {
-    background-color: hsl(316deg 5% 35%);
+    background-color: hsl(0deg 0% 92%);
+    color: #333;
 }
 
 body {
