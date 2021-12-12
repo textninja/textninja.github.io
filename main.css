@@ -195,5 +195,10 @@ aside p {
   left: 0;
   bottom: 0;
   right: 0;
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+#dimmer.active {
   background-color: #20342fad;
 }
