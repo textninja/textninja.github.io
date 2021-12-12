@@ -1,0 +1,10 @@
+@import 'purple.css';
+
+header {
+    background: #4a4a41;
+}
+
+
+#dimmer.active {
+    background-color: #4a4a41;
+}
