@@ -87,7 +87,11 @@ main *::selection {
         margin: 0;
         width: calc(100% - 400px);
         border-radius: 0;
-        padding-left: 100px;
+        padding-left: 120px;
+    }
+
+    aside p {
+        margin-left: 0;
     }
 
     main {
