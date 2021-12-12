@@ -21,6 +21,10 @@ function setArtSize() {
 function updateArt() {
     let [w, h] = setArtSize();
     let rects = [...document.querySelectorAll("header .rects")].flatMap(e => [...e.getClientRects()]);
+    rects.forEach(r => {
+        r.x += document.documentElement.scrollLeft;
+        r.y += document.documentElement.scrollTop;
+    });
 
     let canvas = d3.select("svg#canvas");
     canvas.selectAll("rect")
