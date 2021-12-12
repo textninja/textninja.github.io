@@ -211,3 +211,8 @@ footer::after {
 #dimmer.active {
   background-color: #20342fcd;
 }
+
+*::selection {
+  background-color: orangered !important;
+  color: white !important;
+}
