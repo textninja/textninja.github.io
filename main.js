@@ -4,17 +4,6 @@ function hideWhenFinished() {
     document.querySelector("#dimmer").style.display = "none";
 }
 
-document.querySelector("header input[type=search]").addEventListener("focus", () => {
-    document.querySelector("#dimmer").removeEventListener("transitionend", hideWhenFinished);
-    document.querySelector("#dimmer").style.display = "block";
-    setTimeout(() => document.querySelector("#dimmer").className = "active", 0);
-});
-
-document.querySelector("header input[type=search]").addEventListener("blur", () => {
-    document.querySelector("#dimmer").addEventListener("transitionend", hideWhenFinished);    
-    document.querySelector("#dimmer").className = "";
-});
-
 function setArtSize() {
     const headerSvg = document.querySelector("header svg");
     const svgContainer = headerSvg.parentNode;
@@ -28,6 +17,17 @@ function setArtSize() {
 
     return [w, h];
 }
+
+document.querySelector("header input[type=search]").addEventListener("focus", () => {
+    document.querySelector("#dimmer").removeEventListener("transitionend", hideWhenFinished);
+    document.querySelector("#dimmer").style.display = "block";
+    setTimeout(() => document.querySelector("#dimmer").className = "active", 0);
+});
+
+document.querySelector("header input[type=search]").addEventListener("blur", () => {
+    document.querySelector("#dimmer").addEventListener("transitionend", hideWhenFinished);    
+    document.querySelector("#dimmer").className = "";
+});
 
 setArtSize();
 window.addEventListener("resize", setArtSize);
