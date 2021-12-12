@@ -1,5 +1,7 @@
 import * as d3 from "https://cdn.skypack.dev/d3@7";
 
+window.d3 = d3;
+
 function hideWhenFinished() {
     document.querySelector("#dimmer").style.display = "none";
 }
