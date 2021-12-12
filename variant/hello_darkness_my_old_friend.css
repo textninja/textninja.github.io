@@ -1,0 +1,31 @@
+@import 'flat_beige_banner.css';
+
+header {
+    background-color: #2d2e2e;
+}
+
+body {
+    background-color: hsl(180deg 1% 10%);
+}
+
+aside {
+    display: none;
+}
+
+main {
+    color: white;
+}
+
+footer {
+    background: none;
+    background-color: hsl(210deg 10% 4%);
+}
+
+#dimmer.active {
+    background-color: #191919;
+}
+
+header p .highlight {
+    background-color: #f54100;
+    color: white;
+}
