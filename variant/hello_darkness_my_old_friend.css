@@ -38,3 +38,7 @@ header p .highlight {
     background-color: #4d8989;
     color: white;
 }
+
+section h1 {
+    border-bottom: 0;
+}
