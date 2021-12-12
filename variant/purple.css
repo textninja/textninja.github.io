@@ -35,7 +35,12 @@ main {
 }
 
 footer::before, footer::after {
-    height: 10px;
+    content: none;
+    height: 0;
+}
+
+footer {
+    height: calc(100vh - 240px);
 }
 
 footer::before {
