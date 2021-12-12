@@ -11,17 +11,20 @@
 </head>
 <body>
 <header>
+  <!-- This canvas makes use of all the client rects identified by the "rects" class -->
   <svg id="canvas" width="10" height="10" viewBox="0,0,10,10"></svg>
   <div>
     <div class="navbar">
-      <div id="logo">{--}<span class="highlight">~</span></div> <input type="search" placeholder="Search textninja.net">
+      <div id="logo" class="rects">{--}<span class="highlight">~</span></div> <input class="rects" type="search" placeholder="Search textninja.net">
     </div>
 
-    <h1>Textninja Developer Journal</h1>
+    <h1><span class="rects">Textninja Developer Journal</span></h1>
     <p>
-      Coding for the web<br>
-      New articles every week<br>
-      <span class="highlight">Focus that changes with the seasons</span>
+      <span class="rects">
+        Coding for the web<br>
+        New articles every week<br>
+        <span class="highlight">Focus that changes with the seasons</span>
+      </span>
     </p>  
   </div>
 </header>
