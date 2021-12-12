@@ -175,7 +175,7 @@ ol li::before {
 }
 
 aside {
-  background-color: hsl(294deg 8% 22% / 40%);
+  background-color: hsl(294deg 8% 22% / 10%);
   margin-top: -100px;
   margin-bottom: 35px;
   box-sizing: border-box;
