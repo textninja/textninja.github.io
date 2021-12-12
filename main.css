@@ -19,28 +19,7 @@ input {
 }
 
 header {
-  background: linear-gradient(transparent 0%, #121112 100%),
-    radial-gradient(
-        circle at 900px 0px,
-        rgb(36 19 34) 0%,
-        rgba(36, 19, 34, 0) 80%
-      )
-      no-repeat,
-    radial-gradient(
-        circle at -100px 90px,
-        rgba(2, 40, 36, 0.8) 0%,
-        rgba(2, 40, 36, 0) 80%
-      )
-      no-repeat,
-    radial-gradient(
-        circle at 80% 90%,
-        rgba(14, 14, 14, 0.8) 0%,
-        rgba(14, 14, 14, 0) 80%
-      )
-      no-repeat,
-    linear-gradient(#301035, #301035);
-
-  background-color: #221f30;
+  background-color: #522727;
   display: flex;
   align-items: center;
   flex-flow: row wrap;
@@ -175,7 +154,7 @@ ol li::before {
 }
 
 aside {
-  background-color: hsl(294deg 8% 22% / 10%);
+  background-color: hsl(0deg 47% 40%);
   margin-top: -100px;
   margin-bottom: 35px;
   box-sizing: border-box;
@@ -185,7 +164,8 @@ aside {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  max-width: 1200px;  
+  max-width: 1200px;
+  border-radius: 0 50px 0 50px;
 }
 
 aside p {
