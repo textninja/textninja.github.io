@@ -20,6 +20,11 @@ input {
 
 header {
   background-color: #354e41;
+  position: relative;
+  display: block;
+}
+
+header > div {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
@@ -167,6 +172,7 @@ aside {
   justify-content: center;
   max-width: 1200px;
   border-radius: 0 50px 0 50px;
+  position: relative;
 }
 
 aside p {
@@ -216,4 +222,17 @@ footer::after {
 *::selection {
   background-color: rgba(255, 68, 0, 1) !important;
   color: white !important;
+}
+
+svg#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+header h1, header p {
+  z-index: 2;
 }
