@@ -184,7 +184,7 @@ footer {
 footer::before, footer::after {
   content: " ";
   background-color: #3c354e;
-  height: 4px;
+  height: 2px;
   position: absolute;
   top: 0px;
   left: 0;
