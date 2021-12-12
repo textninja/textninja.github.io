@@ -18,6 +18,26 @@ function setArtSize() {
     return [w, h];
 }
 
+function updateArt() {
+    let [w, h] = setArtSize();
+    let rects = [...document.querySelectorAll("header .rects")].flatMap(e => [...e.getClientRects()]);
+
+    let canvas = d3.select("svg#canvas");
+    canvas.selectAll("rect")
+        .data(rects)
+        .join("rect")
+        .attr("x", d => d.x)
+        .attr("y", d => d.y)
+        .attr("width", d => d.width)
+        .attr("height", d => d.height)
+        .attr("fill", "none")
+        .attr("stroke", "transparent")
+        .attr("stroke-width", 1);
+}
+
+updateArt();
+window.addEventListener("resize", updateArt);
+
 document.querySelector("header input[type=search]").addEventListener("focus", () => {
     document.querySelector("#dimmer").removeEventListener("transitionend", hideWhenFinished);
     document.querySelector("#dimmer").style.display = "block";
@@ -28,6 +48,3 @@ document.querySelector("header input[type=search]").addEventListener("blur", () 
     document.querySelector("#dimmer").addEventListener("transitionend", hideWhenFinished);    
     document.querySelector("#dimmer").className = "";
 });
-
-setArtSize();
-window.addEventListener("resize", setArtSize);
