@@ -173,9 +173,33 @@ aside p {
   line-height: 1.75em;
 }
 
+footer {
+  padding: 120px;
+  background-color: #19161a;
+  text-align: center;  
+  position: relative;
+}
+
+
+footer::before, footer::after {
+  content: " ";
+  background-color: #3c354e;
+  height: 4px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+}
+
+footer::after {
+  background-color: #354e41;
+  left: 120px;
+  right: 120px;
+}
+
 #dimmer {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
