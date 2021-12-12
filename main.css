@@ -83,7 +83,7 @@ header input[type="search"]:focus::placeholder {
 #logo {
   user-select: none;
   font-family: "Roboto Mono", monospace;
-  font-size: 32px;
+  font-size: 36px;
   color: white;
   padding-right: 29px;
   white-space: nowrap;
