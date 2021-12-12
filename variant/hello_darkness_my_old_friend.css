@@ -59,3 +59,19 @@ header p .highlight {
 footer {
     padding-top: 50px;
 }
+
+
+/* Lighten things up */
+
+body {
+    background-color: white;
+}
+
+main {
+    color: #222;
+}
+
+main *::selection {
+    color: white !important;
+    background-color: #222 !important;
+}
