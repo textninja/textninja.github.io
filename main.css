@@ -213,6 +213,7 @@ footer::after {
   right: 0;
   background-color: transparent;
   transition: background-color 0.5s;
+  z-index: 10;
 }
 
 #dimmer.active {
