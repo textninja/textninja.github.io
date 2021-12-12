@@ -85,6 +85,10 @@ header input[type="search"]:focus::placeholder {
   color: #cfcfcf80;
 }
 
+.navbar > a {
+  text-decoration: none;
+}
+
 #logo {
   user-select: none;
   font-family: "Roboto Mono", monospace;
