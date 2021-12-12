@@ -28,6 +28,7 @@ aside {
 
 main {
     color: white;
+    grid-gap: 80px;
 }
 
 footer {
@@ -87,6 +88,10 @@ main *::selection {
         width: calc(100% - 400px);
         border-radius: 0;
         padding-left: 100px;
+    }
+
+    main {
+        width: calc(100% - 400px);
     }
 }
 
