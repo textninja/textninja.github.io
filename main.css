@@ -161,6 +161,10 @@ ol li {
   margin-left: -40px;
 }
 
+ol li:hover {
+  color: orangered;
+}
+
 ol li::before {
   content: "0" counter(list-counter, decimal-leading-zero);
   color: #a9a9a9;
@@ -171,21 +175,22 @@ ol li::before {
 }
 
 aside {
-  background-color: hsl(122deg 8% 22%);
+  background-color: hsl(294deg 8% 22% / 40%);
   margin-top: -100px;
   margin-bottom: 35px;
   box-sizing: border-box;
-  padding: 20px;
-  width: 70%;
-  max-width: 1100px;
+  padding: 50px;
   margin-left: 120px;
+  width: calc(100% - 240px);
   display: flex;
   flex-flow: column;
   justify-content: center;
+  max-width: 1200px;  
 }
 
 aside p {
   margin: 0.5em;
+  line-height: 1.75em;
 }
 
 #dimmer {
