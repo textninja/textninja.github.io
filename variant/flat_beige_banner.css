@@ -4,6 +4,9 @@ header {
     background: #4a4a41;
 }
 
+footer {
+    filter: hue-rotate(45deg);
+}
 
 #dimmer.active {
     background-color: #4a4a41;
