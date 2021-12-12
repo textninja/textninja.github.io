@@ -13,6 +13,10 @@ header {
     background-color: #2d2e2e;
 }
 
+header > div {
+    padding-bottom: 50px;
+}
+
 body {
     background-color: hsl(180deg 1% 10%);
 }
@@ -34,11 +38,15 @@ footer {
     background-color: #191919;
 }
 
-header p .highlight {
-    background-color: #4d8989;
-    color: white;
-}
-
 section h1 {
     border-bottom: 0;
+}
+
+header p .highlight {
+    background-color: orangered;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    left: -10px;
 }
