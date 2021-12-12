@@ -1,5 +1,14 @@
 @import 'flat_beige_banner.css';
 
+#logo {
+    letter-spacing: 0;
+    transition: letter-spacing 0.3s;
+}
+
+#logo:active {
+    letter-spacing: -0.1em;
+}
+
 header {
     background-color: #2d2e2e;
 }
