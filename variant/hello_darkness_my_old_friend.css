@@ -22,7 +22,8 @@ body {
 }
 
 aside {
-    display: none;
+    background-color: hsl(197deg 3% 11%);
+    color: white;
 }
 
 main {
