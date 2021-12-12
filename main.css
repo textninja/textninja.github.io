@@ -155,7 +155,7 @@ ol li::before {
 }
 
 aside {
-  background-color: hsl(155deg 13% 35%);
+  background-color: hsl(194deg 1% 11%);
   margin-top: -100px;
   margin-bottom: 35px;
   box-sizing: border-box;
@@ -214,6 +214,6 @@ footer::after {
 }
 
 *::selection {
-  background-color: orangered !important;
+  background-color: rgba(255, 68, 0, 1) !important;
   color: white !important;
 }
