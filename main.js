@@ -54,3 +54,5 @@ document.querySelector("header input[type=search]").addEventListener("blur", () 
     document.querySelector("#dimmer").addEventListener("transitionend", hideWhenFinished);    
     document.querySelector("#dimmer").className = "";
 });
+
+
