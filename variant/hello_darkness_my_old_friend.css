@@ -50,3 +50,12 @@ header p .highlight {
     position: relative;
     left: -10px;
 }
+
+*::selection {
+    background-color: white !important;
+    color: black !important;
+}
+
+footer {
+    padding-top: 50px;
+}
