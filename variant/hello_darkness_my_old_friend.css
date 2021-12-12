@@ -76,3 +76,22 @@ main *::selection {
     color: white !important;
     background-color: #222 !important;
 }
+
+@media (min-width: 769px) {
+    body {
+        border-top: solid #1b1c1d 49px;
+    }
+
+    aside {
+        margin: 0;
+        width: calc(100% - 400px);
+        border-radius: 0;
+        padding-left: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    aside {
+        width: 100%;
+    }
+}
