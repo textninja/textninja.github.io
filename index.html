@@ -3,14 +3,14 @@
   <title>Textninja Developer Journal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Roboto+Mono&family=Teko:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Roboto+Mono&family=Teko:wght@300;400&display=block" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="variant/hello_darkness_my_old_friend.css">
   
 </head>
 <body>
 <header>
-  <svg id="canvas"></svg>
+  <svg id="canvas" width="10" height="10" viewBox="0,0,10,10"></svg>
   <div>
     <div class="navbar">
       <div id="logo">{--}<span class="highlight">~</span></div> <input type="search" placeholder="Search textninja.net">
@@ -106,4 +106,5 @@
     document.querySelector("#dimmer").className = "";
   });
 </script>
+<script src="main.js" type="module"></script>
 </body>

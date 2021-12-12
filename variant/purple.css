@@ -40,7 +40,8 @@ footer::before, footer::after {
 }
 
 footer {
-    height: calc(100vh - 240px);
+    height: calc(100vh);
+    box-sizing: border-box;
 }
 
 footer::before {
