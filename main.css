@@ -23,13 +23,13 @@ header {
     radial-gradient(
         circle at 900px 0px,
         rgb(36 19 34) 0%,
-        rgba(120, 212, 255, 0) 80%
+        rgba(36, 19, 34, 0) 80%
       )
       no-repeat,
     radial-gradient(
         circle at -100px 90px,
         rgba(2, 40, 36, 0.8) 0%,
-        rgba(120, 212, 255, 0) 80%
+        rgba(2, 40, 36, 0) 80%
       )
       no-repeat,
     radial-gradient(
