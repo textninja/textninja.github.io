@@ -125,6 +125,9 @@ main *::selection {
         width: calc(100% - 400px);
         border-radius: 0;
         padding-left: 120px;
+        position: relative;
+        overflow: hidden;
+        padding-right: 120px;
     }
 
     aside p {
@@ -133,6 +136,21 @@ main *::selection {
 
     main {
         width: calc(100% - 400px);
+    }
+}
+
+@media (min-width: 1400px) {
+    aside {
+        padding-right: 345px;
+    }
+
+    aside::after {
+        content: " ";
+        position: absolute;
+        right: 0; bottom: 0;
+        width: 0; height: 0;
+        border-top: solid transparent 400px;
+        border-right: solid #e3e3e3 300px;
     }
 }
 
