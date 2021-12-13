@@ -75,11 +75,11 @@ footer {
 /* Lighten things up */
 
 body {
-    background-color: white;
+    background-color: #e3e3e3;
 }
 
 main {
-    color: #222;
+    color:#333;
 }
 
 main *::selection {
