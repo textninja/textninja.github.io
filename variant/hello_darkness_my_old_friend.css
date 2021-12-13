@@ -42,7 +42,20 @@ main {
 
 footer {
     background: none;
-    background-color: hsl(210deg 10% 4%);
+    background-color: #191a1a;
+    background-image: radial-gradient(circle at 90% 50%, #070b21ff, #070b2100 80%), radial-gradient(circle at 95% 10%, #1c071cff, #1c071c00 90%);
+    background-position: 100vw 0, 500vw 0;
+    background-repeat: no-repeat;
+    filter: none;
+    color: #ffffffff;
+    transition: background-position 4s, background-color 2s, color 0.75s;
+}
+
+footer.nightsky {
+    background-image: radial-gradient(circle at 90% 90%, #070b21ff, #070b2100 80%), radial-gradient(circle at 95% 10%, #1c071cff, #1c071c00 90%);
+    background-color: black;
+    background-position: 0 0, 0 0;
+    color: #ffffff00;
 }
 
 #dimmer.active {

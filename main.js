@@ -67,3 +67,16 @@ document.onkeydown = function(e) {
         alert("Bring up command prompt!");
     }
 };
+
+document.addEventListener("scroll", function() {
+    let de = document.documentElement;
+    let footer = document.querySelector("footer");
+    if (!footer) return;
+
+    if (de.scrollHeight-de.scrollTop === window.innerHeight) {
+        footer.classList.add("nightsky");
+    } else if (footer.classList.contains("nightsky")) {
+        footer.classList.remove("nightsky");
+    }
+
+});
