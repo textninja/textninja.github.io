@@ -1,5 +1,4 @@
 import * as d3 from "https://cdn.skypack.dev/d3@7";
-
 window.d3 = d3;
 
 function hideWhenFinished() {
@@ -56,3 +55,8 @@ document.querySelector("header input[type=search]").addEventListener("blur", () 
 });
 
 
+(function() {
+    let s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/npm/minisearch@3.2.0/dist/umd/index.min.js";
+    document.head.appendChild(s);
+})();

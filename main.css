@@ -108,6 +108,7 @@ header input[type="search"]:focus::placeholder {
   display: flex;
   flex-basis: 100%;
   padding: 40px 0;
+  align-items: center;
 }
 
 main {
@@ -174,7 +175,7 @@ aside {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  max-width: 1200px;
+  max-width: auto;
   border-radius: 0 50px 0 50px;
   position: relative;
 }
@@ -182,6 +183,7 @@ aside {
 aside p {
   margin: 0.5em;
   line-height: 1.75em;
+  max-width: 1100px;
 }
 
 footer {
