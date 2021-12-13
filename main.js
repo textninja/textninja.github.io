@@ -37,7 +37,7 @@ function updateArt() {
         .attr("width", d => d.width)
         .attr("height", d => d.height)
         .attr("fill", "none")
-        .attr("stroke", "yellow")
+        .attr("stroke", "transparent")
         .attr("stroke-width", 1);
 }
 
@@ -69,15 +69,49 @@ document.onkeydown = function(e) {
     }
 };
 
+function startMeditating() {
+
+}
+
+function stopMeditating() {
+
+}
+
+let footer = d3.select('footer');
+var stars = Array(5000).fill(0).map(p => [Math.random()*window.innerWidth|0, Math.random()*window.innerHeight|0, `hsla(${Math.random()*360|0}deg 60% 95% / ${Math.random()*20|0}%)`]);
+
+let sky = footer.append("svg")
+    .classed(["sky"], true)
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .style("position", "absolute")
+    .style("top", "0")
+    .style("left", "0")
+    .style("right", "0")
+    .style("bottom", "0");
+
+sky.selectAll("circle")
+    .data(stars)
+    .join("circle")
+    .attr("cx", d => d[0])
+    .attr("cy", d => d[1])
+    .attr("r", 1)
+    .attr("fill", d => d[2])        
+
 document.addEventListener("scroll", function() {
     let de = document.documentElement;
     let footer = document.querySelector("footer");
     if (!footer) return;
 
     if (de.scrollHeight-de.scrollTop === window.innerHeight) {
+        footer.style.transition = "";
+        sky.style("transition", "");
         footer.classList.add("nightsky");
+        startMeditating();
     } else if (footer.classList.contains("nightsky")) {
+        footer.style.transition = "all 1s";
+        sky.style("transition", "opacity 0.5s");
         footer.classList.remove("nightsky");
+        stopMeditating();
     }
-
 });

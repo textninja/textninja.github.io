@@ -52,7 +52,12 @@ footer {
     background-repeat: no-repeat;
     filter: none;
     color: #ffffffff;
-    transition: background-position 4s, background-color 2s, color 0.75s;
+    transition: background-position 15s ease-out 2.5s, background-color ease-out 2.5s, color 2s;
+}
+
+footer .sky {
+    opacity: 0;
+    transition: opacity 45s ease-out;
 }
 
 footer.nightsky {
@@ -60,6 +65,10 @@ footer.nightsky {
     background-color: black;
     background-position: 0 0, 0 0;
     color: #ffffff00;
+}
+
+footer.nightsky .sky {
+    opacity: 1;
 }
 
 #dimmer.active {
