@@ -10,6 +10,10 @@
 }
 
 header {
+    background-color: #2d2e2e;
+}
+
+.frontpage header {
     background-color: #2a3232;
 }
 
