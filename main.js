@@ -21,10 +21,11 @@ function setArtSize() {
 
 function updateArt() {
     let [w, h] = setArtSize();
+    let headerPos = document.querySelector("header").getBoundingClientRect();
     let rects = [...document.querySelectorAll("header .rects")].flatMap(e => [...e.getClientRects()]);
     rects.forEach(r => {
-        r.x += document.documentElement.scrollLeft;
-        r.y += document.documentElement.scrollTop;
+        r.x -= headerPos.x;
+        r.y -= headerPos.y;
     });
 
     let canvas = d3.select("svg#canvas");
@@ -36,7 +37,7 @@ function updateArt() {
         .attr("width", d => d.width)
         .attr("height", d => d.height)
         .attr("fill", "none")
-        .attr("stroke", "transparent")
+        .attr("stroke", "yellow")
         .attr("stroke-width", 1);
 }
 

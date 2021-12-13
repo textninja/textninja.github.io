@@ -72,6 +72,7 @@ header input[type="search"] {
   position: relative;
   top: 3px;
   z-index: 9999;
+  flex-shrink: 1;
 }
 
 header input[type="search"]::placeholder {

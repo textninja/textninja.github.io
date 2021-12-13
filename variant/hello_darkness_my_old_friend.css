@@ -116,10 +116,6 @@ main *::selection {
 }
 
 @media (min-width: 901px) {
-    body {
-        border-top: solid #1b1c1d 49px;
-    }
-
     aside {
         margin: 0;
         width: calc(100% - 400px);
@@ -136,6 +132,14 @@ main *::selection {
 
     main {
         width: calc(100% - 400px);
+    }
+
+    .disclaimer {
+        background-color: #1b1c1d;
+        text-align: center;
+        color: #ffffffb0 !important;
+        line-height: 50px;
+        font-style: italic;
     }
 }
 
@@ -157,5 +161,9 @@ main *::selection {
 @media (max-width: 900px) {
     aside {
         width: 100%;
+    }
+
+    .disclaimer {
+        display: none;
     }
 }
