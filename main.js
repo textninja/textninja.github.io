@@ -60,3 +60,10 @@ document.querySelector("header input[type=search]").addEventListener("blur", () 
     s.src = "https://cdn.jsdelivr.net/npm/minisearch@3.2.0/dist/umd/index.min.js";
     document.head.appendChild(s);
 })();
+
+
+document.onkeydown = function(e) {
+    if (e.key == "`" && e.ctrlKey) {
+        alert("Bring up command prompt!");
+    }
+};
