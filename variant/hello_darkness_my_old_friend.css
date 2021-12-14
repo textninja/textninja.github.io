@@ -8,7 +8,8 @@
     --body-text: #dfdfdf;
     --top-bar-bg: #1c1c1c;
     --top-bar-text: #686868;
-    --aside-bg: hsl(0deg 0% 9%);
+    --hex-bg: hsl(0deg 0% 9%);
+    --aside-bg: #0d0d0d;
     --aside-text: #858585;
     --body-bg: #101010;
     --body-text: #d7d7d7;
@@ -157,18 +158,29 @@ main h2 {
     overflow: hidden;
     color: transparent;
     text-indent: -9999px;
+    flex-shrink: 0;
 }
 
 @media (min-width: 901px) {
     aside {
         margin: 0;
-        width: calc(100% - 400px);
+        width: calc(100% - 600px);
         border-radius: 0;
         padding-left: 120px;
         position: relative;
         overflow: hidden;
-        padding-right: 120px;
+        padding-right: 345px;
+        box-sizing: content-box;
     }
+
+    aside::after {
+        content: " ";
+        position: absolute;
+        right: 0; bottom: 0;
+        width: 0; height: 0;
+        border-top: solid transparent 400px;
+        border-right: solid var(--body-bg) 300px;
+    }    
 
     aside p {
         margin-left: 0;
@@ -190,15 +202,6 @@ main h2 {
 @media (min-width: 1400px) {
     aside {
         padding-right: 345px;
-    }
-
-    aside::after {
-        content: " ";
-        position: absolute;
-        right: 0; bottom: 0;
-        width: 0; height: 0;
-        border-top: solid transparent 400px;
-        border-right: solid var(--body-bg) 300px;
     }
 }
 
