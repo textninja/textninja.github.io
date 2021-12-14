@@ -1,5 +1,6 @@
 import * as d3 from "https://cdn.skypack.dev/d3@7";
 window.d3 = d3;
+import { viz } from './viz/20211214.js';
 
 function hideWhenFinished() {
     document.querySelector("#dimmer").style.display = "none";
@@ -39,6 +40,9 @@ function updateArt() {
         .attr("fill", "none")
         .attr("stroke", "transparent")
         .attr("stroke-width", 1);
+
+
+    viz(canvas, w, h, rects);
 }
 
 updateArt();
