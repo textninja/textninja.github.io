@@ -1,0 +1,26 @@
+main {
+    padding: 0;
+    margin-left: 120px;
+    width: auto;
+    display: block;
+    padding-bottom: 60px;
+}
+
+main h2 {
+    display: block;
+    flex-basis: 100% !important;
+}
+
+.hexagons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+
+.hexagon {
+    width: 300px;
+    height: 300px;
+    background-color: var(--aside-bg);
+    margin: 20px;
+}

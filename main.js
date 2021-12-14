@@ -115,3 +115,28 @@ document.addEventListener("scroll", function() {
         stopMeditating();
     }
 });
+
+
+/**
+ * Identify last modified
+ */
+
+let lastUpdatedMsAgo = new Date().getTime() - new Date(document.lastModified);
+console.log(lastUpdatedMsAgo);
+
+let scale = "seconds";
+let scales = [[60000, "minutes"], [60, "hours"], [48, "days"], [7, "weeks"], [4, "months"], [12, "years"]];
+
+let lastUpdated = lastUpdatedMsAgo;
+let s;
+while (s=scales.shift()) {
+    lastUpdated /= s[0];
+    if (lastUpdated >= 1) {
+        scale = s[1];
+    } else {
+        break;
+    }
+}
+
+let disclaimer = document.querySelector(".disclaimer");
+disclaimer.textContent = disclaimer.textContent.replace(/a living mockup./, "a living mockup, last updated " + scale + " ago.");

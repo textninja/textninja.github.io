@@ -63,9 +63,12 @@ aside {
     color: var(--aside-text);
 }
 
+aside strong {
+    color: var(--body-text);
+}
+
 main {
     color: var(--body-text);
-    grid-gap: 80px;
 }
 
 footer {
