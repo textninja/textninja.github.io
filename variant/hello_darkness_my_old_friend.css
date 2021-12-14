@@ -1,5 +1,23 @@
 @import 'flat_beige_banner.css';
 
+:root {
+    --header-bg: #141414;
+    --header-dim-text: #646464;
+    --highlight: #414e37;
+    --bright-text: #fff;
+    --body-text: #dfdfdf;
+    --top-bar-bg: #1c1c1c;
+    --top-bar-text: #686868;
+    --aside-bg: hsl(0deg 0% 9%);
+    --aside-text: #858585;
+    --body-bg: #101010;
+    --body-text: #d7d7d7;
+    --footer-bg: #0c0c0c;
+    --footer-text: #4c4c4c;
+    --dimmer-bg: #101010;
+    --search-input-bg: hsl(0deg 0% 10%);
+}
+
 #logo {
     letter-spacing: 0;
     transition: letter-spacing 0.3s;
@@ -9,19 +27,25 @@
     letter-spacing: -0.05em;
 }
 
+#logo .highlight {
+    color: var(--highlight) !important;
+}
+
 header {
-    background-color: #2d2e2e;
+    background-color: var(--header-bg);
 }
 
 .frontpage header {
-    background-color: #2a3232;
+    background-color: var(--header-bg);
 }
 
 header h1 {
     font-size: 108px;
+    font-weight: 300;
 }
 
 header p {
+    color: var(--header-dim-text);
     margin-left: 60px;
     letter-spacing: 0.03em;
 }
@@ -31,27 +55,27 @@ header > div {
 }
 
 body {
-    background-color: hsl(180deg 1% 10%);
+    background-color: var(--body-bg);
 }
 
 aside {
-    background-color: hsl(197deg 3% 11%);
-    color: white;
+    background-color: var(--aside-bg);
+    color: var(--aside-text);
 }
 
 main {
-    color: white;
+    color: var(--body-text);
     grid-gap: 80px;
 }
 
 footer {
     background: none;
-    background-color: #191a1a;
+    background-color: var(--footer-bg);
     background-image: radial-gradient(circle at 90% 50%, #070b21ff, #070b2100 80%), radial-gradient(circle at 95% 10%, #1c071cff, #1c071c00 90%);
     background-position: 100vw 0, 500vw 0;
     background-repeat: no-repeat;
     filter: none;
-    color: #ffffffff;
+    color: var(--footer-text);
     transition: background-position 15s ease-out 2.5s, background-color ease-out 2.5s, color 2s;
 }
 
@@ -72,7 +96,7 @@ footer.nightsky .sky {
 }
 
 #dimmer.active {
-    background-color: #191919;
+    background-color: var(--dimmer-bg);
 }
 
 section h1 {
@@ -80,12 +104,17 @@ section h1 {
 }
 
 header p .highlight {
-    background-color: orangered;
+    background-color: var(--highlight);
     color: white;
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
     left: -10px;
+}
+
+header input[type=search] {
+    background-color: var(--search-input-bg);
+    border: none;
 }
 
 *::selection {
@@ -97,21 +126,10 @@ footer {
     padding-top: 50px;
 }
 
-
-/* Lighten things up */
-
-body {
-    background-color: #e3e3e3;
-}
-
-main {
-    color:#333;
-}
-
-main *::selection {
+/* main *::selection {
     color: white !important;
     background-color: #222 !important;
-}
+} */
 
 .hamburger {
     display: inline-block;
@@ -144,9 +162,9 @@ main *::selection {
     }
 
     .disclaimer {
-        background-color: #1b1c1d;
+        background-color: var(--top-bar-bg);
         text-align: center;
-        color: #ffffffb0 !important;
+        color: var(--top-bar-text) !important;
         line-height: 50px;
         font-style: italic;
     }
@@ -163,7 +181,7 @@ main *::selection {
         right: 0; bottom: 0;
         width: 0; height: 0;
         border-top: solid transparent 400px;
-        border-right: solid #e3e3e3 300px;
+        border-right: solid var(--body-bg) 300px;
     }
 }
 
