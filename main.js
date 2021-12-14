@@ -140,3 +140,26 @@ while (s=scales.shift()) {
 
 let disclaimer = document.querySelector(".disclaimer");
 disclaimer.textContent = disclaimer.textContent.replace(/a living mockup./, "a living mockup, last updated " + scale + " ago.");
+
+
+
+/**
+ * Add svgs to hexagons
+ */
+
+let hexagons = d3.selectAll(".hexagon");
+let translations = d3.map(hexagons, h => [0, Math.random()*350-175|0]);
+let widths = d3.map(hexagons, h => h.offsetWidth);
+hexagons
+    .data(translations)
+    .style("transform", (d,i) => `translateY(${d[1]}px)`)
+    .style("opacity", "0.5");
+
+// d3.each(hexagons, f => console.log(f))
+
+
+function slice(e) {
+    console.log(e.clientY);
+}
+
+document.onclick = slice;
