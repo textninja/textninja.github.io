@@ -11,17 +11,6 @@ export function viz(canvas, w, h, rects) {
     let gh = areah / cellSize | 0;
 
     let data = Array(gw*gh).fill(0).map(d => Math.random()*10|0);
-
-    // canvas.selectAll("rect.grid-indicator")
-    //     .data([[topLeft, bottomRight]])
-    //     .join("rect")
-    //         .attr("x", d => d[0][0])
-    //         .attr("y", d => d[0][1])
-    //         .attr("width", d => d[1][0]-d[0][0])
-    //         .attr("height", d => d[1][1]-d[0][1])
-    //         .attr("stroke", "yellow")
-    //         .attr("stroke-width", "1");
-
     
     canvas.selectAll("g.grid").data([1]).join("g").classed(["grid"], true)
         .attr("transform", "translate(" + topLeft[0] + ", " + topLeft[1] + ")")
@@ -30,6 +19,6 @@ export function viz(canvas, w, h, rects) {
         .join("circle")
             .attr("cx", (d,i) => (i%gw|0)*(cellSize+1))
             .attr("cy", (d,i) => (i/gw|0)*cellSize)
-            .attr("r", _ => cellSize/2*0.6)
+            .attr("r", d => cellSize/2*0.6*d/10)
             .attr("fill", d => d3.interpolateInferno(d/10));
 }

@@ -165,11 +165,12 @@ main h2 {
     aside {
         margin: 0;
         width: calc(100% - 600px);
+        max-width: 1100px;
         border-radius: 0;
         padding-left: 120px;
         position: relative;
         overflow: hidden;
-        padding-right: 345px;
+        padding-right: 250px;
         box-sizing: content-box;
     }
 
@@ -179,7 +180,7 @@ main h2 {
         right: 0; bottom: 0;
         width: 0; height: 0;
         border-top: solid transparent 400px;
-        border-right: solid var(--body-bg) 300px;
+        border-right: solid var(--body-bg) 100px;
     }    
 
     aside p {
@@ -196,12 +197,6 @@ main h2 {
         color: var(--top-bar-text) !important;
         line-height: 50px;
         font-style: italic;
-    }
-}
-
-@media (min-width: 1400px) {
-    aside {
-        padding-right: 345px;
     }
 }
 
