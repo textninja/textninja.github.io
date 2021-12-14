@@ -10,7 +10,10 @@ export function viz(canvas, w, h, rects) {
     let gw = areaw / cellSize | 0;
     let gh = areah / cellSize | 0;
 
-    let data = Array(gw*gh).fill(0).map(d => Math.random()*10|0);
+    let data = [];
+    if (gw >= 5 && gh >= 4) {
+        data = Array(gw*gh).fill(0).map(d => Math.random()*10|0);
+    }
     
     canvas.selectAll("g.grid").data([1]).join("g").classed(["grid"], true)
         .attr("transform", "translate(" + topLeft[0] + ", " + topLeft[1] + ")")
