@@ -118,12 +118,21 @@ header input[type=search] {
 }
 
 *::selection {
-    background-color: white !important;
-    color: black !important;
+    background-color: #e5001c !important;
+    color: #fefef1 !important;
 }
 
 footer {
     padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: #dddddd;
+}
+
+main h2 {
+    font-size: 64px;
 }
 
 /* main *::selection {
@@ -140,6 +149,11 @@ footer {
     background-image: url(/hamburger.svg);
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    color: transparent;
+    text-indent: -9999px;
 }
 
 @media (min-width: 901px) {
