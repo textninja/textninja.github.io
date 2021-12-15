@@ -12,7 +12,8 @@ main h2 {
 }
 
 .hexagons {
-    margin-left: -120px;
+    margin-left: -50px;
+    margin-right: 70px;
     margin-top: 150px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -20,7 +21,7 @@ main h2 {
 
 .hexagon {
     width: calc(100% - 10px);
-    padding-bottom: calc(100% - 10px);
+    padding-bottom: calc(57.73%);
     margin-bottom: 10px;
     height: 0;
     background-color: var(--hex-bg);
@@ -28,13 +29,20 @@ main h2 {
     margin-bottom: 200px;
 }
 
-.hexagon > div {
+.hexagon .content {
     box-sizing: border-box;
+    padding: 20px;
     font-size: 32px;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hexagon .caption {
+    order: -1;
+    margin-bottom: 0.5em;
 }

@@ -151,13 +151,17 @@ disclaimer.textContent = disclaimer.textContent.replace(/a living mockup./, "a l
  * Add svgs to hexagons
  */
 
+
 let hexagons = d3.selectAll(".hexagon");
+// used to add randomized fly in later
 let translations = d3.map(hexagons, h => [0, Math.random()*350-175|0]);
 let widths = d3.map(hexagons, h => h.offsetWidth);
-hexagons
-    .data(translations)
-    .style("transform", (d,i) => `translateY(${d[1]}px)`)
-    .style("opacity", "0.5");
+// hexagons
+//     .data(translations)
+//     .style("transform", (d,i) => `translateY(${d[1]}px)`);
+
+
+
 
 // d3.each(hexagons, f => console.log(f))
 
