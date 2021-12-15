@@ -43,16 +43,17 @@ main h2:first-of-type {
     color: #606060;
 }
 
-.hexagon.highlight {
+/* .hexagon.highlight {
     --hex-bg: white;
-}
+}*/
+
 
 .hexagon.highlight h3 {
-    color: #333;
-}
+    color: white;
+} */
 
 .hexagon.highlight:hover h3 {
-    color: black;
+    color: white;
 }
 
 .hexagon.highlight .caption {

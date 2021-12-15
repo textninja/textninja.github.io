@@ -138,8 +138,8 @@ header input[type=search] {
 }
 
 *::selection {
-    background-color: #e5001c !important;
-    color: #fefef1 !important;
+    background-color: #555 !important;
+    color: white !important;
 }
 
 footer {
