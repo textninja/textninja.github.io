@@ -156,6 +156,64 @@ let hexagons = d3.selectAll(".hexagon");
 // used to add randomized fly in later
 let translations = d3.map(hexagons, h => [0, Math.random()*350-175|0]);
 let widths = d3.map(hexagons, h => h.offsetWidth);
+
+let hexTop = hexagons.selectAll("div.hexagon-top")
+    .data([0])
+    .join(
+        enter => {
+            enter.append(
+                () => {
+                    let d = d3.create("div");
+                    return d.node();
+                }
+            ).call(hexProps)
+        },
+        update => update.call(hexProps)
+    );
+
+let hexBottom = hexagons.selectAll("div.hexagon-bottom")
+    .data([0])
+    .join(
+        enter => {
+            enter.append(
+                () => {
+                    let d = d3.create("div");
+                    return d.node();
+                }
+            ).call(hexProps, true)
+        },
+        update => update.call(hexProps, true)
+    );    
+
+
+function hexProps(el, bottom=false) {
+    el.classed([bottom ? "hexagon-bottom" : "hexagon-top"], true)
+        .style("position", "absolute")
+        .style("box-sizing", "border-box")
+        .style("left", "0")
+        .style(bottom ? "top" : "bottom", "100%")
+        .style("width", "100%")
+        .style("padding-bottom", 50/Math.tan(60/180*Math.PI) + "%");
+
+    el.selectAll("svg")
+        .data([0])
+        .join("svg")
+        .style("position", "absolute")
+        .style("left", "0")
+        .style("right", "0")
+        .style("top", "0")
+        .style("bottom", "0")
+        .style("width", "100%")
+        .style("height", "100%")
+        .attr("viewBox", "0 0 100 100")
+        .attr("preserveAspectRatio", "none")
+        .selectAll("path")
+            .data([0])
+            .join("path")
+            .attr("d", bottom ? "M0 0 L50 100 L100 0 z" : "M0 100 L50 0 L100 100 z");
+}
+
+
 // hexagons
 //     .data(translations)
 //     .style("transform", (d,i) => `translateY(${d[1]}px)`);

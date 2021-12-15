@@ -8,10 +8,10 @@
     --body-text: #dfdfdf;
     --top-bar-bg: #1c1c1c;
     --top-bar-text: #9f9f9f;
-    --hex-bg: hsl(0deg 0% 9%);
+    --hex-bg: #181818;
     --aside-bg: #121212;
     --aside-text: #858585;
-    --body-bg: #101010;
+    --body-bg: var(--header-bg);
     --body-text: #d7d7d7;
     --footer-bg: #0c0c0c;
     --footer-text: #4c4c4c;
