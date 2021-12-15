@@ -1,7 +1,7 @@
 @import 'flat_beige_banner.css';
 
 :root {
-    --header-bg: #141414;
+    --header-bg: transparent;
     --header-dim-text: #646464;
     --highlight: #414e37;
     --bright-text: #fff;
@@ -11,7 +11,7 @@
     --hex-bg: #181818;
     --aside-bg: #121212;
     --aside-text: #858585;
-    --body-bg: var(--header-bg);
+    --body-bg: #141414;
     --body-text: #d7d7d7;
     --footer-bg: #111;
     --footer-text: #4c4c4c;
