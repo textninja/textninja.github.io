@@ -99,11 +99,18 @@ aside {
 }
 
 .hexagon {
-    --background-color: white;
-    --text-color: black;
+    cursor: pointer;
 }
 
-.hexagon, .hexagon h3, .hexagon path, .hexagon .caption {
+.hexagon h3 {
+    transition: color ease-out 0.2s;
+}
+
+.hexagon:hover h3 {
+    color: white;
+}
+
+/* .hexagon, .hexagon h3, .hexagon path, .hexagon .caption {
     cursor: pointer;
     transition: color ease-out 0.2s, background-color ease-out 0.2s, fill ease-out 0.2s;
 }
@@ -123,4 +130,4 @@ aside {
 
 .hexagon:hover .caption {
     color: var(--text-color);
-}
+} */
