@@ -91,6 +91,14 @@
         width: auto;
     }
 
+    .hexagons:first-of-type {
+        margin-top: 0;
+    }
+
+    header > div {
+        padding-bottom: 0;
+    }
+
     .hexagons .hexagon-top,
     .hexagons .hexagon-bottom {
         display: none;
@@ -98,6 +106,7 @@
 
     .hexagons .hexagon {
         margin: 0;
+        margin-bottom: 25px;
     }
 
     .hexagons h3 {
@@ -116,7 +125,9 @@
         padding: 20px;
         display: block !important;
         text-align: center;
-        color: #888;
+        color: #727272;
+        background-color: #1e1e1e;
+        font-size: 14px;
     }
 
     main > div {
