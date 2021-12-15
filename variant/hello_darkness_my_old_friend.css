@@ -123,6 +123,7 @@ section h1 {
 
 header p .highlight {
     background-color: var(--highlight);
+    background: none;
     color: white;
     padding-left: 10px;
     padding-right: 10px;
@@ -153,6 +154,8 @@ h1, h2, h3, h4, h5, h6 {
 main h2 {
     font-size: 64px;
 }
+
+
 
 /* main *::selection {
     color: white !important;
@@ -212,6 +215,15 @@ main h2 {
         color: var(--top-bar-text) !important;
         line-height: 50px;
         font-style: italic;
+        display: none;
+    }
+
+    body.frontpage {
+        padding-top: 50px;
+    }
+
+    header h1 {
+        font-weight: bold;
     }
 }
 

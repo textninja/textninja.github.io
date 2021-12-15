@@ -43,8 +43,16 @@ main h2:first-of-type {
     color: #606060;
 }
 
+.hexagon.highlight {
+    --hex-bg: white;
+}
+
 .hexagon.highlight h3 {
-    color: white;
+    color: #333;
+}
+
+.hexagon.highlight:hover h3 {
+    color: black;
 }
 
 .hexagon.highlight .caption {
@@ -132,12 +140,15 @@ aside {
     color: var(--text-color);
 } */
 
+.hidden {
+    visibility: hidden;
+}
 
-.hexagon {
+.hexagons {
     opacity: 0;
 }
 
-body.show-hexagons .hexagon {
+body.show-hexagons .hexagons {
     opacity: 1;
 }
 
