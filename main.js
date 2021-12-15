@@ -213,6 +213,7 @@ function hexProps(el, bottom=false) {
             .attr("d", bottom ? "M0 0 L50 100 L100 0 z" : "M0 100 L50 0 L100 100 z");
 }
 
+document.querySelector("body").classList.add("show-hexagons");
 
 // hexagons
 //     .data(translations)
