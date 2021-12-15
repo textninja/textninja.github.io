@@ -154,11 +154,6 @@ body.show-hexagons .hexagons {
 
 /* Hexagon transition */
 
-/* 
-body.show-hexagons .hexagon {
-    transform: translate(0, 0);
-}
-
 .hexagon {
     transition: transform ease-out 0.75s;
 }
@@ -206,4 +201,8 @@ body.show-hexagons .hexagon {
 
 .hexagons:nth-of-type(3) .hexagon:nth-of-type(5) {
     transform: translate(25px, 50px);
-} */
+}
+
+body.show-hexagons .hexagons .hexagon {
+    transform: translate(0, 0) !important;
+}
