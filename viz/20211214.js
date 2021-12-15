@@ -1,3 +1,7 @@
+let mx = null;
+let my = null;
+let data = [];
+
 export function viz(canvas, w, h, rects) {
     let rectsByTop = [...rects].sort((a,b)=>a.top-b.top);
     let rectsByRight = [...rects].sort((a,b)=>b.right-a.right);
@@ -10,18 +14,35 @@ export function viz(canvas, w, h, rects) {
     let gw = areaw / cellSize | 0;
     let gh = areah / cellSize | 0;
 
-    let data = [];
+    let localData = [];
+
     if (gw >= 5 && gh >= 4) {
-        data = Array(gw*gh).fill(0).map(d => Math.random()*10|0);
+        while (data.length < gh) {
+            data.push([]);
+        }
+        for (let row of data) {
+            while (row.length < gw) {
+                row.push(Math.random()*10|0);
+            }
+        }
+
+        localData = data.slice(0, gh).flatMap(row => row.slice(0, gw));
     }
-    
+
+    let centerOfArea = [topLeft[0]+areaw/2, topLeft[1]+areah/2];
+    if (mx === null) {
+        [mx, my] = centerOfArea;
+    }
+
+    let diff = [(centerOfArea[0]-mx)/window.innerWidth, (centerOfArea[1]-my)/window.innerHeight];
+
     canvas.selectAll("g.grid").data([1]).join("g").classed(["grid"], true)
         .attr("transform", "translate(" + topLeft[0] + ", " + topLeft[1] + ")")
         .selectAll("circle")
-        .data(data)
+        .data(localData)
         .join("circle")
-            .attr("cx", (d,i) => (i%gw|0)*(cellSize+1))
-            .attr("cy", (d,i) => (i/gw|0)*cellSize)
+            .attr("cx", (d,i) => (i%gw|0)*(cellSize+1)+diff[0]*10)
+            .attr("cy", (d,i) => (i/gw|0)*cellSize+diff[1]*10)
             .attr("r", d => cellSize/2*0.6*d/10)
             .attr("fill", d => d3.interpolateInferno(d/10));
 }
