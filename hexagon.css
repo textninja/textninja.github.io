@@ -32,7 +32,7 @@ main h2:first-of-type {
     margin: 0;
     font-family: roboto, helvetica, arial, sans-serif;
     font-weight: normal;
-    font-size: 2vw;
+    font-size: 1.75vw;
 }
 
 .hexagon h3 {
