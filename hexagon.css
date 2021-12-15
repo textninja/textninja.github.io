@@ -6,7 +6,7 @@ main {
     padding-bottom: 60px;
 }
 
-main h2 {
+main h2:first-of-type {
     display: none;
 }
 
@@ -18,6 +18,10 @@ main h2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     color: var(--header-dim-text);
+}
+
+.hexagons:last-of-type {
+    margin-bottom: 150px;
 }
 
 .hexagon .content {
