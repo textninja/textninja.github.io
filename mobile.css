@@ -1,6 +1,5 @@
 @media (max-width: 900px) {
 
-
     header > div {
         padding: 0;
         margin: 0;
@@ -69,5 +68,63 @@
 
     ol li::before {
         display: none;
+    }
+
+    header h1 {
+
+        display: none;
+
+    }
+
+    header p {
+        display: none;
+    }
+
+    header input[type=search] {
+        display: none;
+    }
+
+    .hexagons {
+        grid-template-columns: 1fr;
+        width: auto;
+        margin: 0;
+        width: auto;
+    }
+
+    .hexagons .hexagon-top,
+    .hexagons .hexagon-bottom {
+        display: none;
+    }
+
+    .hexagons .hexagon {
+        margin: 0;
+    }
+
+    .hexagons h3 {
+        font-size: 24px;
+    }
+
+    .hexagons:nth-of-type(2n) .hexagon {
+        margin: 0;
+    }
+
+    main {
+        margin: 0; padding: 20px;
+    }
+
+    .disclaimer {
+        padding: 20px;
+        display: block !important;
+        text-align: center;
+        color: #888;
+    }
+
+    main > div {
+        columns: 1 !important;
+        margin: 0 !important;
+    }
+
+    main > div ol li {
+        margin: 45px !important;
     }
 }
