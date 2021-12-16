@@ -43,22 +43,26 @@ main h2:first-of-type {
     color: #606060;
 }
 
-.hexagon.highlight {
-    --hex-bg: #0e0e0e;
+.hexagon.lowlight {
+    --hex-bg: #101010;
 }
 
-
-.hexagon.highlight h3 {
+/* .hexagon.lowlight h3 {
     color: white;
+}
+
+.hexagon.lowlight:hover h3 {
+    color: white;
+}
+
+.hexagon.lowlight .caption {
+    color: #979797;
 } */
 
-.hexagon.highlight:hover h3 {
-    color: white;
+.hexagon.highlight {
+    --hex-bg: #242424;
 }
 
-.hexagon.highlight .caption {
-    color: #979797;
-}
 
 .hexagons .hexagon {
     margin-top: calc(28.8675% + 7px);
