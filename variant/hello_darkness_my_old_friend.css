@@ -20,7 +20,23 @@
     --killer-highlight: #e5011c;
     --input-border-radius: 0px;
     --hexagon-highlight-color: #3a6860;
+
+    --heading-font: "Big Shoulders Text", impact, helvetica, arial, sans-serif;
 }
+
+
+/* Big shoulders variation */
+header h1, header p {
+    font-family: var(--heading-font);
+    font-weight: normal !important;
+}
+
+header p {
+    line-height: 1.5em;
+    letter-spacing: 0;
+}
+/* End big shoulders variation */ 
+
 
 .caption {
     font-family: 'unica one', helvetica, arial, sans-serif;
