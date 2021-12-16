@@ -1,6 +1,9 @@
 function slice(e) {
-    console.log(e);
+    slice1(e);
+    setTimeout(() => slice1(e), 100);
+}
 
+function slice1(e) {
     let el = d3.create("svg");
 
     let cy = e.clientY;
@@ -20,7 +23,7 @@ function slice(e) {
         }
     );
 
-    let startX = Math.random()*50+25|0;
+    let startX = Math.random()*100+50|0;
 
     el.append("line")
         .attr("x1", startX)
