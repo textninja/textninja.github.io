@@ -25,7 +25,7 @@ function slice1(e) {
 
     let startX = Math.random()*100+50|0;
 
-    el.append("line")
+    let line = el.append("line")
         .attr("x1", startX)
         .attr("y1", "0")
         .attr("x2", startX+((50-startX)/cy)*window.innerHeight)
@@ -33,9 +33,12 @@ function slice1(e) {
         .attr("stroke-width", 3+Math.random()*3)
         .attr("stroke", "var(--killer-highlight)");
 
-    el.node().ontransitionend = () => el.remove();
+    el.node().addEventListener("transitionend", function() {
+        el.remove();
+    });
+
     document.body.appendChild(el.node());
-    setTimeout(() => el.style("opacity", "0"), 0);
+    setTimeout(() => el.style("opacity", "0"), 500);
 }
 
 function applyStyles(el, styles) {
