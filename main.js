@@ -145,10 +145,6 @@ while (s=scales.shift()) {
     }
 }
 
-let disclaimer = document.querySelector(".disclaimer");
-disclaimer.textContent = disclaimer.textContent.replace(/a living mockup./, "a living mockup, last updated " + scale + " ago.");
-
-
 
 /**
  * Add svgs to hexagons
