@@ -32,7 +32,13 @@ main h2:first-of-type {
     margin: 0;
     font-family: roboto, helvetica, arial, sans-serif;
     font-weight: normal;
-    font-size: 1.75vw;
+    font-size: 24px;
+}
+
+@media (max-width: 1600px) {
+    .hexagon h3 {
+        font-size: 1.5vw;
+    }
 }
 
 .hexagon h3 {
@@ -215,3 +221,4 @@ body.show-hexagons .hexagons {
 body.show-hexagons .hexagons .hexagon {
     transform: translate(0, 0) !important;
 }
+

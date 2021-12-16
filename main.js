@@ -265,14 +265,15 @@ document.body.appendChild(bgSvg);
 let circle = d3.select(bgSvg).append("circle");
 
 function resizeCircle() {
-    let availScroll = document.querySelector("header").offsetHeight*0.75;
+    let availScroll = document.querySelector("header").offsetHeight;
     let scrollPercent = document.documentElement.scrollTop/availScroll;
 
-    let r = 50 + scrollPercent*100;
+    let d = 75;
+    let r = d + scrollPercent*100;
 
     circle
         .attr("cx", "50")
-        .attr("cy", "150")
+        .attr("cy", 100+d)
         .attr("r", r)
         .attr("fill", "#111");
 }
