@@ -31,7 +31,7 @@ function slice1(e) {
         .attr("x2", startX+((50-startX)/cy)*window.innerHeight)
         .attr("y2", window.innerHeight)
         .attr("stroke-width", 3+Math.random()*3)
-        .attr("stroke", "var(--killer-highlight)");
+        .attr("stroke", "white");
 
     el.node().addEventListener("transitionend", function() {
         el.remove();
