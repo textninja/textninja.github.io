@@ -244,3 +244,13 @@ main h2 {
     bottom: 0; right: 0;
     z-index: -1;
 }
+
+.hexagons img {
+    cursor: pointer;
+    transition: opacity 1.5s ease-in;
+    opacity: 0;
+}
+/* 
+.hexagons:hover img {
+    opacity: 1;
+} */
