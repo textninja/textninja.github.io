@@ -44,7 +44,7 @@ main h2:first-of-type {
 }
 
 .hexagon.lowlight {
-    --hex-bg: #101010;
+    --hex-bg: #0d0d0d;
 }
 
 /* .hexagon.lowlight h3 {

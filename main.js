@@ -274,7 +274,7 @@ function resizeCircle() {
         .attr("cx", "50")
         .attr("cy", "150")
         .attr("r", r)
-        .attr("fill", "#121212");
+        .attr("fill", "#111");
 }
 
 document.addEventListener("scroll", resizeCircle);
