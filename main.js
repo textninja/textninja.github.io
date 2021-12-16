@@ -230,3 +230,53 @@ function slice(e) {
 }
 
 document.onclick = slice;
+
+
+
+document.addEventListener("scroll", function plax() {
+
+    let headerStuff = document.querySelectorAll("header h1, header p, header svg");
+    headerStuff.forEach(thing => {
+        thing.style.transform = "translate(0, " + document.documentElement.scrollTop * 0.15 + "px)";
+    });
+
+    // let headerSvg = document.querySelector("header svg");
+    // headerSvg.style.transform = "translate(0, " + document.documentElement.scrollTop * 0 + "px)";    
+
+    // document.querySelectorAll(".hexagons").forEach(hexagons => {
+    //     hexagons.style.transform = "translate(0, " + document.documentElement.scrollTop * 0.15 + "px)";
+    // });
+
+    // document.querySelectorAll(".hexagons img").forEach(img => {
+    //     /*img.style.transform = "translate(0, " + document.documentElement.scrollTop * -0.15 + "px)";*/
+    // });
+
+});
+
+
+let bgSvg = d3.create("svg").node();
+bgSvg.id = "background-svg";
+bgSvg.setAttribute("viewBox", "0 0 100 100");
+bgSvg.setAttribute("width", "100vw");
+bgSvg.setAttribute("height", "100vh");
+bgSvg.setAttribute("preserveAspectRatio", "none");
+document.body.appendChild(bgSvg);
+
+let circle = d3.select(bgSvg).append("circle");
+
+function resizeCircle() {
+    let availScroll = document.querySelector("header").offsetHeight*0.75;
+    let scrollPercent = document.documentElement.scrollTop/availScroll;
+
+    let r = 50 + scrollPercent*100;
+
+    circle
+        .attr("cx", "50")
+        .attr("cy", "150")
+        .attr("r", r)
+        .attr("fill", "#121212");
+}
+
+document.addEventListener("scroll", resizeCircle);
+
+
