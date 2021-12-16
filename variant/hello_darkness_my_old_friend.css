@@ -3,7 +3,7 @@
 :root {
     --header-bg: transparent;
     --header-dim-text: #646464;
-    --highlight: #414e37;
+    --highlight: #444 !important;
     --bright-text: #fff;
     --body-text: #dfdfdf;
     --top-bar-bg: #1c1c1c;
