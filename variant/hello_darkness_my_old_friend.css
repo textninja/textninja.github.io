@@ -40,13 +40,24 @@
 @media (max-width: 900px) {
     .hexagons .hexagon {
         transition: none !important;
-        transform: translate(0, 0) !important;
-        padding-bottom: 20%;
+        padding: 0;
+        height: auto;
+    }
+
+    .hexagons .hexagon .content {
+        position: relative;
+        padding-top: 2em;
+        padding-bottom: 2em;
     }
 
     body > svg {
         display: none;
     }
+}
+
+/* disable transform transition for hexagons */
+.hexagons .hexagon {
+    transform: translate(0, 0) !important;
 }
 
 
