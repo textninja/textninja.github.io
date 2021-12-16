@@ -66,7 +66,15 @@ main h2:first-of-type {
 } */
 
 .hexagon.highlight {
-    --hex-bg: #202222;
+    --hex-bg: #255e41;
+}
+
+.hexagon.highlight h3 {
+    color: #cfcfcf;
+}
+
+.hexagon.highlight .caption {
+    color: #cfcfcf; 
 }
 
 .hexagon.invisible {
