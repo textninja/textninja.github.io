@@ -1,0 +1,13 @@
+white: #fff
+mid-grey: #5f5f5f
+pale-green: #40554a
+hex-highlight: #396860
+hex-regular: #181818
+hex-regular-text: #979797
+hex-receded: #0d0d0d
+hex-caption: #606060
+hex-highlight-caption: #cfcfcf
+hex-highlight-text: #cfcfcf
+hex-hover-heading-text: #fff
+dim-bg: #080808
+inky-depths: #0e0e0e
