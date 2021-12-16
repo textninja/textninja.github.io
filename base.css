@@ -71,7 +71,7 @@ header input[type="search"] {
   color: white;
   position: relative;
   top: 3px;
-  z-index: 9999;
+  z-index: 100;
   flex-shrink: 1;
 }
 
@@ -99,7 +99,7 @@ header input[type="search"]:focus::placeholder {
   padding-right: 29px;
   white-space: nowrap;
   position: relative;
-  z-index: 9999;
+  z-index: 100;
 }
 
 #logo .highlight {

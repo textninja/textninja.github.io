@@ -2,8 +2,8 @@
 
 :root {
     --header-bg: transparent;
-    --header-dim-text: #646464;
-    --highlight: #444 !important;
+    --header-dim-text: #5b5d60;
+    --highlight: #43484f !important;
     --bright-text: #fff;
     --body-text: #dfdfdf;
     --top-bar-bg: #1c1c1c;
@@ -11,7 +11,7 @@
     --hex-bg: #181818;
     --aside-bg: #121212;
     --aside-text: #858585;
-    --body-bg: #141414;
+    --body-bg: #141415;
     --body-text: #d7d7d7;
     --footer-bg: #0e0e0e;
     --footer-text: #4c4c4c;
