@@ -25,6 +25,31 @@
 }
 
 
+@media (max-width: 1500px) {
+    header h1 {
+        font-size: 90px !important;
+    }
+
+    header p {
+        font-size: 24px !important;
+        margin-left: 30px !important;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .hexagons .hexagon {
+        transition: none !important;
+        transform: translate(0, 0) !important;
+        padding-bottom: 20%;
+    }
+
+    body > svg {
+        display: none;
+    }
+}
+
+
 /* Big shoulders variation */
 header h1, header p {
     font-family: var(--heading-font);
