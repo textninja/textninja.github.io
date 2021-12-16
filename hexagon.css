@@ -63,6 +63,10 @@ main h2:first-of-type {
     --hex-bg: #242424;
 }
 
+.hexagon.invisible {
+    --hex-bg: transparent;
+}
+
 
 .hexagons .hexagon {
     margin-top: calc(28.8675% + 7px);
