@@ -255,30 +255,30 @@ document.addEventListener("scroll", function plax() {
 });
 
 
-// let bgSvg = d3.create("svg").node();
-// bgSvg.id = "background-svg";
-// bgSvg.setAttribute("viewBox", "0 0 100 100");
-// bgSvg.setAttribute("width", "100vw");
-// bgSvg.setAttribute("height", "100vh");
-// bgSvg.setAttribute("preserveAspectRatio", "none");
-// document.body.appendChild(bgSvg);
+let bgSvg = d3.create("svg").node();
+bgSvg.id = "background-svg";
+bgSvg.setAttribute("viewBox", "0 0 100 100");
+bgSvg.setAttribute("width", "100vw");
+bgSvg.setAttribute("height", "100vh");
+bgSvg.setAttribute("preserveAspectRatio", "none");
+document.body.appendChild(bgSvg);
 
-// let circle = d3.select(bgSvg).append("circle");
+let circle = d3.select(bgSvg).append("circle");
 
-// function resizeCircle() {
-//     let availScroll = document.querySelector("header").offsetHeight;
-//     let scrollPercent = document.documentElement.scrollTop/availScroll;
+function resizeCircle() {
+    let availScroll = document.querySelector("header").offsetHeight;
+    let scrollPercent = document.documentElement.scrollTop/availScroll;
 
-//     let d = 75;
-//     let r = d + scrollPercent*100;
+    let d = 75;
+    let r = d + scrollPercent*100;
 
-//     circle
-//         .attr("cx", "50")
-//         .attr("cy", 100+d)
-//         .attr("r", r)
-//         .attr("fill", "#111");
-// }
+    circle
+        .attr("cx", "50")
+        .attr("cy", 100+d)
+        .attr("r", r)
+        .attr("fill", "#111");
+}
 
-// document.addEventListener("scroll", resizeCircle);
+document.addEventListener("scroll", resizeCircle);
 
 
