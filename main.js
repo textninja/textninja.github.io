@@ -1,4 +1,6 @@
 import * as d3 from "https://cdn.skypack.dev/d3@7";
+import './slice.js';
+
 window.d3 = d3;
 // import { viz } from './viz/20211214.js';
 function viz() {}
@@ -224,13 +226,6 @@ document.querySelector("body").classList.add("show-hexagons");
 
 
 // d3.each(hexagons, f => console.log(f))
-
-
-function slice(e) {
-    console.log(e.clientY);
-}
-
-document.onclick = slice;
 
 
 
