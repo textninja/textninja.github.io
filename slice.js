@@ -1,4 +1,6 @@
 function slice(e) {
+    console.log(e);
+
     let el = d3.create("svg");
 
     let cy = e.clientY;
@@ -25,7 +27,7 @@ function slice(e) {
         .attr("y1", "0")
         .attr("x2", startX+((50-startX)/cy)*window.innerHeight)
         .attr("y2", window.innerHeight)
-        .attr("stroke-width", 3)
+        .attr("stroke-width", 3+Math.random()*3)
         .attr("stroke", "var(--killer-highlight)");
 
     el.node().ontransitionend = () => el.remove();

@@ -126,7 +126,7 @@ aside {
 }
 
 .hexagon h3 {
-    transition: color ease-out 0.2s;
+    /* transition: color ease-out 0.2s; */
 }
 
 .hexagon:hover h3 {
@@ -219,6 +219,6 @@ body.show-hexagons .hexagons {
 }
 
 body.show-hexagons .hexagons .hexagon {
-    transform: translate(0, 0) !important;
+    /* transform: translate(0, 0) !important; */
 }
 
