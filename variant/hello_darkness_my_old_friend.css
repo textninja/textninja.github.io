@@ -55,11 +55,6 @@
     }
 }
 
-/* disable transform transition for hexagons */
-.hexagons .hexagon {
-    transform: translate(0, 0) !important;
-}
-
 
 /* Big shoulders variation */
 header h1, header p {

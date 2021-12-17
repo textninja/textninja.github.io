@@ -152,8 +152,6 @@ while (s=scales.shift()) {
 
 
 let hexagons = d3.selectAll(".hexagon");
-// used to add randomized fly in later
-let translations = d3.map(hexagons, h => [0, Math.random()*350-175|0]);
 let widths = d3.map(hexagons, h => h.offsetWidth);
 
 let hexTop = hexagons.selectAll("div.hexagon-top")
@@ -213,6 +211,23 @@ function hexProps(el, bottom=false) {
 }
 
 document.querySelector("body").classList.add("show-hexagons");
+
+
+
+/* Hexagon scroll transitions */
+
+let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
+
+document.addEventListener("scroll", () => {
+
+    let currentScroll = document.documentElement.scrollTop;
+    let scrollPercent = Math.min(currentScroll / document.querySelector("header").offsetHeight, 1);
+
+    hexagons.data(translationInterpolators)
+        .style("transform", d => d(scrollPercent))
+    
+});
+
 
 // hexagons
 //     .data(translations)
