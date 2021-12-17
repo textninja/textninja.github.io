@@ -254,20 +254,20 @@ bgSvg.setAttribute("height", "100vh");
 bgSvg.setAttribute("preserveAspectRatio", "none");
 document.body.appendChild(bgSvg);
 
-let circle = d3.select(bgSvg).append("circle");
+let path = d3.select(bgSvg).append("path");
+path.attr("d", "M0,120 C20,100 80,100 100,120 z")
+    .attr("fill", "#101010");
 
 function resizeCircle() {
     let availScroll = document.querySelector("header").offsetHeight-100;
-    let scrollPercent = document.documentElement.scrollTop/availScroll;
+    let scrollPercent = Math.min(document.documentElement.scrollTop/availScroll, 1);
+    let armLength = 50;
+    let angle = -((60*scrollPercent-30)/360*Math.PI*2);
+    let y = 120 - (140*scrollPercent); // go from 120 to -20
+    let bottomY = 100-(-30/360*Math.PI*2);
+    let p = `M0,${bottomY} L0,${y} C${Math.cos(angle)*armLength},${y-Math.sin(angle)*armLength} ${100-Math.cos(angle)*armLength},${y-Math.sin(angle)*armLength} 100,${y} L100,${bottomY} z`;
 
-    let d = 75;
-    let r = d + scrollPercent*100;
-
-    circle
-        .attr("cx", "50")
-        .attr("cy", 100+d)
-        .attr("r", r)
-        .attr("fill", "#111");
+    path.attr("d", p);
 }
 
 document.addEventListener("scroll", resizeCircle);
