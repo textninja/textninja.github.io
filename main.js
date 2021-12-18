@@ -218,17 +218,18 @@ document.querySelector("body").classList.add("show-hexagons");
 
 /* Removed. One effect is enough. */
 
-let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
+// let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
 
-document.addEventListener("scroll", () => {
+// document.addEventListener("scroll", () => {
 
-    let currentScroll = document.documentElement.scrollTop;
-    let scrollPercent = Math.min(currentScroll / document.querySelector("header").offsetHeight, 1);
+//     let currentScroll = document.documentElement.scrollTop;
+//     let scrollPercent = Math.min(currentScroll / document.querySelector("header").offsetHeight/2, 1);
 
-    hexagons.data(translationInterpolators)
-        .style("transform", d => d(scrollPercent))
+//     hexagons.data(translationInterpolators)
+//         .style("transform", d => d(scrollPercent))
     
-});
+// });
+
 
 
 
@@ -272,7 +273,7 @@ path.attr("d", "M0,120 C20,100 80,100 100,120 z")
     .attr("fill", "#101010");
 
 function resizeCircle() {
-    let availScroll = document.querySelector("header").offsetHeight/2;
+    let availScroll = document.querySelector("header").offsetHeight-100;
     let scrollPercent = Math.min(document.documentElement.scrollTop/availScroll, 1);
     let armLength = 50;
     let angle = -((60*scrollPercent-30)/360*Math.PI*2);
@@ -283,6 +284,6 @@ function resizeCircle() {
     path.attr("d", p);
 }
 
-//document.addEventListener("scroll", resizeCircle);
+document.addEventListener("scroll", resizeCircle);
 
 
