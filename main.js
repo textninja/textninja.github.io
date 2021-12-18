@@ -216,6 +216,9 @@ document.querySelector("body").classList.add("show-hexagons");
 
 /* Hexagon scroll transitions */
 
+/* Removed. One effect is enough. */
+
+/*
 let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
 
 document.addEventListener("scroll", () => {
@@ -227,11 +230,8 @@ document.addEventListener("scroll", () => {
         .style("transform", d => d(scrollPercent))
     
 });
+*/
 
-
-// hexagons
-//     .data(translations)
-//     .style("transform", (d,i) => `translateY(${d[1]}px)`);
 
 
 
