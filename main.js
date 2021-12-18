@@ -272,7 +272,7 @@ path.attr("d", "M0,120 C20,100 80,100 100,120 z")
     .attr("fill", "#101010");
 
 function resizeCircle() {
-    let availScroll = document.querySelector("header").offsetHeight-100;
+    let availScroll = document.querySelector("header").offsetHeight/2;
     let scrollPercent = Math.min(document.documentElement.scrollTop/availScroll, 1);
     let armLength = 50;
     let angle = -((60*scrollPercent-30)/360*Math.PI*2);
