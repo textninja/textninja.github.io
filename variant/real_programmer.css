@@ -1,0 +1,75 @@
+:root {
+    --header-bg: transparent;
+    --header-dim-text: #5f5f5f;
+    --highlight: white !important;
+    --bright-text: #fff;
+    --body-text: #dfdfdf;
+    --top-bar-bg: #1c1c1c;
+    --top-bar-text: #9f9f9f;
+    --hex-bg: #ffffff;
+    --aside-bg: #121212;
+    --aside-text: #858585;
+    --body-bg: #787878;
+    --body-text: #d7d7d7;
+    --footer-bg: #787878;
+    --footer-text: #4c4c4c;
+    --dimmer-bg: #080808;
+    --search-input-bg: transparent;
+    --killer-highlight: #050505;
+    --input-border-radius: 0px;
+    --hexagon-highlight-color: #3a6860;
+    --heading-font: big shoulders text;
+}
+
+
+header input[type=search] {
+    border-bottom: solid #1b00ff 3px;
+}
+
+header input[type=search]::placeholder {
+    color: white;
+}
+
+header #logo {
+    color: #faff00;
+}
+
+header h1 {
+    color: #0200a9;
+}
+
+header p {
+    color: white;
+}
+
+.hexagon.highlight {
+    --hex-bg: #0300a9;
+}
+
+.hexagon h3 {
+    color: black;
+}
+
+.hexagon:hover h3 {
+    color: black;
+}
+
+.hexagon.highlight h3 {
+    color: white;
+}
+
+.hexagon.highlight:hover h3 {
+    color: white;
+}
+
+.hexagon.lowlight {
+    --hex-bg: #a8a8a8;
+}
+
+.hexagon.lowlight h3 {
+    color: white;
+}
+
+#background-svg path {
+    fill: #faff00;
+}
