@@ -285,6 +285,6 @@ function resizeCircle() {
     path.attr("d", p);
 }
 
-document.addEventListener("scroll", resizeCircle);
+//document.addEventListener("scroll", resizeCircle);
 
 
