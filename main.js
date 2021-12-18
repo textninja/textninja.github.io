@@ -218,7 +218,6 @@ document.querySelector("body").classList.add("show-hexagons");
 
 /* Removed. One effect is enough. */
 
-/*
 let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
 
 document.addEventListener("scroll", () => {
@@ -230,7 +229,6 @@ document.addEventListener("scroll", () => {
         .style("transform", d => d(scrollPercent))
     
 });
-*/
 
 
 
@@ -285,6 +283,6 @@ function resizeCircle() {
     path.attr("d", p);
 }
 
-document.addEventListener("scroll", resizeCircle);
+//document.addEventListener("scroll", resizeCircle);
 
 
