@@ -47,4 +47,4 @@ function applyStyles(el, styles) {
     });
 }
 
-document.ondblclick = slice;
+//document.ondblclick = slice;
