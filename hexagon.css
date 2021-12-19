@@ -231,7 +231,7 @@ body.show-hexagons .hexagons {
 /* Less drab */
 
 .hexagon {
-    --hex-bg: #c74a3f;
+    --hex-bg: #38B373;
 }
 
 .hexagon h3 {
