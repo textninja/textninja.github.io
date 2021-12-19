@@ -231,7 +231,7 @@ body.show-hexagons .hexagons {
 /* Less drab */
 
 .hexagon {
-    --hex-bg: #38B373;
+    --hex-bg: #6fc799;
 }
 
 .hexagon h3 {
@@ -243,7 +243,7 @@ body.show-hexagons .hexagons {
 }
 
 .hexagon.highlight {
-    --hex-bg: #43a5c8;
+    --hex-bg: #77afc3;
 }
 
 .hexagon.highlight .caption {
@@ -255,7 +255,7 @@ body.show-hexagons .hexagons {
 }
 
 .hexagon.lowlight {
-    --hex-bg: black;
+    --hex-bg: #0a0a0a;
 }
 
 .hexagon.lowlight h3 {
