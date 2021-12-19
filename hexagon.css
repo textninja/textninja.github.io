@@ -225,3 +225,43 @@ body.show-hexagons .hexagons {
         transform: none !important;
     }
 }
+
+
+
+/* Less drab */
+
+.hexagon {
+    --hex-bg: #c74a3f;
+}
+
+.hexagon h3 {
+    color: white;
+}
+
+.hexagon .caption {
+    color: #fff9;
+}
+
+.hexagon.highlight {
+    --hex-bg: #43a5c8;
+}
+
+.hexagon.highlight .caption {
+    color: #fff9;
+}
+
+.hexagon.highlight h3 {
+    color: white;
+}
+
+.hexagon.lowlight {
+    --hex-bg: black;
+}
+
+.hexagon.lowlight h3 {
+    color: white;
+}
+
+.hexagon.lowlight .caption {
+    color: #fff9;
+}
