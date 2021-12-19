@@ -219,3 +219,9 @@ body.show-hexagons .hexagons {
 .hexagons:nth-of-type(3) .hexagon:nth-of-type(5) {
     transform: translate(50px, 100px);
 }
+
+@media (max-width: 900px) {
+    .hexagons .hexagon {
+        transform: none !important;
+    }
+}
