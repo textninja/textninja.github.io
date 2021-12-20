@@ -216,19 +216,17 @@ document.querySelector("body").classList.add("show-hexagons");
 
 /* Hexagon scroll transitions */
 
-/* Removed. One effect is enough. */
+let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
 
-// let translationInterpolators = d3.map(hexagons, h => d3.interpolateTransformCss(getComputedStyle(h).transform, "translate(0, 0)"));
+document.addEventListener("scroll", () => {
 
-// document.addEventListener("scroll", () => {
+    let currentScroll = document.documentElement.scrollTop;
+    let scrollPercent = Math.min(currentScroll / (document.querySelector("header").offsetHeight-100), 1);
 
-//     let currentScroll = document.documentElement.scrollTop;
-//     let scrollPercent = Math.min(currentScroll / document.querySelector("header").offsetHeight/2, 1);
-
-//     hexagons.data(translationInterpolators)
-//         .style("transform", d => d(scrollPercent))
+    hexagons.data(translationInterpolators)
+        .style("transform", d => d(scrollPercent))
     
-// });
+});
 
 
 

@@ -255,7 +255,7 @@ body.show-hexagons .hexagons {
 }
 
 .hexagon.lowlight {
-    --hex-bg: #0a0a0a;
+    --hex-bg: #5c5c5c;
 }
 
 .hexagon.lowlight h3 {
@@ -264,4 +264,8 @@ body.show-hexagons .hexagons {
 
 .hexagon.lowlight .caption {
     color: #fff9;
+}
+
+#background-svg path {
+    fill: #424242;
 }
