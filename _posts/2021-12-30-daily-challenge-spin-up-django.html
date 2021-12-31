@@ -1,0 +1,383 @@
+---
+layout: post
+title: Daily Tech Challenge #1
+subtitle: Spinning up Django on Kubernetes
+date: 2021-12-30
+author: Joe Taylor
+series: daily-challenge
+series-num: 1
+links:
+    - [GitHub Repo](https://github.com/textninja/daily-challenge-0001-django-on-k8s)
+---
+
+<script>
+    let frontMatter = document.body.textContent;
+    document.body.textContent = "";
+
+
+    let challengeStatusMarker = document.createElement("div");
+    challengeStatusMarker.className = "challenge-status-container";
+    challengeStatusMarker.innerHTML = `<span class='challenge-status'>ACTIVE CHALLENGE</span>`;
+    document.body.appendChild(challengeStatusMarker);    
+
+    let title = frontMatter.match(/^title: (.+$)/m)[1];
+    let h1 = document.createElement("h1");
+    h1.textContent= title;
+    document.body.appendChild(h1);
+
+    let subtitle = frontMatter.match(/^subtitle: (.+$)/m)[1];
+    let h2 = document.createElement("h2");
+    h2.textContent= subtitle;
+    h2.className = "subtitle";
+    document.body.appendChild(h2);
+
+    let date = frontMatter.match(/^date: (.+$)/m)[1];
+    let dateEl = document.createElement("div");
+    dateEl.textContent = "Authored by Joe Taylor on " + new Date(date).toLocaleDateString("en-us");
+    dateEl.className = "date";
+    document.body.appendChild(dateEl);    
+</script>    
+
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Lato:ital,wght@0,400;0,700;1,400&family=Roboto+Mono&family=Roboto:ital,wght@0,400;0,700;1,400&family=Teko:wght@300;400&family=Unica+One&display=swap" rel="stylesheet">
+
+
+<style>
+
+    :root {
+        color-scheme: light;
+
+        --page-bg: white;
+        --page-text: #333;
+
+        --bold-text-color: black;
+
+        --kbd-bg: #404040;        
+        --kbd-text: #e0e0e0;
+
+        --mid-gray: #888888;
+        --a-ok: #15b548;
+
+        --aside-bg: #333;
+    }    
+
+    ::selection {
+        background-color: #e0e0e0 !important;
+        color: black !important;
+    }
+
+    .challenge-status-container {
+        margin-bottom: 3em;
+    }
+
+    .challenge-status {
+        font-weight: bold;
+        color: var(--a-ok);
+        padding: 5px;
+        border-radius: 4px;
+        border: solid;
+    }
+
+    body {
+        max-width: 700px;
+        margin-left: auto; margin-right: auto;
+        margin-top: 0;
+        padding: calc(6vmin);
+        font-family: roboto, helvetica neue, helvetica, sans-serif;
+        color: var(--page-text); 
+        background-color: var(--page-bg);
+    }
+
+    a {
+        color: #17b548;
+    }
+
+    p, ul, ol {
+        line-height: 1.4em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--bold-text-color);
+    }
+
+    h3 {
+        font-size: inherit !important;
+        text-transform: uppercase;
+        margin-top: 3em;
+    }
+
+    h1 {
+        font-size: 2em;
+        color: #777;
+        font-family: Big Shoulders Text, Roboto, Helvetica Neue, Helvetica, sans-serif;                
+    }
+
+    h2 {
+        font-size: 1.8em;
+        font-family: Big Shoulders Text, Roboto, Helvetica Neue, Helvetica, sans-serif;
+        margin-top: 2em;
+        margin-bottom: 1.5em;
+        padding-top: 1em;
+        border-top: solid 1px #ccc;
+    }
+
+    aside + h2 {
+        padding-top: 0;
+        border-top: 0;
+        margin-top: 1.5em;
+    }
+    
+    h2.subtitle {
+        font-size: 7em;
+        margin-top: 0;
+        margin-bottom: 1em;
+        font-family: Big Shoulders Text, Roboto, Helvetica Neue, Helvetica, sans-serif;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    kbd {
+        display: inline-block;
+        font: inherit;
+        background-color: var(--kbd-bg);
+        color: var(--kbd-text);
+        line-height: 1em;
+        vertical-align: baseline;
+        margin: 0.05em;
+        padding: 0.2em;
+        border-radius: 5px;
+    }
+
+    aside {
+        padding: 20px;
+        margin-right: -248px;
+        margin-left: -40px;
+        margin-top: 3em;
+        margin-bottom: 4em;
+        background-color: var(--aside-bg);
+        --bold-text-color: white;
+        --page-text: #ccc;
+        color: var(--page-text);
+    }
+
+    aside a {
+        color: inherit; 
+        filter: none;
+    }
+
+    aside h3 {
+        color: var(--bold-text-color);
+        margin-left: 20px;
+        margin-top: 0.5em;
+        font-size: 1.8em !important;
+        font-family: Big Shoulders Text, Roboto, Helvetica Neue, Helvetica, sans-serif;
+        text-transform: none;
+    }
+
+    aside ol {
+        column-count: 2;
+        column-gap: 50px;
+    }
+
+    .date {
+        margin-bottom: 3em;
+        color: var(--mid-gray);
+        margin-top: -4em;
+    }
+
+    #inverter {
+        position: fixed;
+        top: 0; left: 0;
+        bottom: 0; width: 50%;
+        background-color: transparent;
+        backdrop-filter: invert(1);
+        clip-path: polygon(0 0, 0 100%, 50% 100%, 80% 0);
+    }
+
+    h4.code-title {
+        padding: 10px;
+        background-color: #ddd;
+        margin-bottom: -10px;
+        padding-left: 15px;;
+        font-weight: normal;
+    }
+</style>
+
+<link href="https://unpkg.com/prismjs@1.25.0/themes/prism-tomorrow.css" rel="stylesheet" />
+
+<!-- Let's just leave this commented. It was a fun idea, but it was a stupid one. -->
+<!--<div id="inverter"></div>-->
+
+<p>
+    As an early start to my would-be New Year's Resolution, I've decided to
+    start a blog series to document my daily tech challenges. Blogging is itself
+    one aspect of the challenge, but the main goal is to define and achieve some
+    small technological objective. This can be of any size, scope, or focus I
+    choose, with the single constant being that it involves some technology. For
+    example, I might try a new tool, create a visualization, or maybe explore an
+    algorithm or data structure.
+</p>
+
+<p>
+    Today, my challenge is to spin up django in the cloud. To make it more interesting,
+    I'd also like to change the background color and default font, and install a 
+    stock module or extension. I'd like the deployment to be push button via a command line
+    tool created for the purpose.
+</p>
+    
+<p>
+    I don't have any experience with Django, but I thought it would be
+    interesting to see how far I can deploying it in a single day. I'm not
+    expecting this one to be very difficult, as far as challenges go, but we've
+    got to start somewhere!
+</p>
+
+
+<aside>
+
+    <h3>Challenge summary</h3>
+
+    <ol>
+        <li>Dockerize Django or find existing dockerization</li>
+        <li>Paramaterize to allow for third party extensions to be included</li>
+        <li>Make background color of Django site configurable with environment variables</li>
+        <li>Create Kubernetes manifest for above</li>        
+        <li>Create command line tool to deploy</li>        
+        <li>Deploy to <a href="https://cloud.google.com/kubernetes-engine">GKE</a></li>
+        <li>Keep code organized in GitHub repo</li>
+    </ol>
+</aside>
+
+<h2>Getting started</h2>
+
+<p>
+    Today I'm starting the same way I start every day: by clearing off my
+    computer's Desktop. I do this to create room for the lo-fi mindmap that will
+    unfold over the course of the day. My process is generally to collect
+    information by dragging links and things onto the Desktop, and my Desktop is
+    almost always the place I keep source files and notes for new projects I'm
+    starting. Later, I'll either abandon the project, or get more organized with
+    GitHub repos or collated folder structures.
+</p>
+
+<p>
+    Next up, I'll need a repo for the codebase and YAML configs. Let's go with
+    <a href="https://github.com/textninja/daily-challenge-0001-django-on-k8s">daily-challenge-0001-django-on-k8s</a>,
+    mindful of the fact that if I stay as consistent as I'm planning, I'll run
+    out of zero-padded digits in just 27 short years.
+</p>
+
+<h2>Challenge play-by-play</h2>
+
+<h3>1. Get Django dockerized locally</h3>
+
+<p>
+    To kick things off, I'd better get django running locally. I'm not expecting that to be
+    too difficult. I'll start with whatever Docker Compose files I can find lying around.
+</p>
+
+<p>
+    As it turns out, there's a <a href="https://docs.docker.com/samples/django/">quickstart for Django in Docker's documentation</a>.
+    I'll start there.
+</p>
+
+
+<p>
+    The basis of our deployment is the standard Dockerfile for python apps. We
+    inherit from the <code>python:3</code> image, copy in a <code>requirements.txt</code>
+    that loads django, and perform a <code>pip install</code>. So far, so
+    simple.
+</p>
+
+<h4 class="code-title">Dockerfile</h4>
+<pre><code class="language-docker"><script type="prism-src">FROM python:3
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+WORKDIR /app/
+COPY requirements.txt /app/
+RUN pip install -r requirements.txt
+CMD python -m django
+</script></code></pre>
+
+
+<h4 class="code-title">requirements.txt</h4>
+<pre><code class="language-text"><script type="prism-src">Django>=4.0,<5.0</script></code></pre>
+
+<p>
+    Now I'm consulting the Django docs to see how I'm meant to actually run
+    Django.
+</p>
+
+<p>
+    It looks like django expects me to set up a site with <kbd>django-admin start-project</kbd>.
+    I'll start a new project called <code>dtc0001</code>.
+</p>
+
+
+<h2>Appendix</h2>
+
+<h3>Things I learned or practiced</h3>
+
+<p>
+    <strong>Disclaimer:</strong> These may only be tangentially related to the challenge
+    described above, if they can be related at all. I just like writing these
+    things down.
+</p>
+
+<ul>
+    <li>
+        I was reminded of the keyboard shortcut to rewrap text in VS Code -
+        <kbd>⌥</kbd><kbd>Q</kbd>. Handy!
+    </li>
+    <li>
+        Viewport-relative units like vmin can elevate responsive designs by
+        smoothing hard transitions.
+    </li>
+    <li>
+        Blog posts don't need a lot of styling. Less is more for
+        readability, and by extension, the entire experience.
+    </li>
+    <li>
+        Blog styles don't need to be site consistent.
+        Less consistency, more craftmanship?
+    </li>
+</ul>
+
+<h3>Future challenge ideas</h3>
+
+<ul>
+    <li>Basic Jekyll blog deployment</li>
+    <li>Visualization of daily challenges for entire year, linked to posts</li>
+    <li>Elastic search integration with blog</li>
+    <li>Visualization of heap data structure</li>
+    <li>Create a Harvest / Calendar app integration</li>
+    <li>Experiment with per-post microservice multi-repo configuration for blog</li>
+    <li>Create sidebar blocks in Jekyll</li>
+</ul>
+
+<h3>Technology used (challenge)</h3>
+
+<ul>
+    <li>Django</li>
+    <li>Docker</li>
+    <li>Kubernetes</li>
+    <li>Kustomize</li>
+    <li>Google Kubernetes Engine</li>
+</ul>
+
+<h3>Colophon (blog article)</h3>
+
+<p>Today's blog article is plain HTML with Prism for code highlighting. I have a wishlist for technology to
+integrate, however. That includes the following:</p>
+
+<ul>
+    <li>d3 with greensock for animations</li>
+    <li>SVG diagrams</li>
+    <li>Pagination, sectioning</li>
+</ul>
+
+
+<script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.25.0/components/prism-docker.min.js"></script>
