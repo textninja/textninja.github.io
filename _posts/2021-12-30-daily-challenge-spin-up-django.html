@@ -361,9 +361,24 @@ CMD python -m django
 <img src="successful-install.png" alt="Screenshot of a message from django showing the installation was successful">
 
 
+<h3>2. Give local django a database</h3>
+
+<p>
+    It's time to sort out the configuration. Django will need a database. Postgres
+    is my go-to; I'll spin up a database and then tell Django about it, probably in a
+    config file.
+</p>
+
+<p>
+    From this point forward, I'll do local development with Docker Compose. Once
+    that's proven to work, we can move on to Kubernetes manifests.
+</p>
+
+
 
 <h2>Appendix</h2>
-
+<details>
+<summary>Meta information</summary>
 <h3>Things I learned or practiced</h3>
 
 <p>
@@ -389,6 +404,11 @@ CMD python -m django
         Blog styles don't need to be site consistent.
         Less consistency, more craftmanship?
     </li>
+    <li>
+        Blog posts needn't go on forever. If it's taking too long to say what
+        you want to say, break the article up into a multipart series.
+    </li>
+
 </ul>
 
 <h3>Future challenge ideas</h3>
@@ -423,6 +443,7 @@ integrate, however. That includes the following:</p>
     <li>SVG diagrams</li>
     <li>Pagination, sectioning</li>
 </ul>
+</details>
 
 
 <script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
