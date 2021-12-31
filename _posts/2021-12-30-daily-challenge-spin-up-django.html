@@ -219,16 +219,24 @@ links:
 <style>
     pre.diff-highlight > code .token.inserted:not(.prefix),
     pre > code.diff-highlight .token.inserted:not(.prefix) {
-	    background-color: rgba(0, 255, 128, .3);
+        background-color: rgb(109 219 112 / 42%);
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     pre.diff-highlight > code .token.deleted:not(.prefix),
     pre > code.diff-highlight .token.deleted:not(.prefix) {
         background-color: rgba(255, 0, 0, .3);
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;        
     }
 
     .token.inserted {
-        color: transparent;
+        color: rgb(109 219 112 / 42%);
     }
 </style>
 
@@ -239,17 +247,18 @@ links:
     As an early start to my would-be New Year's Resolution, I've decided to
     start a blog series to document my daily tech challenges. Blogging is itself
     one aspect of the challenge, but the main goal is to define and achieve some
-    small technological objective. This can be of any size, scope, or focus I
+    small technical objective. This can be of any size, scope, or focus I
     choose, with the single constant being that it involves some technology. For
-    example, I might try a new tool, create a visualization, or maybe explore an
-    algorithm or data structure.
+    example, I might try a new tool, create a visualization, or maybe explore a
+    new (or old) algorithm or data structure.
 </p>
 
 <p>
-    Today, my challenge is to spin up django in the cloud. To make it more interesting,
-    I'd also like to change the background color and default font, and install a 
-    stock module or extension. I'd like the deployment to be push button via a command line
-    tool created for the purpose.
+    Today, my challenge is to deploy django to the cloud (Google Cloud Platform,
+    in my case) using kubernetes. To make it more interesting, I'd also like to
+    change the background color and default font, and install a stock module or
+    extension. I'd like the deployment to be push button via a command line tool
+    created for the purpose.
 </p>
     
 <p>
@@ -283,15 +292,16 @@ links:
     unfold over the course of the day. My process is generally to collect
     information by dragging links and things onto the Desktop, and my Desktop is
     almost always the place I keep source files and notes for new projects I'm
-    starting. Later, I'll either abandon the project, or get more organized with
-    GitHub repos or collated folder structures.
+    starting. Later, I'll either abandon the project (tragically), or promote
+    the project by getting more organized with GitHub repos or collated folder
+    structures.
 </p>
 
 <p>
     Next up, I'll need a repo for the codebase and YAML configs. Let's go with
     <a href="https://github.com/textninja/daily-challenge-0001-django-on-k8s">daily-challenge-0001-django-on-k8s</a>,
     mindful of the fact that if I stay as consistent as I'm planning, I'll run
-    out of zero-padded digits in just 27 short years.
+    out of zero-padded digits in just 27 short years. It's my year 2049 problem.
 </p>
 
 <h2>Challenge play-by-play</h2>
@@ -310,7 +320,7 @@ links:
 
 
 <p>
-    The basis of our deployment is the standard Dockerfile for python apps. We
+    The basis of our deployment is a fairly traditional Dockerfile for python apps. We
     inherit from the <code>python:3</code> image, copy in a <code>requirements.txt</code>
     that loads django, and perform a <code>pip install</code>. So far, so
     simple.
@@ -374,6 +384,20 @@ CMD python -m django
     that's proven to work, we can move on to Kubernetes manifests.
 </p>
 
+<p>Before we get to the database, let's run our django app via docker compose.</p>
+
+<h4 class="code-title">docker-compose.yaml</h4>
+<pre><code class="language-yaml">version: '3'
+services:
+  django:
+    build: ./django
+    ports:
+      - 8000:8000</code></pre>
+
+<p>
+    One <code>docker-compose up</code> later, and we're able to navigate to
+    localhost:8000 to see the same screen as before. Progress!
+</p>
 
 
 <h2>Appendix</h2>
@@ -447,6 +471,8 @@ integrate, however. That includes the following:</p>
 
 
 <script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
-<script src="https://unpkg.com/prismjs@1.25.0/components/prism-docker.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
 <script src="https://unpkg.com/prismjs@1.25.0/components/prism-diff.min.js"></script>
 <script src="https://unpkg.com/prismjs@1.22.0/plugins/diff-highlight/prism-diff-highlight.min.js"></script>
