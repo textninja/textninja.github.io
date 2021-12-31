@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: Daily Tech Challenge #1
@@ -510,9 +511,23 @@ DATABASES = {
     I figure if I can change the background color I can change just about anything else,
     theme-wise, so it makes for a great test.
 </p>
+
+<p>
+    Before continuing, let's make one little change to place django <a
+    href="https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/daphne/">behind
+    an ASGI server</a>; that'll make us more production ready when it comes time
+    to deploy.
+</p>
     
+<h4 class="code-title">Dockerfile (diff)</h4>
+<pre><code class="language-diff-docker diff-highlight"><script type="prism-src"> COPY settings.py /app/dtc0001/dtc0001/settings.py
+-CMD python manage.py runserver 0.0.0.0:8000
++CMD daphne -b 0.0.0.0 dtc0001.asgi:application</script></code></pre>
 
-
+<h4 class="code-title">requirements.txt (diff)</h4>
+<pre><code class="language-diff-text diff-highlight"><script type="prism-src"> Django>=4.0,<5.0
+ psycopg2
++daphne</script></code></pre>
 
 <h2>Appendix</h2>
 <details>
