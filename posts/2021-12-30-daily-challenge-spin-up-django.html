@@ -18,7 +18,7 @@ links:
 
     let challengeStatusMarker = document.createElement("div");
     challengeStatusMarker.className = "challenge-status-container";
-    challengeStatusMarker.innerHTML = `<span class='challenge-status'>ACTIVE CHALLENGE</span>`;
+    challengeStatusMarker.innerHTML = `<span class='challenge-status ehh-alright'>CHALLENGE COMPLETE - PARTIAL SUCCESS</span>`;
     document.body.appendChild(challengeStatusMarker);    
 
     let title = frontMatter.match(/^title: (.+$)/m)[1];
@@ -60,6 +60,7 @@ links:
 
         --mid-gray: #888888;
         --a-ok: #15b548;
+        --ehh-alright: #e9be1c;
 
         --aside-bg: #333;
     }    
@@ -79,6 +80,10 @@ links:
         padding: 5px;
         border-radius: 4px;
         border: solid;
+    }
+
+    .challenge-status.ehh-alright {
+        color: var(--ehh-alright);
     }
 
     body {
@@ -528,6 +533,65 @@ DATABASES = {
 <pre><code class="language-diff-text diff-highlight"><script type="prism-src"> Django>=4.0,<5.0
  psycopg2
 +daphne</script></code></pre>
+
+<p>
+    In order to change the theme around, or pretty much anything, really, we
+    need to create what Django calls an "app". We've just created a project so
+    far; there's more scaffolding to prepare.
+</p>
+
+<p>
+    To create the folder structure for the app, I stepped outside of Docker and
+    used my local version of Python in a venv. I could also have used a
+    bind mount together with the container we made, but this was easier.
+</p>
+
+<h4 class="code-title">Command line input</h4>
+<pre><code class="language-diff"><script type="prism-src">python3 -m venv venv
+source venv/bin/activate
+pip install django
+django-admin startapp dtc0001themechange
+</script></code></pre>
+
+<p>
+    This app needs to be in our container to be of any use, so it demands
+    changes to the Dockerfile.
+</p>
+
+
+
+<h3>Deploying to Kubernetes</h3>
+
+<p>I used click ops to set up a cost optimized cluster in Google Cloud.</p>
+
+<img src="costoptimizedcluster.png">
+
+<p>
+    To use it with kubectl, it's <code>gcloud container clusters get-credentials
+    CLUSTER_NAME</code> and then you're off to the races, though I do recommend
+    setting up a namespace with <code>kubectl create ns NAME</code> and
+    <code>kubectl config set-context --current --namespace NAME</code>.
+</p>
+
+<hr>
+
+<p><strong>TIME!</strong> It's now 1am, so I'm going to have to call it!</p>
+
+<h2>Outcome</h2>
+
+<p>
+    Today's challenge was at least a partial success. Unfortunately, I
+    underestimated how long it takes to explore new technology while also
+    writing about it. Basically, I tried to do too many things at once. The
+    biggest time sink was writing this article, because I'm quite rusty when it
+    comes to blogging.
+</p>
+
+<p>
+    It is good to start things off less than perfectly. That leaves plenty of room
+    for improvement, and is a sign that I'm reaching high enough with my goals.
+</p>
+
 
 <h2>Appendix</h2>
 <details>
