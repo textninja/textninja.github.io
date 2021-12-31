@@ -367,7 +367,7 @@ CMD python -m django
     I'll start a new project called <code>dtc0001</code>, and bake its creation into the Dockerfile.
 </p>
 
-<h4 class="code-title">Dockerfile (changes)</h4>
+<h4 class="code-title">Dockerfile (diff)</h4>
 <pre><code class="language-diff-docker diff-highlight"><script type="prism-src"> COPY requirements.txt /code/
 +RUN django-admin startproject dtc0001
 +WORKDIR /code/dtc0001
@@ -455,8 +455,51 @@ DATABASES = {
 
 <p>
     I'll have to find the engine for postgres and adjust accordingly. I need to copy
-    the settings.py to local, and adjust the Dockerfile to ship it over.
+    <a href="https://github.com/textninja/daily-challenge-0001-django-on-k8s/blob/main/django/settings.py">the settings.py</a> to local, and adjust the Dockerfile to ship it over to container land.
 </p>
+
+<p>Here's the relevant change to the settings file:</p>
+
+<h4 class="code-title">settings.py (diff)</h4>
+<pre><code class="language-diff-python diff-highlight"><script type="prism-src"> DATABASES = {
+    'default': {
+-        'ENGINE': 'django.db.backends.sqlite3',
+-        'NAME': BASE_DIR / 'db.sqlite3',
++        'ENGINE': 'django.db.backends.postgresql',
++        'NAME': 'postgres',
++        'USER': 'postgres',
++        'PASSWORD': 'thisisnotsecure',
++        'HOST': 'postgres',
++        'PORT': '5432',
+    }
+}</script></code></pre>
+
+<p>Let's update the Dockerfile to ensure our file gets copied over. The dtc0001/dtc0001 part is a relic of how I performed the install.</p>
+
+<h4 class="code-title">Dockerfile (diff)</h4>
+<pre><code class="language-diff-docker diff-highlight"><script type="prism-src"> WORKDIR /app/dtc0001
++COPY settings.py /app/dtc0001/dtc0001/settings.py
+ CMD python manage.py runserver 0.0.0.0:8000</script></code></pre>
+
+<p>
+    As it turns out, we need psycopg2 to get postgres to work in django, so
+    let's add that to our <code>requirements.txt</code>.
+</p>
+
+<h4 class="code-title">requirements.txt (diff)</h4>
+<pre><code class="language-diff-text diff-highlight"><script type="prism-src"> Django>=4.0,<5.0
++psycopg2</script></code></pre>
+
+<p>
+    A review of <code>settings.py</code> shows that includes a secret key and,
+    clearly, passwords. I'm checking those into my public repository because
+    this is the local development phase. I play fast and loose with passwords at
+    that stage. When we get to creating Kubernetes configs I'll use templating
+    to override them with something more secure.
+</p>
+    
+
+
 
 <h2>Appendix</h2>
 <details>
