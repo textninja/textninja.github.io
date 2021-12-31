@@ -203,9 +203,34 @@ links:
         padding-left: 15px;;
         font-weight: normal;
     }
+
+    code {
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    }
+
+    img {
+        max-width: 100%;
+    }
 </style>
 
 <link href="https://unpkg.com/prismjs@1.25.0/themes/prism-tomorrow.css" rel="stylesheet" />
+<link href="https://unpkg.com/prismjs@1.22.0/plugins/diff-highlight/prism-diff-highlight.css" rel="stylesheet" />
+
+<style>
+    pre.diff-highlight > code .token.inserted:not(.prefix),
+    pre > code.diff-highlight .token.inserted:not(.prefix) {
+	    background-color: rgba(0, 255, 128, .3);
+    }
+
+    pre.diff-highlight > code .token.deleted:not(.prefix),
+    pre > code.diff-highlight .token.deleted:not(.prefix) {
+        background-color: rgba(255, 0, 0, .3);
+    }
+
+    .token.inserted {
+        color: transparent;
+    }
+</style>
 
 <!-- Let's just leave this commented. It was a fun idea, but it was a stupid one. -->
 <!--<div id="inverter"></div>-->
@@ -301,19 +326,40 @@ RUN pip install -r requirements.txt
 CMD python -m django
 </script></code></pre>
 
-
 <h4 class="code-title">requirements.txt</h4>
 <pre><code class="language-text"><script type="prism-src">Django>=4.0,<5.0</script></code></pre>
 
 <p>
-    Now I'm consulting the Django docs to see how I'm meant to actually run
-    Django.
+    Now over to the Django docs to see how I'm meant to actually run
+    Django...
 </p>
 
 <p>
-    It looks like django expects me to set up a site with <kbd>django-admin start-project</kbd>.
-    I'll start a new project called <code>dtc0001</code>.
+    It looks like django expects me to set up a site with <code>django-admin start-project</code>.
+    I'll start a new project called <code>dtc0001</code>, and bake its creation into the Dockerfile.
 </p>
+
+<h4 class="code-title">Dockerfile (changes)</h4>
+<pre><code class="language-diff-docker diff-highlight"><script type="prism-src"> COPY requirements.txt /code/
++RUN django-admin startproject dtc0001
++WORKDIR /code/dtc0001
++CMD python manage.py runserver 0.0.0.0:8000
+ 
+ </script></code></pre>
+
+<p>
+    That seems to have done something. I get messages that show things are nearly working when
+    I run <code>docker build -t dtc0001 . && docker run --rm dtc0001</code>.
+</p>
+
+<p>
+    As a matter of fact, combined with port forwarding via <code>docker run --rm -p8000:8000 dtc0001</code>,
+    that's all it took to get <em>something</em> running locally. Clearly, Django expects me to configure other things,
+    like a database, but for the purpose of this challenge we're making great progress!
+</p>
+
+<img src="successful-install.png" alt="Screenshot of a message from django showing the installation was successful">
+
 
 
 <h2>Appendix</h2>
@@ -381,3 +427,5 @@ integrate, however. That includes the following:</p>
 
 <script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
 <script src="https://unpkg.com/prismjs@1.25.0/components/prism-docker.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.25.0/components/prism-diff.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.22.0/plugins/diff-highlight/prism-diff-highlight.min.js"></script>
