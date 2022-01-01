@@ -268,7 +268,7 @@ document.body.appendChild(bgSvg);
 
 let path = d3.select(bgSvg).append("path");
 path.attr("d", "M0,120 C20,100 80,100 100,120 z")
-    .attr("fill", "#101010");
+    .attr("fill", "#4c4c4c");
 
 function resizeCircle() {
     let availScroll = document.querySelector("header").offsetHeight-100;
