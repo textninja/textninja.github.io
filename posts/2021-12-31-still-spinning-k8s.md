@@ -111,7 +111,7 @@ In order, I'd like to do the following:
    deployment
 2. Include postgres statefulset in manifests (don't go too crazy on this)
 3. Install sealed-secrets using a helm chart
-4. Write simple deployment script using Ruby
+4. Write a simple deployment script using Python
 
 I am not going to refactor to use Helm. I am not going to document *how* to
 install sealed-secrets, as it's probably simple enough to configure anyhow. I am
@@ -155,6 +155,19 @@ I'll need a handful of python scripts following a convention like
 files get questionable once dependencies are introduced, so I'll have to either
 write them without dependencies (it's own sort of hell, but better than YAML at
 least), or include a Makefile that configures a venv.
+
+## A fork in the road
+
+I have arrived at a fork in the road. On the left, I use python as a thin layer
+over the existing YAML files, overwriting parts or using templating. In the
+middle, I use the official Python Kubernetes client for any resource that needs
+programmatic love, like randomly generated values. Finally, on the right, I do
+away with YAML completely, embrace the kubernetes client, and start using it for
+every aspect of my deployment. No more kustomization, just straight Python code.
+
+For now, I'll ride the middle road, but I find the idea of full-on abandonment
+of stored YAML configs intriguing. 
+
 
 ## Appendix
 
