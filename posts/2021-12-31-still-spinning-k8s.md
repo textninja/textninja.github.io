@@ -178,5 +178,6 @@ least), or include a Makefile that configures a venv.
  - Create a visual for folder structures that can be integrated with blogs
  - Create a parallax design
  - Create a sidebar indicator of scroll position
+ - Create an app using React Native
 
 </details>
