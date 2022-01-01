@@ -27,7 +27,7 @@ lot of discipline to go back and write about something you already understand
 thoroughly.
 
 Anyhow, I'm going to set aside an hour or so (having a laugh, in retrospect) to
-actually focus on coding, exploring, and figuring things out, and only start
+actually focus on coding, explore, and figure things out, and only start
 writing this blog entry when I'm ready to start over and document what I
 learned. When I say start over, I truly mean that. I'm going to do this
 challenge twice; once for me, and once for *us.*
