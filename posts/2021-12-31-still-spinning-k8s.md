@@ -150,9 +150,10 @@ I need to wrap my deployment in a high level language. This is a Django project,
 so let's go with Python. That's my next step.
 
 I'll need a handful of python scripts following a convention like
-`deploy-dev.py`, `deploy-test.py`, `deploy-prod.py`.
-
-
+`deploy-dev.py`, `deploy-test.py`, `deploy-prod.py`. The ergonomics of these
+files get questionable once dependencies are introduced, so I'll have to either
+write them without dependencies (it's own sort of hell, but better than YAML at
+least), or include a Makefile that configures a venv.
 
 ## Appendix
 
