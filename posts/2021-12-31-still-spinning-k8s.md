@@ -94,15 +94,16 @@ deployment
 ```
 
 It consists only of a very simple deployment config (with a frustrating amount
-of repitition in app labels, but such is life in Kubernetes), with folders and
-kustomization.yaml organized to allow future extensibility.
+of repitition in the labels sections, but such is life in Kubernetes). Folders
+are organized to allow future extensibility.
 
-I now have two things to add. A postgres database, which is going to be
+I now have two things to add. A Postgres database, which is going to be
 ephemeral, and some way of managing secrets. I'd like to use sealed secrets, but
-that does call on me to do some cluster configuring I hadn't actually planned
-on. That's one of my distractions, with the other being a whole lot of hand
-wringing about whether I should be using Helm for this. I'm also self-conscious
-about all the best practices I'm violating in order to keep within the deadline.
+that does call on me to do some cluster maintenance work I hadn't actually
+planned on. That's *one* of my distractions, with the other being a whole lot of
+hand wringing about whether I should be using Helm for this. I'm also
+self-conscious about all the best practices I'm violating in order to stay
+within the deadline.
 
 In order, I'd like to do the following:
 
