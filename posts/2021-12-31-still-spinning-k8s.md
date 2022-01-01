@@ -133,6 +133,26 @@ $ helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
 $ helm install my-release sealed-secrets/sealed-secrets
 ```
 
+That allows me to create sealed secrets, but now I'm questioning whether I even
+need them. I should be able to generate the secret on the fly; the only thing
+more secure than a secret that's encrypted at rest is a secret that never
+rests in the first place!
+
+The issue here is that my deployment is YAML-first instead of code-first.
+
+Instead of thinking about how I can instruct the computer to generate these YAML
+files for me - you know, as programmers do - I spent all my time writing these
+YAML files by hand, like a peasant. It's time to take a step back and think
+about whether I'm writing and source controlling (insert high level programming
+language of choice here) or if I want to become a YAML engineer.
+
+I need to wrap my deployment in a high level language. This is a Django project,
+so let's go with Python. That's my next step.
+
+I'll need a handful of python scripts following a convention like
+`deploy-dev.py`, `deploy-test.py`, `deploy-prod.py`.
+
+
 
 ## Appendix
 
@@ -145,6 +165,7 @@ $ helm install my-release sealed-secrets/sealed-secrets
  - Kustomize
  - Kubernetes
  - Django
+ - sealed-secrets
 
 ### Roadblocks
 
