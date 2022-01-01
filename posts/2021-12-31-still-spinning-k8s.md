@@ -3,6 +3,7 @@ title: Daily Tech Challenge \#2
 subtitle: Still Spinning K8s
 date: 2021-12-31
 author: Joe Taylor
+status: failed challenge
 ---
 # Daily Tech Challenge #2
 ## Still Spinning K8s
@@ -168,6 +169,11 @@ every aspect of my deployment. No more kustomization, just straight Python code.
 For now, I'll ride the middle road, but I find the idea of full-on abandonment
 of stored YAML configs intriguing. 
 
+## Conclusion
+
+I did not complete today's challenge. Instead, I brought in the New Year with my
+family. I'll have to come back to a challenge along the same theme at some later
+date.
 
 ## Appendix
 
