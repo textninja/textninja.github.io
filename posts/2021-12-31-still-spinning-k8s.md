@@ -117,6 +117,22 @@ install sealed-secrets, as it's probably simple enough to configure anyhow. I am
 going to get this done so I can stop staring at YAML files and create a
 visualization or something instead.
 
+## Installing sealed-secrets
+
+I said I wouldn't document this. But I will. I wish I knew of some way to make
+this a dependency of my project without actually making my project a Helm chart,
+but I feel there's no low-code options available so I'm just going to describe
+what I did.
+
+**If you're reading this to learn how to do this yourself, now's as good a time
+as any to point out that articles in my daily challenge series are decidely not
+tutorials. I don't recommend using them as such.**
+
+```console
+$ helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
+$ helm install my-release sealed-secrets/sealed-secrets
+```
+
 
 ## Appendix
 
