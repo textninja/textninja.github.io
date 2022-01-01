@@ -12,9 +12,9 @@ author: Joe Taylor
 Leaving [yesterday's
 challenge](/posts/2021-12-30-daily-challenge-spin-up-django.html) half finished
 and then moving on doesn't sit well with me. There's plenty of shiny new tech to
-explore, but instead of doing my best magpie impression and reaching for what's
-shiny and new, today I'm going to pick up where I left off, and get Django
-deployed in Kubernetes, damn it!
+explore, but instead of doing my best magpie impression and reaching for the
+shiny objects in front of me, I'm going to pick up where I left off, and get
+Django deployed in Kubernetes, damn it!
 
 I spent some time late last night reading Django's docs, and now feel at least a
 little bit better acquainted with its model of the world - I'm comfortable
