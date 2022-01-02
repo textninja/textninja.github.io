@@ -28,11 +28,11 @@ author: Joe Taylor
     }
 
     body {
-        background-color: #222;
+        background-color: #212222;
         color: #bbb;
         line-height: 1.6em;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 200px;
         font-family: helvetica neue;
         padding: 30px;
         font-weight: 300;
@@ -86,19 +86,23 @@ author: Joe Taylor
 
     h1 {
         font-size: 5em;
-        line-height: 1em;
+        font-weight: 300;
+        margin-bottom: 3rem;
+        line-height: 1.1em;
         margin-bottom: 3rem;
     }
 
     h2#tech-challenge-indicator {
-        margin-bottom: -1rem;
+        margin-bottom: 0;
         color: #e5ed7e;
+        font-size: 2.5em;
     }
 
     .authorship {
         margin-bottom: 3em;
         color: #777;
         font-weight: 300;
+        font-size: 1.2em;
     }
 
     article h2 {
@@ -119,7 +123,7 @@ author: Joe Taylor
 
     aside {
         background-color: #2c2c2c;
-        color: #b0e5f5;
+        color: white;
         text-align: left;
         padding: 10px;
         margin-left: -10px;
@@ -131,14 +135,12 @@ author: Joe Taylor
         margin: 0;
     }
 
-    aside a {
-        color: inherit;
-        text-decoration: underline;
-    }    
-
     a {
-        color: #7ed3ed;
-        text-decoration: underline;
+        color: #ed7e7e;
+        display: inline-block;
+        padding-bottom: 0;
+        border-bottom: solid 1px currentColor;
+        text-decoration: none;
     }
 
     .whodis {
@@ -146,12 +148,12 @@ author: Joe Taylor
         text-orientation: sideways;
         display: inline;
         position: fixed;
-        top: 160px; left: 50px;
+        top: 160px; left: 0px;
         transform-origin: center center;
         transform: rotateZ(180deg);
         font-size: 4em;
         direction: rtl;
-        color: #444;
+        color: hsl(180deg 2% 40%);
         user-select: none;
     }
 </style>
@@ -184,18 +186,18 @@ author: Joe Taylor
     .venn > div > div:nth-of-type(1) {
         top: calc(-1 * var(--venn-size) * 0.33); 
         left: calc(-1 * var(--venn-size) * 0.33);
-        background-color: #A1876755;
+        background-color: #A1876799;
     }
 
     .venn > div > div:nth-of-type(2) {
         top: calc(-1 * var(--venn-size) * 0.33); 
         left: calc(1 * var(--venn-size) * 0.33);
-        background-color: #4D4F7055;
+        background-color: #4D4F7099;
     }
 
     .venn > div > div:nth-of-type(3) {
         top: calc(1 * var(--venn-size) * 0.23); 
-        background-color: #47705D55;
+        background-color: #47705D99;
     }
 
     .venn .center {
@@ -269,8 +271,8 @@ Native is totally unfamiliar territory for me, so I'd like to make use of the
 tutorials and documentation and create the space needed to be successful.
 
 So, I'll spend several hours (4+) researching React Native or following
-tutorials, and then, when I'm ready, I'm expecting it get a meditation timer
-coded in an hour or so.
+tutorials, and then, when I'm ready, I'll hopefully code a meditation in an hour
+or so.
 
 ## Research undertaken
 
@@ -286,6 +288,16 @@ I don't need to, but I'm probably going to practice using `ScrollView` and
 I doubt the end product will look very pretty, but I'll do my best with the time
 I have. Or what time I have left, I should say, as my priority is functionality
 over beauty.
+
+
+## Getting started
+
+While I learn, I am following the instructions for the easiest possible
+bootstrapping of React Native projects. That seems to be with the following:
+
+```console
+$ npm install --global expo-cli
+```
 
 
 ## Resources used
