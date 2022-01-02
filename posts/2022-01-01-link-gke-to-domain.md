@@ -24,14 +24,16 @@ that's less flexible).
 ### 1. Create a static global IP address
 
 There's not much to it other than this. You could equally use click-ops, but I
-like using the command line for IP address reservations in particular.
+like using the command line for IP address reservations and other operations
+with limited parameters.
 
 ```console
-$ gcloud compute addresses create dtc0003 --global
-$ gcloud compute addresses describe dtc0003 --global 
+$ gcloud compute addresses create textninja-ip --global
+$ gcloud compute addresses describe textninja-ip --global 
 ```
 
 However you go about doing it, the goal is to get a global IP address reserved.
+Mine is shown below.
 
 ![My reserved IP](reserved-ip.png)
 
@@ -50,6 +52,81 @@ section and clicked "DNS" to configure.
 
 ### 3. Create an ingress resource for your deployment
 
+For this challenge, I created a new Docker image, [textninja/movingstripes](https://hub.docker.com/repository/docker/textninja/movingstripes). Next, I deployed it:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movingstripes
+  labels:
+    app: movingstripes
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: movingstripes
+  template:
+    metadata:
+      labels:
+        app: movingstripes
+    spec:
+      containers:
+        - name: movingstripes
+          image: textninja/movingstripes:latest
+          ports:
+            - containerPort: 80
+```
+
+Next, it's necessary to create a service to connect to an ingress route. To keep
+things as simple as possible, I used the default ClusterIP service type.
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: movingstripes
+  labels:
+    app: movingstripes
+spec:
+  selector:
+    app: movingstripes
+  ports:
+    - port: 80
+      targetPort: 80
+```
+
+By applying these two manifests to my cluster, I'm now able to access the
+deployment with `kubectl port-forward svc/movingstripes 8080:80`. All that'sa
+left is to create the ingress.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: movingstripes
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: textninja-ip
+  labels:
+    app: movingstripes
+spec:
+  rules:
+    - host: dtc0003.textninja.net
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: movingstripes
+              port:
+                number: 80
+```
+
+The pertinent parts are the host rule, which explicitly links this service to a
+particular domain name, and the `kubernetes.io/ingress.global-static-ip-name`
+annotation, which tells Kubernetes which static IP to use. Naturally, we're
+using the IP address we provisioned earlier.
 
 
 ## Final result
