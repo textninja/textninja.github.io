@@ -161,6 +161,9 @@ the `.md` extension. For such files, it passes them through the `marked`
 markdown preprocessor, and if that succeeds, it serves the HTML. It also strips
 out YAML frontmatter since I'll be using it with Jekyll posts primarily.
 
+I wanted to integrate a live reload feature but was unable to get that working
+in time. I'll leave that challenge for another day.
+
 
 ## Meta
 
@@ -196,6 +199,7 @@ tech challenges.
  - Use ansible with Kubernetes
  - Create a pretty Venn diagram using d3
  - Configure Google Kubernetes Engine with custom domain to use TLS
+ - Integrate custom livereload feature with node app
 
 This time tomorrow, though, I'll work on getting a themed Jekyll blog up and
 running.
