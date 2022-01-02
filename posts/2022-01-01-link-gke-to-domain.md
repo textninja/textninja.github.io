@@ -24,14 +24,17 @@ that's less flexible).
 
 ### 1. Create a static global IP address
 
-There's not much to it other than this. It would be perfectly fine to use
-click-ops, but I like using the command line for IP address reservations and
-other operations with limited parameters.
+Here's a couple of commands to take note of...
+
 
 ```console
 $ gcloud compute addresses create textninja-ip --global
 $ gcloud compute addresses describe textninja-ip --global 
 ```
+
+There's not much to it other than this. It would be perfectly fine to use
+click-ops, but I like using the command line for IP address reservations and
+other operations with limited parameters.
 
 However you go about doing it, the goal is to get a global IP address reserved.
 Mine is shown below.
