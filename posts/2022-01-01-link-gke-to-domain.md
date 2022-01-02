@@ -3,6 +3,7 @@ layout: post
 title: Daily Tech Challenge \#3
 subtitle: Use GKE with a domain you own
 date: 2022-01-01
+outcome: success
 ---
 
 Exposing routes in Google Kubernetes Engine to a domain name I own is something
