@@ -151,6 +151,11 @@ author: Joe Taylor
         left: calc(var(--venn-size) - 15px);
     }
 
+    .side {
+        float: left;
+        margin-left: -550px;
+        margin-top: -30px;
+    }
 
 </style>
 
@@ -185,9 +190,8 @@ the button returns.
 
 ## Game plan
 
-Here are what I deem to be the components to success for tech challenges.
 
-<div class="venn">
+<div class="venn side">
     <div>
         <div>Research</div>
         <div>Writing</div>
@@ -198,11 +202,15 @@ Here are what I deem to be the components to success for tech challenges.
     </div>
 </div>
 
-If I'm to be successful, all three of these (research, writing, and development)
-need to be in balance with one another. Said balance doesn't necessarily have to
-be *even*, however; it is likely to vary from challenge to challenge. The
-important thing is that I invest time in all three; the exact breakdown of how I
-divvy up my attention, however, doesn't matter too much.
+
+There are three key ingredients to success in these daily tech challenges. They
+are research, writing, and development.
+
+If I'm to be successful, all three of these activities need to be performed in
+balance with one another. Said balance doesn't necessarily have to be *even* in
+order to be harmonious, however; it is likely to vary from challenge to
+challenge. The important thing is that I invest time in all three. The exact
+breakdown of how I divvy up my attention doesn't matter too much.
 
 Today, I'm expecting to lean more on the research factor than most days. React
 Native is totally unfamiliar territory for me, so I'd like to make use of the
