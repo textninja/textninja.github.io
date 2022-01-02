@@ -33,12 +33,13 @@ author: Joe Taylor
         line-height: 1.6em;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        font-family: 'Source Serif Pro', serif;
+        font-family: helvetica neue;
         padding: 30px;
+        font-weight: 300;
     }
 
     header {
-        padding-top: 100px;
+        padding-top: 70px;
         padding-bottom: 30px;
         background-color: #222;
         grid-column-start: 1;
@@ -46,8 +47,13 @@ author: Joe Taylor
         display: grid;
         margin-bottom: 30px;
         grid-template-columns: repeat(2, 1fr);
-        border-radius: 400px;
     }
+
+    header * {
+        font-family: helvetica neue;
+        font-weight: 100;
+    }
+        
 
     article, header > div {
         padding-right: 50px;
@@ -64,13 +70,12 @@ author: Joe Taylor
     }
 
     h1 {
-        font-family: 'Monoton', cursive;
-        font-weight: 100;
         color: white;
     }
 
     h2, h3, h4 {
         color: #d9d9d9;
+        font-weight: 400;
     }
 
     article {
@@ -86,14 +91,14 @@ author: Joe Taylor
     }
 
     h2#tech-challenge-indicator {
-        text-transform: uppercase;
-        margin-bottom: -2rem;
+        margin-bottom: -1rem;
         color: #e5ed7e;
     }
 
     .authorship {
         margin-bottom: 3em;
         color: #777;
+        font-weight: 300;
     }
 
     article h2 {
