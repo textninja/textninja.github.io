@@ -144,6 +144,15 @@ always, [is available](https://github.com/textninja/dtc0003).
 Some other day, I'll have to walk through the set up of TLS on GKE using
 LetsEncrypt.
 
+## Bonus challenge
+
+As a bonus challenge, I'm creating a simple Markdown server that is devoid of default
+styling by design; I give it a folder of Markdown files, and it hosts nothing more than the raw HTML transformed from markdown.
+Something to build on. The idea is to iterate on these blog posts more quickly and encourage more customization and ownership
+of articles by departing from the use of default templates, and embracing plain HTML. The only
+visual enhancements I want are ones I bundle with each article. Share nothing, customize everything,
+is the credos of the day. Every blog article *is* an island.
+
 ## Meta
 
 <details markdown="1">
