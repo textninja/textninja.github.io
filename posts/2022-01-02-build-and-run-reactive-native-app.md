@@ -109,6 +109,31 @@ author: Joe Taylor
     p, li, td, th {
         letter-spacing: 0.03em;
     }
+
+    .side {
+        float: left;
+        margin-left: -550px;
+        margin-top: -30px;
+    }
+
+
+    aside {
+        background-color: #bdeaff;
+        color: #333;
+        text-align: left;
+        padding: 10px;
+        margin-left: -10px;
+        display: table;
+    }
+
+    aside p {
+        margin: 0;
+    }
+
+    aside a {
+        color: inherit;
+        text-decoration: underline;
+    }    
 </style>
 
 <!-- venn-diagram.css -->
@@ -160,12 +185,6 @@ author: Joe Taylor
         left: calc(var(--venn-size) - 15px);
     }
 
-    .side {
-        float: left;
-        margin-left: -550px;
-        margin-top: -30px;
-    }
-
 </style>
 
 <header>
@@ -179,6 +198,8 @@ author: Joe Taylor
 </header>
 
 <article>
+
+<aside><p>Today's repo can be found <a href="https://github.com/textninja/dtc0004">here</a>, in the usual place on GitHub.</p></aside>
 
 I know I said I'd be working on Jekyll today, but there's been a change of
 plans. For today's challenge, I'm going to build a simple React Native app, with
