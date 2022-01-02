@@ -31,6 +31,12 @@ $ gcloud compute addresses create dtc0003 --global
 $ gcloud compute addresses describe dtc0003 --global 
 ```
 
+However you go about doing it, the goal is to get a global IP address reserved.
+
+![My reserved IP](reserved-ip.png)
+
+
+
 ### 2. Configure your domain's DNS to point to the static IP
 
 I'm not sure what subdomains I'll use in the future, so I decided to link the
@@ -40,7 +46,7 @@ just reserved. Using Google Domains, updating the DNS entry is very
 straightforward. I just chose my domain from the list in the "My Domains"
 section and clicked "DNS" to configure.
 
-![Screen showing A record configuration in Google Domains](reserved-ip.png)
+![Screen showing A record configuration in Google Domains](dns-a-record.png)
 
 ### 3. Create an ingress resource for your deployment
 
