@@ -211,12 +211,12 @@ will lead to a successful day dabbling in mobile!
 
 ## Product objective
 
-Out of a dirth of options, having in little in the way of inspiration today, and
-to be kind to myself by not biting off more than I can chew, I'm going to create
-a simple meditation timer. The goal is to have a big button in the middle of the
-screen which, when pressed, makes a bell sound and replaces itself with a
-countdown from 10 minutes. When the timer finishes, another bell resonates and
-the button returns.
+Out of a dirth of other options on this uninspired day, and also to be kind to
+myself by not biting off more than I can chew, I'm going to create a simple
+meditation timer. The goal is to have a big button in the middle of the screen
+which, when pressed, makes a bell sound and replaces itself with a countdown
+from 10 minutes. When the timer finishes, another bell resonates and the button
+returns.
 
 ## Game plan
 
