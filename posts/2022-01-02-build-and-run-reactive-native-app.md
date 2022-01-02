@@ -47,7 +47,6 @@ author: Joe Taylor
         margin-bottom: 30px;
         grid-template-columns: repeat(2, 1fr);
         border-radius: 400px;
-        margin-top: 100px;
     }
 
     article, header > div {
