@@ -7,28 +7,99 @@ author: Joe Taylor
 
 <meta charset="utf-8">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+
+
+
 <!-- article.css -->
 <style>
+
+    :root {
+        --content-width: 700px;
+    }
+
+
+    html, body {
+        margin: 0; padding: 0;
+    }
+
     body {
         background-color: #303030;
-        color: white;
+        color: #bbb;
         line-height: 1.6em;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-right: 100px;
+        font-family: 'Source Serif Pro', serif;
+        padding: 30px;
+    }
+
+    header {
+        padding-top: 100px;
+        padding-bottom: 30px;
+        background-color: #222;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: grid;
+        margin-bottom: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 400px;
+        margin-top: 100px;
+    }
+
+    article, header > div {
+        padding-right: 50px;
+    }
+
+    header > div {
+        grid-column: 2;
+        max-width: var(--content-width);
+
+    }
+
+    h1, h2, h3, h4 {
+
+    }
+
+    h1 {
+        font-family: 'Monoton', cursive;
+        font-weight: 100;
+        color: white;
+    }
+
+    h2, h3, h4 {
+        color: #d9d9d9;
     }
 
     article {
         grid-column: 2;
-        margin-left: 50px;
         font-size: 1.2em;
-        max-width: 700px;
+        max-width: var(--content-width);
     }
 
     h1 {
         font-size: 5em;
         line-height: 1em;
         margin-bottom: 3rem;
+    }
+
+    h2#tech-challenge-indicator {
+        text-transform: uppercase;
+        margin-bottom: -2rem;
+        color: #e5ed7e;
+    }
+
+    .authorship {
+        margin-bottom: 3em;
+        color: #777;
+    }
+
+    article h2 {
+        margin-top: 1.5em;
+        color: #e5ed7e;
     }
 </style>
 
@@ -84,9 +155,17 @@ author: Joe Taylor
 
 </style>
 
-<article>
+<header>
+<div>
+<h2 id="tech-challenge-indicator">Daily tech challenge #4</h2>
 
 # Build a React Native app and run it on your iPhone
+
+<p class="authorship">Written by Joe Taylor on January 2nd, 2022</p>
+</div>
+</header>
+
+<article>
 
 I know I said I'd be working on Jekyll today, but there's been a change of
 plans. For today's challenge, I'm going to build a simple React Native app, with
@@ -98,9 +177,12 @@ will lead to a successful day dabbling in mobile!
 
 ## Product objective
 
-Out of a dirth of other inspiration, and to be kind to myself by not biting off
-more than I can chew, I'm going to create a simple meditation timer. The goal is
-to have 
+Out of a dirth of options, having in little in the way of inspiration today, and
+to be kind to myself by not biting off more than I can chew, I'm going to create
+a simple meditation timer. The goal is to have a big button in the middle of the
+screen which, when pressed, makes a bell sound and replaces itself with a
+countdown from 10 minutes. When the timer finishes, another bell resonates and
+the button returns.
 
 ## Game plan
 
@@ -126,6 +208,26 @@ divvy up my attention, however, doesn't matter too much.
 Today, I'm expecting to lean more on the research factor than most days. React
 Native is totally unfamiliar territory for me, so I'd like to make use of the
 tutorials and documentation and create the space needed to be successful.
+
+So, I'll spend several hours (4+) researching React Native or following
+tutorials, and then, when I'm ready, I'm expecting it get a meditation timer
+coded in an hour or so.
+
+## Research undertaken
+
+At the very least, I need to practice using the following core components:
+
+1. View
+2. Text
+3. Image
+
+I don't need to, but I'm probably going to practice using `ScrollView` and
+`TextInput` as well.
+
+I doubt the end product will look very pretty, but I'll do my best with the time
+I have. Or what time I have left, I should say, as my priority is functionality
+over beauty.
+
 
 
 ## Thoughts on a bonus challenge
