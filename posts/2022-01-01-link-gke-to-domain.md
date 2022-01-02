@@ -146,15 +146,20 @@ LetsEncrypt.
 
 ## Bonus challenge
 
-As an extra bit of fun, I'm creating a simple Markdown server that is, by design, devoid of default
-styling; I give it a folder of Markdown files, and it hosts nothing more than the raw HTML transformed from markdown.
-Lack of features as a feature. Something to build on. The idea is to iterate on these blog posts more quickly and encourage more customization and ownership
-of articles by departing from the use of default templates, embracing plain HTML instead. The only
-visual enhancements I want are ones I bundle with each article. Share nothing, customize everything,
-is the credos of the day. Every blog article *is* an island.
+As an extra bit of fun, I'm creating a simple Markdown server that is, by
+design, devoid of default styling; I give it a folder of Markdown files, and it
+hosts nothing more than the raw HTML transformed from markdown. Lack of features
+as a feature. Something to build on. The idea is to iterate on these blog posts
+more quickly and encourage more customization and ownership of articles by
+departing from the use of default templates, embracing plain HTML instead. The
+only visual enhancements I want are ones I bundle with each article. Share
+nothing, customize everything, is the credos of the day. Every blog article *is*
+an island.
 
-I ended up creating a tool called `mdserve` for this purpose. It can be found in 
-the [bonus challenge](https://github.com/textninja/dtc0003/tree/master/bonuschallenge) section of today's GitHub repo.
+I ended up creating a tool called `mdserve` for this purpose. It can be found in
+the [bonus
+challenge](https://github.com/textninja/dtc0003/tree/master/bonuschallenge)
+section of today's GitHub repo.
 
 It's basically just express's static server with special handling of files with
 the `.md` extension. For such files, it passes them through the `marked`
