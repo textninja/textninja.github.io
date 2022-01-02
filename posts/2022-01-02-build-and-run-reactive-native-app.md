@@ -105,6 +105,10 @@ author: Joe Taylor
         margin-top: 1.5em;
         color: #e5ed7e;
     }
+
+    p, li, td, th {
+        letter-spacing: 0.03em;
+    }
 </style>
 
 <!-- venn-diagram.css -->
