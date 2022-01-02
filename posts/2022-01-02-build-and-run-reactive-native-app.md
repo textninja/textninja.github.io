@@ -28,7 +28,7 @@ author: Joe Taylor
     }
 
     body {
-        background-color: #212222;
+        background-color: #1e232c;
         color: #bbb;
         line-height: 1.6em;
         display: grid;
@@ -95,7 +95,7 @@ author: Joe Taylor
 
     .authorship {
         margin-bottom: 3em;
-        color: #777;
+        color: #535c6a;
         font-size: 1.2em;
     }
 
@@ -110,13 +110,13 @@ author: Joe Taylor
 
     .side {
         float: left;
-        margin-left: -550px;
+        margin-left: -800px;
         margin-top: -30px;
     }
 
 
     aside {
-        background-color: #2c2c2c;
+        background-color: #3a4352;
         color: white;
         text-align: left;
         padding: 10px;
@@ -147,8 +147,14 @@ author: Joe Taylor
         transform: rotateZ(180deg);
         font-size: 4em;
         direction: rtl;
-        color: hsl(180deg 2% 40%);
+        color: #3a4352;
         user-select: none;
+    }
+
+    .snack-left {
+        width: 700px;
+        margin-left: -750px;
+        float: left;
     }
 </style>
 
@@ -157,7 +163,7 @@ author: Joe Taylor
     .venn {
         width: calc(var(--venn-size) * 1); height: calc(var(--venn-size) * 1);
         position: relative;
-        --venn-size: 250px;
+        --venn-size: 400px;
         margin-bottom: calc(var(--venn-size) * 0.9);
     }
 
@@ -287,12 +293,53 @@ over beauty.
 
 ## Getting started
 
-While I learn, I am following the instructions for the easiest possible
-bootstrapping of React Native projects. That seems to be with the following:
+<!-- Embed inlined Snack -->
+<div class="snack-left">
+<div
+  data-snack-dependencies="expo-constants%2Clodash%404"
+  data-snack-name="My%20Snack"
+  data-snack-description="My%20Amazing%20Snack"
+  data-snack-preview="true"
+  data-snack-platform="My Device"
+  style="overflow:hidden;background:#fafafa;border:1px solid rgba(0,0,0,.08);border-radius: 0;height:505px;width:100%">
+</div>
+
+<script type="snack-code">
+const { React } = require('react');
+const { View, Text } = require('react-native');
+
+const App = () => {
+
+    return (
+        <View style={{flex: 1, alignItems: "center", alignContent: "center" }}>
+            <Text>Have a snack.</Text>
+        </View>
+    );
+
+};
+
+export default App;
+</script>
+<script>
+    let snackScript = [...document.querySelectorAll("script[type=snack-code]")].pop().textContent;
+    [...document.querySelectorAll("div")].pop().dataset.snackCode = snackScript;
+</script>
+</div>
+
+<!-- Load the embed.js script -->
+<script async src="https://snack.expo.dev/embed.js"></script>
+
+To bootstrap my React Native project, I picked the easiest possible method
+available, Expo.
 
 ```console
 $ npm install --global expo-cli
+$ expo init appname
 ```
+
+Expo allows me to embed code on my blog, too, so running snippets on an
+Expo-enabled iPhone is as easy as scanning a QR code.
+
 
 
 ## Resources used
