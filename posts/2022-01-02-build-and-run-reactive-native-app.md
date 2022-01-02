@@ -119,7 +119,7 @@ author: Joe Taylor
 
     aside {
         background-color: #2c2c2c;
-        color: #7ed3ed;
+        color: #b0e5f5;
         text-align: left;
         padding: 10px;
         margin-left: -10px;
@@ -139,6 +139,20 @@ author: Joe Taylor
     a {
         color: #7ed3ed;
         text-decoration: underline;
+    }
+
+    .whodis {
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+        display: inline;
+        position: fixed;
+        top: 160px; left: 50px;
+        transform-origin: center center;
+        transform: rotateZ(180deg);
+        font-size: 4em;
+        direction: rtl;
+        color: #444;
+        user-select: none;
     }
 </style>
 
@@ -192,6 +206,8 @@ author: Joe Taylor
     }
 
 </style>
+
+<p class="whodis">A textninja tech challenge<p>
 
 <header>
 <div>
