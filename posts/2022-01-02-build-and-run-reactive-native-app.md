@@ -44,8 +44,8 @@ author: Joe Taylor
         grid-column-start: 1;
         grid-column-end: 3;
         display: grid;
-        margin-bottom: 50px;
-        border-bottom: solid #2a2a2a 3px;
+        margin-bottom: 2rem;
+        /*border-bottom: solid #2a2a2a 3px;*/
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -119,11 +119,12 @@ author: Joe Taylor
 
     aside {
         background-color: #2c2c2c;
-        color: #bdeaff;
+        color: #7ed3ed;
         text-align: left;
         padding: 10px;
         margin-left: -10px;
         display: table;
+        margin-bottom: 2.5em;
     }
 
     aside p {
@@ -134,6 +135,11 @@ author: Joe Taylor
         color: inherit;
         text-decoration: underline;
     }    
+
+    a {
+        color: #7ed3ed;
+        text-decoration: underline;
+    }
 </style>
 
 <!-- venn-diagram.css -->
@@ -265,6 +271,10 @@ I doubt the end product will look very pretty, but I'll do my best with the time
 I have. Or what time I have left, I should say, as my priority is functionality
 over beauty.
 
+
+## Resources used
+
+ - I'm using expo dev for rapid prototyping https://expo.dev/
 
 
 ## Thoughts on a bonus challenge
