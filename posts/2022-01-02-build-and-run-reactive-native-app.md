@@ -9,10 +9,26 @@ author: Joe Taylor
 
 <!-- article.css -->
 <style>
+    body {
+        background-color: #303030;
+        color: white;
+        line-height: 1.6em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-right: 100px;
+    }
+
     article {
+        grid-column: 2;
         margin-left: 50px;
         font-size: 1.2em;
         max-width: 700px;
+    }
+
+    h1 {
+        font-size: 5em;
+        line-height: 1em;
+        margin-bottom: 3rem;
     }
 </style>
 
@@ -36,7 +52,8 @@ author: Joe Taylor
         line-height: var(--venn-size);
         text-align: center;
         border-radius: 100%;
-        mix-blend-mode: color;
+        background-blend-mode: color;
+        color: white;
     }
 
 
@@ -69,6 +86,8 @@ author: Joe Taylor
 
 <article>
 
+# Build a React Native app and run it on your iPhone
+
 I know I said I'd be working on Jekyll today, but there's been a change of
 plans. For today's challenge, I'm going to build a simple React Native app, with
 the measure for success being a more or less completely functional (if basic)
@@ -98,11 +117,11 @@ Here are what I deem to be the components to success for tech challenges.
     </div>
 </div>
 
-All three of these (research, writing, and development) need to be in balance
-with one another to succeed. The balance doesn't necessarily have to be *even*,
-however; it is likely to vary from challenge to challenge. The important thing
-is that I invest time in all three; the exact breakdown of how I divvy up my
-attention, however, doesn't matter too much.
+If I'm to be successful, all three of these (research, writing, and development)
+need to be in balance with one another. Said balance doesn't necessarily have to
+be *even*, however; it is likely to vary from challenge to challenge. The
+important thing is that I invest time in all three; the exact breakdown of how I
+divvy up my attention, however, doesn't matter too much.
 
 Today, I'm expecting to lean more on the research factor than most days. React
 Native is totally unfamiliar territory for me, so I'd like to make use of the
