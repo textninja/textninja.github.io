@@ -101,7 +101,7 @@ spec:
 ```
 
 By applying these two manifests to my cluster, I'm now able to access the
-deployment with `kubectl port-forward svc/movingstripes 8080:80`. All that'sa
+deployment with `kubectl port-forward svc/movingstripes 8080:80`. All that's
 left is to create the ingress.
 
 ```yaml
