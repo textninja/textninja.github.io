@@ -40,8 +40,7 @@ author: Joe Taylor
 
     header {
         padding-top: 70px;
-        padding-bottom: 30px;
-        background-color: #222;
+        padding-bottom: 0px;
         grid-column-start: 1;
         grid-column-end: 3;
         display: grid;
