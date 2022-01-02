@@ -35,7 +35,7 @@ author: Joe Taylor
         grid-template-columns: 1fr 1fr 200px;
         font-family: helvetica neue;
         padding: 30px;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     header {
@@ -47,11 +47,6 @@ author: Joe Taylor
         margin-bottom: 2rem;
         /*border-bottom: solid #2a2a2a 3px;*/
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    header * {
-        font-family: helvetica neue;
-        font-weight: 100;
     }
         
 
@@ -86,7 +81,7 @@ author: Joe Taylor
 
     h1 {
         font-size: 5em;
-        font-weight: 300;
+        font-weight: 400;
         margin-bottom: 3rem;
         line-height: 1.1em;
         margin-bottom: 3rem;
@@ -101,7 +96,6 @@ author: Joe Taylor
     .authorship {
         margin-bottom: 3em;
         color: #777;
-        font-weight: 300;
         font-size: 1.2em;
     }
 
@@ -203,8 +197,9 @@ author: Joe Taylor
     .venn .center {
         font-size: 2em;
         position: absolute;
-        top: calc(var(--venn-size) - var(--venn-size) * 0.22);
+        top: calc(var(--venn-size) - var(--venn-size) * 0.22 + 5px);
         left: calc(var(--venn-size) - 15px);
+        color: white;
     }
 
 </style>
@@ -245,14 +240,14 @@ returns.
 ## Game plan
 
 
-<div class="venn side">
+<div class="venn side" style="user-select: none">
     <div>
-        <div>Research</div>
-        <div>Writing</div>
-        <div>Development</div>
+        <div style="background-color: #e5ed7e99;"><span style="font-weight: 500; display: inline-block; transform: translate(-20px, -10px);">Research</span></div>
+        <div style="background-color: #ed7e7e99;"><span style="font-weight: 500; display: inline-block; transform: translate(20px, -10px);">Write</span></div>
+        <div  style="background-color: #7ed9ed99;"><span style="font-weight: 500; display: inline-block; transform: translate(0, 20px);">Develop</span></div>
     </div>
-    <div class="center">
-    🎉
+    <div class="center" style="font-weight: 500; font-size: inherit;">
+    Win
     </div>
 </div>
 
