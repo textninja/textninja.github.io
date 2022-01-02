@@ -6,7 +6,7 @@ date: 2022-01-01
 outcome: success
 ---
 
-Exposing routes in Google Kubernetes Engine to a domain name I own is something
+Exposing routes in Google Kubernetes Engine to my own domain name is something
 I've done in the past, but these challenges are not only opportunities to try
 new things, but a chance to practice things I already know, whether I have them
 down pat or am starting to get rusty (as is the case here).
