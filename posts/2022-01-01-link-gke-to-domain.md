@@ -144,8 +144,12 @@ always, [is available](https://github.com/textninja/dtc0003).
 Some other day, I'll have to walk through the set up of TLS on GKE using
 LetsEncrypt.
 
+## Meta
 
-## Tech used
+<details markdown="1">
+  <summary>Tech used and so forth</summary>
+
+### Tech used
 
 For the deployment:
 
@@ -161,7 +165,7 @@ For the silly spinning cube:
  - Greensock
  - Sass
 
-## Future challenge ideas
+### Future challenge ideas
 
 Today, for reasons unknown, I came up with the following ideas for future
 tech challenges.
@@ -177,3 +181,4 @@ tech challenges.
 
 This time tomorrow, though, I'll work on getting a themed Jekyll blog up and
 running.
+</details>
