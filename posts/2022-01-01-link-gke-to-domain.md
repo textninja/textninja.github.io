@@ -7,9 +7,9 @@ outcome: success
 ---
 
 Exposing routes in Google Kubernetes Engine to a domain name I own is something
-I've done before in the past, but these challenges are not only an opportunity
-to try new things, but a chance to practice things I already know, whether I
-have them down pat or am starting to get rusty (as is the case here).
+I've done in the past, but these challenges are not only opportunities to try
+new things, but a chance to practice things I already know, whether I have them
+down pat or am starting to get rusty (as is the case here).
 
 Luckily, since I'm kind of tired today, linking Google Kubernetes Engine to a
 domain you control is not difficult at all. Three steps, really, if you want to
@@ -24,9 +24,9 @@ that's less flexible).
 
 ### 1. Create a static global IP address
 
-There's not much to it other than this. You could equally use click-ops, but I
-like using the command line for IP address reservations and other operations
-with limited parameters.
+There's not much to it other than this. It would be perfectly fine to use
+click-ops, but I like using the command line for IP address reservations and
+other operations with limited parameters.
 
 ```console
 $ gcloud compute addresses create textninja-ip --global
@@ -133,12 +133,30 @@ using the IP address we provisioned earlier.
 ## Final result
 
 I ended up with a funky rotating cube deployed to http://dtc0003.textninja.net.
-I then promptly deleted it, because why would I pay for that.
+I then promptly deleted it, because why would I pay for that. The repo, as
+always, [is available](https://github.com/textninja/dtc0003).
 
 ![A funky cube](funky-cube.png)
 
 Some other day, I'll have to walk through the set up of TLS on GKE using
 LetsEncrypt.
+
+
+## Tech used
+
+For the deployment:
+
+ - Google Cloud Platform
+ - Kubernetes / Kustomize
+ - Google Domains (DNS)
+ - Docker
+
+For the silly spinning cube:
+
+ - Vite
+ - THREE.js
+ - Greensock
+ - Sass
 
 ## Future challenge ideas
 
