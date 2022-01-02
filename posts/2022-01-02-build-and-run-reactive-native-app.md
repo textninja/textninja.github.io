@@ -28,7 +28,7 @@ author: Joe Taylor
     }
 
     body {
-        background-color: #303030;
+        background-color: #1a1a1a;
         color: #bbb;
         line-height: 1.6em;
         display: grid;
