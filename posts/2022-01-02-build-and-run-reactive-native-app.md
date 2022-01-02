@@ -118,8 +118,8 @@ author: Joe Taylor
 
 
     aside {
-        background-color: #bdeaff;
-        color: #333;
+        background-color: #2b3032;
+        color: #bdeaff;
         text-align: left;
         padding: 10px;
         margin-left: -10px;
