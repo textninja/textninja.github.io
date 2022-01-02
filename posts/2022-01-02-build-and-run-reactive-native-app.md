@@ -28,7 +28,7 @@ author: Joe Taylor
     }
 
     body {
-        background-color: #1a1a1a;
+        background-color: #222;
         color: #bbb;
         line-height: 1.6em;
         display: grid;
@@ -45,7 +45,7 @@ author: Joe Taylor
         grid-column-end: 3;
         display: grid;
         margin-bottom: 50px;
-        border-bottom: solid #333 3px;
+        border-bottom: solid #2a2a2a 3px;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -118,7 +118,7 @@ author: Joe Taylor
 
 
     aside {
-        background-color: #2b3032;
+        background-color: #2c2c2c;
         color: #bdeaff;
         text-align: left;
         padding: 10px;
