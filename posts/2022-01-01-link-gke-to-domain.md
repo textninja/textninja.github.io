@@ -50,7 +50,7 @@ reserved address to my domain via a wildcard record. Concretely, that meant
 creating an "A" record for *.textninja.net, setting the data to the IP address I
 just reserved. Using Google Domains, updating the DNS entry is very
 straightforward. I just chose my domain from the list in the "My Domains"
-section and clicked "DNS" to configure.
+section and clicked "DNS" to configure. The newly minted A record is pictured below.
 
 ![Screen showing A record configuration in Google Domains](dns-a-record.png)
 
