@@ -146,7 +146,7 @@ LetsEncrypt.
 
 ## Bonus challenge
 
-As a bonus challenge, I'm creating a simple Markdown server that is devoid of default
+As an extra bit of fun, I'm creating a simple Markdown server that is devoid of default
 styling by design; I give it a folder of Markdown files, and it hosts nothing more than the raw HTML transformed from markdown.
 Something to build on. The idea is to iterate on these blog posts more quickly and encourage more customization and ownership
 of articles by departing from the use of default templates, and embracing plain HTML. The only
