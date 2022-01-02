@@ -153,6 +153,15 @@ of articles by departing from the use of default templates, embracing plain HTML
 visual enhancements I want are ones I bundle with each article. Share nothing, customize everything,
 is the credos of the day. Every blog article *is* an island.
 
+I ended up creating a tool called `mdserve` for this purpose. It can be found in 
+the [bonus challenge](https://github.com/textninja/dtc0003/tree/master/bonuschallenge) section of today's GitHub repo.
+
+It's basically just express's static server with special handling of files with
+the `.md` extension. For such files, it passes them through the `marked`
+markdown preprocessor, and if that succeeds, it serves the HTML. It also strips
+out YAML frontmatter since I'll be using it with Jekyll posts primarily.
+
+
 ## Meta
 
 <details markdown="1">
