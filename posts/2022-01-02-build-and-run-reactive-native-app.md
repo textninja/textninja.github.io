@@ -3,13 +3,11 @@ title: Daily Tech Challenge \#4
 subtitle: Build a React Native app and run it on your iPhone
 date: 2022-01-02
 author: Joe Taylor
+outcome: Success
 ---
+<div id="challenge-outcome"><span>Challenge outcome: success</span></div>
 
 <meta charset="utf-8">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
 
@@ -17,6 +15,27 @@ author: Joe Taylor
 
 <!-- article.css -->
 <style>
+
+    #challenge-outcome {
+        position: fixed;
+        top: 0; right: 0; left: 0;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+        background-color: #aaffaa;
+        color: #1e232c;
+        font-size: 20px;
+        font-weight: bold;
+        display: grid;
+        grid-template-columns: 1fr 1fr 200px;
+    }
+
+    #challenge-outcome > span {
+        max-width: 700px;
+        display: block;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
 
     :root {
         --content-width: 700px;
@@ -243,7 +262,7 @@ which, when pressed, makes a bell sound and replaces itself with a countdown
 from 10 minutes. When the timer finishes, another bell resonates and the button
 returns.
 
-## Game plan
+## On balance
 
 
 <div class="venn side" style="user-select: none">
@@ -275,7 +294,7 @@ So, I'll spend several hours (4+) researching React Native or following
 tutorials, and then, when I'm ready, I'll hopefully code a meditation in an hour
 or so.
 
-## Research undertaken
+## Research to undertake
 
 At the very least, I need to practice using the following core components:
 
@@ -311,7 +330,7 @@ const { View, Text } = require('react-native');
 const App = () => {
 
     return (
-        <View style={{flex: 1, alignItems: "center", alignContent: "center" }}>
+        <View style={{flex: 1, alignItems: "center", justifyContent: "center" }}>
             <Text>Have a snack.</Text>
         </View>
     );
@@ -340,17 +359,79 @@ $ expo init appname
 Expo allows me to embed code on my blog, too, so running snippets on an
 Expo-enabled iPhone is as easy as scanning a QR code.
 
+## Approach
+
+ - I'm using [Expo](https://expo.dev) and making use of its "snacks" feature for
+   rapid prototyping.
+ - I'm working through the examples in the [React Native Docs](https://reactnative.dev/docs/getting-started).
+ - Since I can get a native screen to display on my iPhone without it, I'm not
+   even bothering to eject my expo app and bundle it ad hoc. 
+ 
+
+## Outcome
+
+I spent the lion's share of my time researching and practicing. I may even have
+overdone it. The final result is something I'm happy with, however, although it
+is quite basic.
 
 
-## Resources used
 
- - I'm using expo dev for rapid prototyping https://expo.dev/
+Most of the work is done by expo when I run `expo init meditationtimer` ,
+because when that finishes and I run `yarn start`, I have all the scaffolding
+written, and a working app on my device; with this kind of a head start, a
+meditation timer feels like a paint by numbers project.
 
+Mostly, developing this app was like developing any other app, although the
+components and build system were different, and there are differences when it
+comes to playing sounds and styling.
+
+I am happy to say, Expo made it easy to play sounds. I installed `expo-av` and
+then used the snippet shown. In conjunction with a free wav file of a Tibetan
+singing bowl being struck, the audio functionality was taken care of.
+
+```javascript
+import { Audio } from 'expo-av';
+
+async function ding() {
+  const ding = await Audio.Sound.createAsync(
+    require("./assets/ding.wav")
+  );
+
+  ding.sound.playAsync();
+}
+```
+
+I worked with a library called React Navigation to get a native screen with a
+title bar and a basic dark color scheme, and wrote a few styles for a
+TouchableOpacity (what you or I might call a "button"), using React Native's
+StyleSheet feature. This is not an exact replica of web-based CSS, but it does
+the job. It might be difficult to get complicated styling with layers of
+overlays working in a native context, so that's a challenge I'd like to take on
+some time in the future, if not for my next challenge.
+
+I enjoyed working with React Native. I don't tend to use many apps on my phone,
+so I'm not exactly a font of knowledge when it comes to what makes a great app
+or what the market needs, but if I do come up with some cool new idea then I'll
+probably reach for React Native first. Unless I want to challenge myself...
+Which, admittedly, I probably do.
+
+
+## Extras
+
+<details markdown="1">
+<summary>Extra scrawlings, loosely related to the above</summary>
 
 ## Thoughts on a bonus challenge
 
 For a bonus challenge, perhaps I'll extend `mdserve` to transpile SCSS on the
-fly as well, though to be honest, that's not so much a challenge as just a thing
+fly, though to be honest, that's not so much a challenge as just a thing
 I'd like to get done.
 
+## Future challenges this may spawn
+
+ - Create a React Native text input with custom functionality, like enforced formatting, for
+   example.
+ - Create a native iOS app using XCode tools
+ - Deploy an app to Apple Store
+</details>
 </article>
