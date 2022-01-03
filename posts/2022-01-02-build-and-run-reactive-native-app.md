@@ -17,15 +17,14 @@ outcome: Success
 <style>
 
     #challenge-outcome {
-        position: fixed;
+        position: absolute;
         top: 0; right: 0; left: 0;
         height: 40px;
         line-height: 40px;
         vertical-align: middle;
-        background-color: #aaffaa;
+        background-color: #e4ee7e;
         color: #1e232c;
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 1.2em;
         display: grid;
         grid-template-columns: 1fr 1fr 200px;
     }
@@ -160,7 +159,7 @@ outcome: Success
         writing-mode: vertical-rl;
         text-orientation: sideways;
         display: inline;
-        position: fixed;
+        position: absolute;
         top: 160px; left: 0px;
         transform-origin: center center;
         transform: rotateZ(180deg);
@@ -380,6 +379,8 @@ Most of the work is done by expo when I run `expo init meditationtimer` ,
 because when that finishes and I run `yarn start`, I have all the scaffolding
 written, and a working app on my device; with this kind of a head start, a
 meditation timer feels like a paint by numbers project.
+
+![Screenshot of the meditation timer](meditationtimer.jpeg)
 
 Mostly, developing this app was like developing any other app, although the
 components and build system were different, and there are differences when it
