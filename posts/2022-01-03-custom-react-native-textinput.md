@@ -119,7 +119,7 @@ p {
 }
 
 a {
-    color: #4f5b6a;
+    color: #3c434c;
 }
 
 </style>
@@ -250,18 +250,73 @@ export default function DollarInput(props) {
 
 Right away we have issues. First of all, we can't click backspace from the end
 of the input. Second, there's a flicker when we enter invalid input.  Clearly
-this isn't going to work. Let's try overlaying the input over a text field
-instead.
+this isn't going to work. Let's try faking out the input with a **Text**
+component and hidden **TextInput** instead.
 
 </div>
 </section>
 
 <section>
+
 <div class="max-width-wrapper" markdown="1">
 
 <h2>Attempt number 2 - overlay</h2>
 
+```javascript
+import styles from '../styles';
 
+export default function DollarInput(props) {
+    const [dollars, setDollars] = useState(0);
+    const hiddenInputRef = useRef();
+
+    const formattedDollars = dollars && !isNaN(dollars)
+        ? (
+            <>
+                <Text style={{color:'#c0c0c0'}}>$</Text>{
+                 dollars
+                }<Text style={{color:'#c0c0c0'}}>.00</Text>
+            </>
+          )
+        : (<Text style={{color:'#c0c0c0'}}>$</Text>);
+
+    return (
+        <View>
+            <TouchableOpacity
+                    style={styles.input}
+                    onPress={() => hiddenInputRef.current.focus()}>
+                <TextInput
+                    style={{display: 'none'}}
+                    value={String(dollars)}
+                    keyboardType="numeric"
+                    ref={hiddenInputRef}
+                    onChangeText={updateDollars}
+                    maxWidth={5}
+                />
+                <Text style={styles.bigText}>{formattedDollars}</Text>
+            </TouchableOpacity>
+        </View>
+    );
+
+    function updateDollars(text) {
+        let d = parseInt(text.replace(/[^0-9]/g), 10);
+        setDollars(isNaN(d) ? 0 : d);
+    }
+}
+```
+
+<img src="dtc0005-attempt-2.jpeg" style="float: right; margin-left: 20px; margin-right: -330px; width: 300px; margin-top: -340px;">
+
+For this attempt, I positioned a **TouchableOpacity** where the text input would
+go, added an *invisible* **TextInput**, and rigged up the **TouchableOpacity**
+to focus on the invisible input whenever it's pressed.
+
+This very nearly works, except now there's no caret, and no way to select text
+like in a normal input.
+
+At this point, I'm nearly ready to give up. We cannot possibly build all the
+native features for inputs, like text selection, keyboards, and so on, from
+scratch - at least not with React Native, or if we can, certainly not in a few
+hours.
 
 </div>
 </section>
@@ -272,7 +327,30 @@ instead.
 
 <h2>Attempt number 3 - flex input</h2>
 
+Luckily there's a better way.
 
+
+</div>
+</section>
+
+
+
+<section>
+<div class="max-width-wrapper" markdown="1">
+
+<h2>Not attempted - completely custom text input</h2>
+
+
+
+</div>
+</section>
+
+
+<section style="background-color: #2b262e; padding-bottom: 50vh;">
+<div style="grid-column: 2 / all; text-align: left;">
+<h2 style="font-size: 120px; margin-left: 0; padding-left: 0;">Challenge successful.</h2>
+
+<p style="text-indent: 0; font-size: 1.5em; margin-left: 0; font-style: italic; margin-right: 50px;">It has its flaws, but we built a custom text input, just like we said we would.</p>
 
 </div>
 </section>
