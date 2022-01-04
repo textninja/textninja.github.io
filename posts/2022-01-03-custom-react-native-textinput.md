@@ -11,27 +11,37 @@ author: Joe Taylor
 
 <style>
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    margin: 20px;
+    background-color: #788491;
     font-family: 'Public Sans', sans-serif;
     font-size: 20px;
-    color: #444;
-    margin: 40px;
+    color: #d9dedf;
+    padding-top: 50px;
 }
 
 h1, h2, h3, h4 {
     font-family: "Barlow Condensed", sans-serif;
-    color: black;
+    color: white;
 }
 
 article {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100%;
 }
 
 article header {
     grid-column: 2 / 4;
-    max-width: 1200px;
+    max-width: 1000px;
+    padding: 20px 20px 0 0;
 }
 
 article .max-width-wrapper {
@@ -41,12 +51,14 @@ article .max-width-wrapper {
 article h1 {
     font-size: 32px;
     margin: 0;
-    color: #999;
+    color: white;
 }
 
 article h2:first-of-type {
-    font-size: 100px;
+    font-size: 140px;;
+    line-height: 1em;
     margin: 0;
+    margin-bottom: 2rem;
 }
 
 .max-width-wrapper {
@@ -55,24 +67,29 @@ article h2:first-of-type {
 
 .post-date {
     grid-row: 1 / 3;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    text-orientation: sideways;
+    font-size: 1.2em;
+    text-orientation: upright;
     writing-mode: vertical-rl;
     margin-right: 1em;
-    color: #ccc;
+    padding: 20px;
+    font-style: italic;
+    letter-spacing: -0.15em;
+    padding-top: 3rem;
 }
 
 .post-date span {
     display: inline-block;
-    transform-origin: center center;
-    transform: rotateZ(180deg);
 }
+
+p {
+    text-indent: 1em;
+}
+
 </style>
 
 <article markdown="1">
 
-<div class="post-date"><span>Posted January 3rd, 2022 by Joe Taylor</span></div>
+<div class="post-date"><span><span>January 3rd, 2022</span><br>By Joe Taylor</span></div>
 
 <header markdown="1">
 
@@ -99,9 +116,11 @@ cross platform. I expect the styling to get a little hacky, so the text input
 needs to work in iOS only, although I will take a screenshot in the Android
 simulator for comparison purposes.
 
-What I'll be going for, to start, looks something like this:
+What I'll be going for, to start, should resemble this sketch, where the parts
+in grey are added automatically:
 
-*Illustrator image goes here*
+<img alt="Sketch of text input with enforced formatting" src="textinputsketch.svg"
+    style="max-width: 200px; filter: invert(1) grayscale(1);" />
 
 </div>
 
