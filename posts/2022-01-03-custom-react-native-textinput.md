@@ -327,18 +327,12 @@ hours.
 
 <h2>Attempt number 3 - flex input</h2>
 
-Luckily there's a better way.
+It turns out there's a straightforward way to achieve our goal. With a flexbox
+**TouchableOpacity**, similar to the above, we can mimic a text input, but
+instead of hiding the input, we can actually display it in between the fixed
+pieces of text.
 
 
-</div>
-</section>
-
-
-
-<section>
-<div class="max-width-wrapper" markdown="1">
-
-<h2>Not attempted - completely custom text input</h2>
 
 
 
