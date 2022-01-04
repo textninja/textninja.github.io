@@ -100,7 +100,6 @@ section {
     grid-template-rows: auto 1fr;    
     grid-column: 1 / 4;
     padding-bottom: 2rem;
-
 }
 
 section:nth-of-type(2n) {
@@ -114,6 +113,8 @@ p {
 </style>
 
 <article markdown="1">
+
+
 
 <div class="post-date"><span><span>January 3rd, 2022</span><br>By Joe Taylor</span></div>
 
@@ -131,12 +132,13 @@ I had so much fun using React Native for yesterday's challenge that I decided to
 stick with it, this time diving a little deeper into UI design by creating a
 custom text input.
 
-Today's custom text input is going to enforce formatting and add a few visual
-bells and whistles. I may try a few different types of custom inputs, but one,
-for example, could display a specially formatted dollar sign before any numbers
-that are entered. While I could certainly build such a thing in a web context, I
-understand there to be styling quirks in React Native inherent to the
-environment components run in, so this could be a real challenge.
+This plan for this text input is to have it enforce formatting and add a few
+visual bells and whistles. I may try a few different types of custom inputs, but
+one, for example, could display a specially formatted dollar sign before any
+numbers that are entered. While I could certainly build such a thing in a web
+context, I understand there to be styling quirks in React Native which are
+inherent to the environment components run in, so this could be a real
+challenge.
 
 I should mention up front that I will make no attempt to build something that is
 cross platform. I expect the styling to get a little hacky, so the text input
@@ -144,29 +146,109 @@ needs to work in iOS only, although I will take a screenshot in the Android
 simulator for comparison purposes.
 
 What I'll be going for, to start, should resemble this sketch, where the parts
-in grey are added automatically:
+emphasized are added automatically:
 
-<img alt="Sketch of text input with enforced formatting" src="textinputsketch.svg"
-    style="max-width: 200px; filter: invert(1) grayscale(1);" />
+<div style="
+    padding: 5px;
+    border: solid white;
+    width: 100px; margin-left: 1.2rem;
+"><span style="color: #4f5b6a; font-weight: bold;">$</span>256<span style="color: #4f5b6a; font-weight: bold;">.00</span></div>
 
 Now we're ready to start. The journey begins, as before, with `expo init`.
+
+
+<div style="padding: 20px; border: solid black 2px;padding-right: 40px; text-transform: uppercase; text-align: center; color: black; margin: 1.2rem;">
+<strong>Today's repo</strong>
+
+<ul style="padding: 0; margin: 0; margin-top: 20px;">
+<li style="list-style-type: none; padding: 0; margin: 0;"><a href="https://github.com/textninja/dtc0005" style="text-decoration: none; color: black;"><img src="GitHub-Mark-32px.png" style="display: inline; vertical-align: middle;"> dtc0005</a></li>
+</ul>
+</div>
+
+
 </div>
 </section>
 
 <section>
 <div class="max-width-wrapper" markdown="1">
 
-## Getting started
+## Some preliminary setup
 
 Before I'm able to render a custom **TextInput**, I need to be able to render a
 regular **TextInput**. I'll start by creating a custom component called
 **DollarInput** which acts as a thin wrapper around **TextInput**. That will be
 the base I build on.
 
+```javascript
+export default function DollarInput(props) {
+    return (
+        <TextInput {...props} />
+    );
+}
+```
+
+</div>
+</section>
+
+<section>
+<div class="max-width-wrapper" markdown="1">
+
+## Attempt number 1 - state rewrite
+
+For a first kick at the can, let's try  changing the state on the fly to lock in
+all the extra visuals. We need a dollar sign and the number of cents, with the
+latter being uneditable.
+
+First, let's figure out how to reformat arbitrary input to be formatted like
+money. The only type of input that's really relevant for this purpose is digits,
+so we can replace non numeric values in the user input, and then add a dollar
+sign to the beginning and the number of cents (0) to the end.
+
+
+```javascript
+function moneyFormat(input) {
+    return "$" + input.replace(/[^0-9]/g, "") + ".00";
+}
+```
+
+Let's hook that into the **DollarInput** component we created.
+
+```javascript
+function moneyFormat(input) {
+    return "$" + input.replace(/[^0-9]/g, "") + ".00";
+}
+
+export default function DollarInput(props) {
+    const [val, setVal] = useState("0");
+    const shownValue = moneyFormat(val);
+
+    return (
+        <TextInput
+            style={styles.bigText}
+            {...{...props, value: shownValue}}
+            onChangeText={t => setVal(t)}
+        />
+    );
+}
+
+```
+
 </div>
 </section>
 
 </article>
 
+<!-- highlight section with #e5deab, black -->
+
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-one-light.min.css">
+<style>
+    pre[class*=language-] {
+        font-size: 0.8em;
+        border-radius: 0;
+    }
+    code[class*=language-], pre[class*=language-] {
+        background-color: #cdd9eb;
+    }
+</style>
 <script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
 <script src="https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
