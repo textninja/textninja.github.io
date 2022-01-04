@@ -102,16 +102,24 @@ section {
     padding-bottom: 2rem;
 }
 
-section:nth-of-type(3n + 2) {
+section:nth-of-type(4n + 2) {
     background-color: #4f5b6a;
 }
 
-section:nth-of-type(3n) {
+section:nth-of-type(4n + 3) {
     background-color: #637389;
+}
+
+section:nth-of-type(4n + 4) {
+    background-color: #323c4e;
 }
 
 p {
     text-indent: 1em;
+}
+
+a {
+    color: #4f5b6a;
 }
 
 </style>
@@ -132,22 +140,21 @@ p {
 <section>
 <div class="max-width-wrapper" markdown="1">
 
-I had so much fun using React Native for yesterday's challenge that I decided to
+I had so much fun using React Native for <a href="2022-01-02-build-and-run-reactive-native-app.md">yesterday's challenge</a> that I decided to
 stick with it, this time diving a little deeper into UI design by creating a
 custom text input.
 
 This plan for this text input is to have it enforce formatting and add a few
 visual bells and whistles. I may try a few different types of custom inputs, but
-one, for example, could display a specially formatted dollar sign before any
+one of the inputs should display a specially formatted dollar sign before any
 numbers that are entered. While I could certainly build such a thing in a web
-context, I understand there to be styling quirks in React Native which are
-inherent to the environment components run in, so this could be a real
-challenge.
+context, there are styling quirks in React Native which are inherent to the
+environment components run in, so this could be a real challenge.
 
 I should mention up front that I will make no attempt to build something that is
 cross platform. I expect the styling to get a little hacky, so the text input
-needs to work in iOS only, although I will take a screenshot in the Android
-simulator for comparison purposes.
+needs to work in iOS only, although I will take a screenshot of the final input
+in the Android simulator for comparison's sake.
 
 What I'll be going for, to start, should resemble this sketch, where the parts
 emphasized are added automatically:
@@ -158,9 +165,9 @@ emphasized are added automatically:
     width: 100px; margin-left: 1.2rem;
 "><span style="color: #d9dedf; font-weight: bold;">$</span>256<span style="color: #d9dedf; font-weight: bold;">.00</span></div>
 
-Now we're ready to start. The journey begins, as before, with `expo init`.
+Let's get started. The journey begins, as before, with `expo init`.
 
-
+<!--
 <div style="padding: 20px; border: solid #30353a 8px;padding-right: 40px; text-transform: uppercase; text-align: center; color: #30353a; margin: 1.2rem;">
 <strong>Today's repo</strong>
 
@@ -168,6 +175,7 @@ Now we're ready to start. The journey begins, as before, with `expo init`.
 <li style="list-style-type: none; padding: 0; margin: 0;"><a href="https://github.com/textninja/dtc0005" style="text-decoration: none; color: #30353a;"><img src="GitHub-Mark-32px.png" style="display: inline; vertical-align: middle;"> dtc0005</a></li>
 </ul>
 </div>
+-->
 
 
 </div>
@@ -206,7 +214,7 @@ latter being uneditable.
 First, let's figure out how to reformat arbitrary input to look like money. The
 only type of input that's really relevant for this purpose is digits, so we can
 replace non numeric values in the user input, and then add a dollar sign to the
-beginning and the number of cents (.00) to the end.
+beginning, and the number of cents (.00) to the end.
 
 
 ```javascript
@@ -241,7 +249,30 @@ export default function DollarInput(props) {
 ```
 
 Right away we have issues. First of all, we can't click backspace from the end
-of the input. Second, there's a flicker when we enter invalid input.
+of the input. Second, there's a flicker when we enter invalid input.  Clearly
+this isn't going to work. Let's try overlaying the input over a text field
+instead.
+
+</div>
+</section>
+
+<section>
+<div class="max-width-wrapper" markdown="1">
+
+<h2>Attempt number 2 - overlay</h2>
+
+
+
+</div>
+</section>
+
+
+<section>
+<div class="max-width-wrapper" markdown="1">
+
+<h2>Attempt number 3 - flex input</h2>
+
+
 
 </div>
 </section>
