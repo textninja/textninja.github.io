@@ -102,8 +102,12 @@ section {
     padding-bottom: 2rem;
 }
 
-section:nth-of-type(2n) {
+section:nth-of-type(3n + 2) {
     background-color: #4f5b6a;
+}
+
+section:nth-of-type(3n) {
+    background-color: #637389;
 }
 
 p {
@@ -157,11 +161,11 @@ emphasized are added automatically:
 Now we're ready to start. The journey begins, as before, with `expo init`.
 
 
-<div style="padding: 20px; border: solid black 2px;padding-right: 40px; text-transform: uppercase; text-align: center; color: black; margin: 1.2rem;">
+<div style="padding: 20px; border: solid #4f5b6a 8px;padding-right: 40px; text-transform: uppercase; text-align: center; color: #30353a; margin: 1.2rem;">
 <strong>Today's repo</strong>
 
 <ul style="padding: 0; margin: 0; margin-top: 20px;">
-<li style="list-style-type: none; padding: 0; margin: 0;"><a href="https://github.com/textninja/dtc0005" style="text-decoration: none; color: black;"><img src="GitHub-Mark-32px.png" style="display: inline; vertical-align: middle;"> dtc0005</a></li>
+<li style="list-style-type: none; padding: 0; margin: 0;"><a href="https://github.com/textninja/dtc0005" style="text-decoration: none; color: #30353a;"><img src="GitHub-Mark-32px.png" style="display: inline; vertical-align: middle;"> dtc0005</a></li>
 </ul>
 </div>
 
@@ -199,15 +203,17 @@ For a first kick at the can, let's try  changing the state on the fly to lock in
 all the extra visuals. We need a dollar sign and the number of cents, with the
 latter being uneditable.
 
-First, let's figure out how to reformat arbitrary input to be formatted like
-money. The only type of input that's really relevant for this purpose is digits,
-so we can replace non numeric values in the user input, and then add a dollar
-sign to the beginning and the number of cents (0) to the end.
+First, let's figure out how to reformat arbitrary input to look like money. The
+only type of input that's really relevant for this purpose is digits, so we can
+replace non numeric values in the user input, and then add a dollar sign to the
+beginning and the number of cents (.00) to the end.
 
 
 ```javascript
 function moneyFormat(input) {
-    return "$" + input.replace(/[^0-9]/g, "") + ".00";
+    let amt = parseInt(input.replace(/[^0-9.]/g, ""), 10);
+    if (isNaN(amt)) amt = 0;
+    return "$" + amt.toFixed(2);
 }
 ```
 
@@ -215,7 +221,9 @@ Let's hook that into the **DollarInput** component we created.
 
 ```javascript
 function moneyFormat(input) {
-    return "$" + input.replace(/[^0-9]/g, "") + ".00";
+    let amt = parseInt(input.replace(/[^0-9.]/g, ""), 10);
+    if (isNaN(amt)) amt = 0;
+    return "$" + amt.toFixed(2);
 }
 
 export default function DollarInput(props) {
@@ -230,8 +238,10 @@ export default function DollarInput(props) {
         />
     );
 }
-
 ```
+
+Right away we have issues. First of all, we can't click backspace from the end
+of the input. Second, there's a flicker when we enter invalid input.
 
 </div>
 </section>
