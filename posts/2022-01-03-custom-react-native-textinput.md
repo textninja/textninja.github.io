@@ -290,7 +290,7 @@ export default function DollarInput(props) {
                     keyboardType="numeric"
                     ref={hiddenInputRef}
                     onChangeText={updateDollars}
-                    maxWidth={5}
+                    maxLength={5}
                 />
                 <Text style={styles.bigText}>{formattedDollars}</Text>
             </TouchableOpacity>
@@ -327,14 +327,58 @@ hours.
 
 <h2>Attempt number 3 - flex input</h2>
 
-It turns out there's a straightforward way to achieve our goal. With a flexbox
-**TouchableOpacity**, similar to the above, we can mimic a text input, but
-instead of hiding the input, we can actually display it in between the fixed
-pieces of text.
+<img src="dtc0005-attempt-3.jpeg" style="float: right; margin-left: 20px; margin-right: -330px;">
 
+It turns out there's a straightforward way to achieve our goal. With a
+flexbox-based container, much like the  **TouchableOpacity** used above, we can
+mimic the boundaries of a text input, but instead of hiding the input, we can
+actually display it in-between the fixed pieces of text.
 
+This method takes advantage of the fact that the static text is at the beginning
+and end of our control. It would not work if the generated text or formatting
+was in the middle, as is the case with a formatted credit card number (which
+should have spaces in it), for example.
 
+```javascript
+export default function DollarInput(props) {
+    const [isFocused, setFocused] = useState(false);
+    const [textValue, setValue] = useState("");
+    const inputRef = useRef();
 
+    return (
+        <View>
+            <TouchableWithoutFeedback
+                    onPress={() => isFocused || inputRef.current.focus()}>
+                <View
+                        style={
+                            {...styles.input, flexDirection: "row"}
+                        }>
+                    <Text style={styles.bigText}>$</Text>
+                    <TextInput
+                        style={styles.bigText}
+                        value={textValue}
+                        keyboardType="numeric"
+                        ref={inputRef}
+                        onChangeText={updateAmt}
+                        maxLength={5}
+                        onPress={e => e.stopPropagation()}
+                        onFocus={() => setFocused(true)}
+                        onBlur={() => setFocused(false)}
+                    />
+                    { textValue ? <Text style={styles.bigText}>.00</Text> : null }
+                </View>
+            </TouchableWithoutFeedback>
+        </View>
+    );
+
+    function updateAmt(text) {
+        setValue(text.toString().replace(/[^0-9]/g, "").replace(/^0+/, ""));
+    }
+}
+```
+
+We finally have something that shows the caret, restricts the input, and
+includes text automatically at the beginning and the end. All in a day's work!
 
 </div>
 </section>
