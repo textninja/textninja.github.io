@@ -154,14 +154,14 @@ emphasized are added automatically:
 
 <div style="
     padding: 5px;
-    border: solid white;
+    border: solid #d9dedf 4px;
     width: 100px; margin-left: 1.2rem;
-"><span style="color: #4f5b6a; font-weight: bold;">$</span>256<span style="color: #4f5b6a; font-weight: bold;">.00</span></div>
+"><span style="color: #d9dedf; font-weight: bold;">$</span>256<span style="color: #d9dedf; font-weight: bold;">.00</span></div>
 
 Now we're ready to start. The journey begins, as before, with `expo init`.
 
 
-<div style="padding: 20px; border: solid #4f5b6a 8px;padding-right: 40px; text-transform: uppercase; text-align: center; color: #30353a; margin: 1.2rem;">
+<div style="padding: 20px; border: solid #30353a 8px;padding-right: 40px; text-transform: uppercase; text-align: center; color: #30353a; margin: 1.2rem;">
 <strong>Today's repo</strong>
 
 <ul style="padding: 0; margin: 0; margin-top: 20px;">
