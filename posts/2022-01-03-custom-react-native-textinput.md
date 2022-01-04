@@ -54,15 +54,28 @@ article h1 {
     color: white;
 }
 
-article h2:first-of-type {
+article header h2 {
     font-size: 140px;;
     line-height: 1em;
     margin: 0;
     margin-bottom: 2rem;
 }
 
+
 .max-width-wrapper {
     max-width: 900px;
+}
+
+section h2 {
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    font-size: 2em;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .post-date {
@@ -79,6 +92,19 @@ article h2:first-of-type {
 
 .post-date span {
     display: inline-block;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;    
+    grid-column: 1 / 4;
+    padding-bottom: 2rem;
+
+}
+
+section:nth-of-type(2n) {
+    background-color: #4f5b6a;
 }
 
 p {
@@ -98,6 +124,7 @@ p {
 
 </header>
 
+<section>
 <div class="max-width-wrapper" markdown="1">
 
 I had so much fun using React Native for yesterday's challenge that I decided to
@@ -122,7 +149,24 @@ in grey are added automatically:
 <img alt="Sketch of text input with enforced formatting" src="textinputsketch.svg"
     style="max-width: 200px; filter: invert(1) grayscale(1);" />
 
+Now we're ready to start. The journey begins, as before, with `expo init`.
 </div>
+</section>
+
+<section>
+<div class="max-width-wrapper" markdown="1">
+
+## Getting started
+
+Before I'm able to render a custom **TextInput**, I need to be able to render a
+regular **TextInput**. I'll start by creating a custom component called
+**DollarInput** which acts as a thin wrapper around **TextInput**. That will be
+the base I build on.
+
+</div>
+</section>
 
 </article>
 
+<script src="https://unpkg.com/prismjs@1.25.0/components/prism-core.min.js"></script>
+<script src="https://unpkg.com/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
