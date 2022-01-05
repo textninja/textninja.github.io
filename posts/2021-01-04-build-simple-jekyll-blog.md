@@ -14,16 +14,16 @@ terribly.
 
 I ran out of time to do anything visually or technologically impressive (is
 something you can learn and do in a day ever that way?), but here's what I did
-manage:
+manage to do:
 
-1. Jekyll is running locally
-2. Jekyll is running on GitHub pages
-3. The contents of a file in a **_data** folder are included in a template
-4. I created two different layouts:
+1. Got Jekyll running locally
+2. Got Jekyll running on GitHub pages
+3. Included the contents of a file in a **_data** folder in a nav template
+4. Created two different layouts:
    - bare layout, which includes nothing
    - basic layout, which includes a header and a footer with navigation
 5. Neither of the above layouts were styled, but I did load some scss, which
-   Jekyll processes for me automatically.
+   Jekyll processed for me automatically.
 
 Besides that, I was just faffing about, really. I probably ought to have made the
 challenge success criteria more concrete, and probably scoped down. What is the
