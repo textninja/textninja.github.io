@@ -1,6 +1,3 @@
----
-layout: none
----
 # Daily Tech Challenge #6
 ## Building a simple blog with Jekyll
 
