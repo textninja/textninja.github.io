@@ -15,37 +15,42 @@ terribly.
 I ran out of time to do anything visually or technologically impressive, but
 here's what I did manage to accomplish:
 
-1. Got Jekyll running locally
-2. Got Jekyll running on GitHub pages
-3. Included the contents of a YAML file in the **_data** folder in a nav template
-4. Created two different layouts:
-   - bare layout, which includes nothing
-   - basic layout, which includes a header and a footer with navigation
-5. Neither of the above layouts were styled, but I did load some scss, which
-   Jekyll processed for me automatically.
-6. Populated a practice blog with pages from a Project Gutenberg book.
+1. I got Jekyll running locally and on GitHub pages
+3. I included the contents of a YAML file in the **_data** folder in a nav template
+4. I created two different layouts:
+   - A bare layout, which just imports content as-is into a blank page
+   - A basic layout, which includes a header and a footer, with navigation and
+     some really basic HTML boilerplate
+5. Neither of the above layouts were styled, but I did try loading some SCSS.
+   Jekyll processed that for me automatically - it works great.
+6. Finally, I populated a practice blog with pages from a Project Gutenberg
+   book.
 
-Besides that, I was just faffing about, really. I probably ought to have made the
-challenge success criteria more concrete, and probably scoped down. What is the
-measure for success here? Just running Jekyll? Do I want something that looks
-good?
+Besides that (or in addition), I was just faffing about, really. I probably
+ought to have made the challenge's success criteria more concrete, and scoped
+down, because what is the measure for success here? Just running Jekyll? Dit it
+need to look good?
 
-## Tech process
+## Technical process
 
-To get up and running, I installed the latest Ruby with homebrew. That part's
-not because I had to, but because I wanted to.
+To get up and running, I installed the latest Ruby with homebrew. I installed
+the latest and greatest not because I had to, but because I wanted to.
 
-Then, I ran the following:
+Next, I ran the following:
 
 ```console
 $ gem install bundler jekyll
 ```
 
-Finally, I created the scaffolding for a jekyll blog using `jekyl new blogname`.
+Finally, I created the scaffolding for a Jekyll blog using `jekyl new blogname`.
 
-At this point, I realized I had no posts for the blog. In retrospect, I could
-have used the blog posts for my daily tech challenges, but I chose to split the 
-chapters of a book I found on Project Gutenberg using the code shown below.
+The blog was customized entirely by YAML frontmatter in tandem with files in
+folders with magic names like **_layouts**, **_posts**, **_sass**,
+**_includes**, **_data** and so on.
+
+I had no posts for the blog, but I wanted them. In retrospect, I could have used
+the blog posts for my daily tech challenges, but I chose to split the chapters
+of a book I found on Project Gutenberg using the code shown below.
 
 ```javascript
 const path = require('path');
@@ -87,6 +92,10 @@ that are very nearly valid markdown. It worked. I chose to use async promises to
 generate the files for some reason. I guess I was pretending it was a lot of
 work that needed to be fanned out for parallel processing or something.
 
+Anyhow, all told, I have a Jekyll blog. It is a bad blog, but it's my bad blog.
+I feel like I should have had more to show for my effort, but there was a real
+paucity of time to build today so we've got what we've got.
+
 ## Conclusion
 
 I should have chosen something more specific for today's challenge. This was a
@@ -102,3 +111,7 @@ problem well enough to claim success.
 
 Today's repo, as always, is on GitHub. <a
 href="https://github.com/textninja/dtc0006">Here's the link.</a>
+
+## How to do better next time
+
+Next time, I'll try to cook only one lasagna.
