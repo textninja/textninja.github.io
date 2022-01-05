@@ -25,7 +25,7 @@ manage:
 5. Neither of the above layouts were styled, but I did load some scss, which
    Jekyll processes for me automatically.
 
-Besides that, just some faffing about. I probably ought to have made the
+Besides that, I was just faffing about, really. I probably ought to have made the
 challenge success criteria more concrete, and probably scoped down. What is the
 measure for success here? Just running Jekyll? Do I want something that looks
 good?
