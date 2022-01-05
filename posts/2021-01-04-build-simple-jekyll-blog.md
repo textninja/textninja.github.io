@@ -1,5 +1,5 @@
 # Daily Tech Challenge #6
-## Building a simple blog with Jekyll
+## Build a simple blog with Jekyll
 
 Today, my challenge was to explore Jekyll and build a simple blog with it. I was
 expecting it to be a rather easy challenge, and a change of pace after slogging
