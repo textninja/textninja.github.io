@@ -1,5 +1,13 @@
+<article>
+
+<header>
+
 # Daily Tech Challenge #6
 ## Build a simple blog with Jekyll
+
+</header>
+
+<section>
 
 Today, my challenge was to explore Jekyll and build a simple blog with it. I was
 expecting it to be a rather easy challenge. A change of pace after slogging
@@ -114,4 +122,14 @@ href="https://github.com/textninja/dtc0006">Here's the link.</a>
 
 ## How to do better next time
 
-Next time, I'll try to cook only one lasagna.
+Next time, I'll stick to one lasagna.
+
+</section>
+
+</article>
+
+<style>
+    body {
+
+    }
+</style>
