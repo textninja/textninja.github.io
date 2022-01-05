@@ -2,15 +2,26 @@
 
 <header>
 
+<div class="maxwidth">
+
 # Daily Tech Challenge #6
 ## Build a simple blog with Jekyll
+
+<div class="author">By Joe Taylor</div>
+
+<div class="blurb">With the pressure of time, and no Jekyll experience, I set out to build a basic blog in a day. Did I succeed or fail? You be the judge.</div>
+
+<div class="postdate">January 4, 2022</div>
+
+</div>
 
 </header>
 
 <section>
+<div class="maxwidth cols">
 
 Today, my challenge was to explore Jekyll and build a simple blog with it. I was
-expecting it to be a rather easy challenge. A change of pace after slogging
+expecting it to be a rather easy challenge; a nice change of pace after slogging
 through uncharted territory in React Native. It is now the 11th hour, with no
 time to spare, and I haven't much of a blog, or blog post, to show for it.
 
@@ -24,14 +35,14 @@ I ran out of time to do anything visually or technologically impressive, but
 here's what I did manage to accomplish:
 
 1. I got Jekyll running locally and on GitHub pages
-3. I included the contents of a YAML file in the **_data** folder in a nav template
-4. I created two different layouts:
+2. I included the contents of a YAML file in the **_data** folder in a nav template
+3. I created two different layouts:
    - A bare layout, which just imports content as-is into a blank page
    - A basic layout, which includes a header and a footer, with navigation and
      some really basic HTML boilerplate
-5. Neither of the above layouts were styled, but I did try loading some SCSS.
+4. Neither of the above layouts were styled, but I did try loading some SCSS.
    Jekyll processed that for me automatically - it works great.
-6. Finally, I populated a practice blog with pages from a Project Gutenberg
+5. Finally, I populated a practice blog with pages from a Project Gutenberg
    book.
 
 Besides that (or in addition), I was just faffing about, really. I probably
@@ -50,11 +61,14 @@ Next, I ran the following:
 $ gem install bundler jekyll
 ```
 
-Finally, I created the scaffolding for a Jekyll blog using `jekyl new blogname`.
+Finally, I created the scaffolding for a Jekyll blog using
 
-The blog was customized entirely by YAML frontmatter in tandem with files in
-folders with magic names like **_layouts**, **_posts**, **_sass**,
-**_includes**, **_data** and so on.
+```console
+$ jekyl new blogname
+````
+
+The blog was customized using YAML frontmatter in conjunction with magic folders
+like **_layouts**, **_posts**, **_sass**, **_includes**, and **_data**.
 
 I had no posts for the blog, but I wanted them. In retrospect, I could have used
 the blog posts for my daily tech challenges, but I chose to split the chapters
@@ -122,14 +136,118 @@ href="https://github.com/textninja/dtc0006">Here's the link.</a>
 
 ## How to do better next time
 
-Next time, I'll stick to one lasagna.
-
+Next time, I'll stick to making one lasagna.
+</div>
 </section>
 
 </article>
 
-<style>
-    body {
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    }
+<style>
+
+.maxwidth {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.maxwidth.cols {
+    columns: 2;
+    column-fill: balance;
+    column-gap: 70px;
+    padding-top: 50px;
+    font-size: 1.1em;
+    height: 1300px;
+}
+
+:root {
+    font-family: Lato, sans-serif;
+}
+
+html, body, article {
+    min-height: 100%;
+    margin: 0; padding: 0;
+}
+
+article header {
+    background-color: #e1e1e1;
+}
+
+article header, article section {
+    padding: 100px;
+}
+
+article section {
+    padding-top: 0;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 1em;
+    color: #050605;
+}
+
+article header h2 {
+    font-size: 48px;
+    margin: 0;
+    margin-left: -4px;
+    max-width: 500px;
+}
+
+
+article section p:first-child {
+    margin-top: 0;
+}
+
+pre {
+    width: 100%;
+    display: block;
+    overflow: auto;
+    break-inside: avoid;
+}
+
+.author {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #050605;
+}
+
+.blurb {
+    font-size: 20px;
+    max-width: 700px;
+    color: #050605;
+}
+
+.postdate {
+    margin-top: 30px;
+    font-style: italic;
+    color: #74786d;
+}
+
+h2 {
+    break-after: avoid;
+}
+
+article section p,
+article section h2 {
+    margin-left: 0;
+}
+
+article section h2 {
+    margin-top: 1.5em;
+    font-size: 1.1em;
+}
+
+pre {
+    background-color: #2f402f;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
 </style>
