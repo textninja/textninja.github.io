@@ -12,13 +12,12 @@ limit, I decided to promise everyone lasagna for dinner. The lesson, it turns
 out, is not to try to do too many things at once. One of the lasagnas came out
 terribly.
 
-I ran out of time to do anything visually or technologically impressive (is
-something you can learn and do in a day ever that way?), but here's what I did
-manage to do:
+I ran out of time to do anything visually or technologically impressive, but
+here's what I did manage to accomplish:
 
 1. Got Jekyll running locally
 2. Got Jekyll running on GitHub pages
-3. Included the contents of a file in a **_data** folder in a nav template
+3. Included the contents of a YAML file in the **_data** folder in a nav template
 4. Created two different layouts:
    - bare layout, which includes nothing
    - basic layout, which includes a header and a footer with navigation
