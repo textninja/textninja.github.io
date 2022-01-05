@@ -12,7 +12,9 @@ limit, I decided to promise everyone lasagna for dinner. The lesson, it turns
 out, is not to try to do too many things at once. One of the lasagnas came out
 terribly.
 
-I ran out of time to do anything interesting, but here's what I did manage:
+I ran out of time to do anything visually or technologically impressive (is
+something you can learn and do in a day ever that way?), but here's what I did
+manage:
 
 1. Jekyll is running locally
 2. Jekyll is running on GitHub pages
