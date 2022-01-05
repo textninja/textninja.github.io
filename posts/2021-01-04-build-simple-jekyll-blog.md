@@ -2,7 +2,7 @@
 ## Build a simple blog with Jekyll
 
 Today, my challenge was to explore Jekyll and build a simple blog with it. I was
-expecting it to be a rather easy challenge, and a change of pace after slogging
+expecting it to be a rather easy challenge. A change of pace after slogging
 through uncharted territory in React Native. It is now the 11th hour, with no
 time to spare, and I haven't much of a blog, or blog post, to show for it.
 
