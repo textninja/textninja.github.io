@@ -1,0 +1,42 @@
+nav { display: block; margin-bottom: -20px; background-color: #00000000; }
+nav h2 { display: block; width: 24px; height: 20px; text-indent: 40px; overflow: hidden; outline: none !important; position: absolute; right: 10px; top: 15px; margin: 0; padding: 0; }
+nav h2::before, nav h2::after { content: " "; height: 3px; border-radius: 2px; background-color: white; position: absolute; top: 5px; left: 0; right: 0; }
+nav h2::after { top: auto; bottom: 5px; }
+nav ul { display: block; position: absolute; left: -100%; text-align: right; }
+nav:focus, nav:focus-within { position: absolute; top: 0; left: 0; right: 0; height: 100%; background-color: var(--bg); padding: 10px; box-sizing: border-box; }
+nav:focus ul, nav:focus-within ul { display: block; position: static; font-size: 16pt; color: white; padding: 50px; padding-right: 0; padding-top: 40px; line-height: 2em; }
+nav:focus ul a, nav:focus-within ul a { text-decoration: none; color: white; }
+nav:focus + #close-nav, nav:focus-within + #close-nav { position: absolute; top: 0px; right: 0px; width: 40px; height: 40px; background-color: transparent; }
+
+:root { --bg: #1c1b22; --fg: #c0c0c0; --dim: #a0a0a0; }
+
+html, body { margin: 0; padding: 0; height: 100%; }
+
+body { background-color: var(--bg); color: var(--fg); font-family: Georgia, 'Times New Roman', Times, serif; margin: 15px; margin-top: 0; hyphens: auto; max-width: 900px; }
+
+header ul { list-style-type: none; margin: 0; }
+
+p { hyphens: auto; }
+
+a { color: white; }
+
+article a { background-color: #313144; color: white; text-decoration: none; }
+
+#site-logo { color: white; position: absolute; top: 10px; left: 15px; font-size: 18pt; font-family: monospace; font-weight: bold; }
+
+hr { margin-top: 74px; color: #e9f1d6; display: block; height: 10px; border-left: 0; /*border: solid currentColor 2px;*/ border: 0; border-right: 0; margin-right: -4px; margin-bottom: -3em; background: linear-gradient(45deg, #3eb1a9 0%, #e13636 100%); }
+
+body > header { height: 20px; }
+
+.challenge-info { margin-bottom: 0; margin-top: 5em; font-size: 1em; color: #7b7e87; }
+
+h1 { font-size: 22pt; max-width: 250px; line-height: 1.3em; color: white; }
+
+.post-info { color: #70737c; font-style: italic; font-size: 1em; margin-top: 2em; margin-bottom: 1em; }
+
+article { color: #979da1; padding-bottom: 25vh; }
+article h2 { font-size: 1em; margin-top: 1.4em; color: white; }
+article li { margin-bottom: 0.3em; }
+article p { line-height: 1.4em; }
+article p:first-of-type { margin-top: 1.5em; }
+article p:first-of-type::first-letter { display: block; font-size: 4.5em; float: left; margin-top: 0.3em; margin-bottom: 10px; margin-right: 0.1em; padding: 0; color: white; }

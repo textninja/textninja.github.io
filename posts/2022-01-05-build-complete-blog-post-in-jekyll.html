@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+        <title>Use Jekyll to build a complete, styled blog post</title>
+        <link rel="stylesheet" href="2022-01-05.css">
+    </head>
+    <body>
+        <header>
+    <div id="site-logo">{ }</div>
+    <nav tabindex="-1">
+<h2 tabindex="1">Menu</h2>
+<ul>
+
+    <li><a tabindex="2" href="https://www.textninja.net">Textninja Home</a></li>
+
+    <li><a tabindex="2" href="/">Challenge Home</a></li>
+
+    <li><a tabindex="2" href="/about/">About</a></li>
+
+</ul>
+</nav>
+<div id="close-nav" tabindex="3"></div>
+
+</header>
+
+
+       <hr />
+
+
+    <div class="challenge-info">Challenge #7</div>
+
+<h1>Use Jekyll to build a complete, styled blog post</h1>
+<p class="post-info">By Joe Taylor • 2022-01-05</p>
+
+<article>
+<p>Today, we’re going meta. Time is at a premium, so instead of doing a tech
+challenge <em>and</em> a blog post, my blog post <em>is</em> my tech challenge, which makes
+this the opportune time to right the wrongs of yesterday and create something in
+<a href="https://jekyllrb.com/">Jekyll</a> that actually feels complete and does the tool some small justice.</p>
+
+<h2 id="my-process">My process</h2>
+
+<p>I followed many of the same steps for setup as yesterday, only this time it went
+quicker because I didn’t need to consult the docs quite so much. Practice makes
+faster.</p>
+
+<p>I placed an emphasis on simple, mobile friendly styles. Actually, I didn’t
+bother with a desktop design at all this time.</p>
+
+<p>I intended to incorporate an offline webpack build for some JavaScript
+enhancements to posts and templates, but ended up using CSS exclusively. I’d
+never built a CSS-only hamburger menu before, and while I’d still prefer
+JavaScript in any serious context, :focus-within and :focus give me all the
+tools I need to make things work sans-scripting. I say CSS, but I mean SCSS. I
+made full use of Jekyll’s built-in preprocessor.</p>
+
+<p>I think some subtle parallax would be a nice and modest touch, and I need to
+pick a highlight color for links, but the design is coming along. I steered
+clear of web fonts, because I want to keep the load time snappy.</p>
+
+<h2 id="what-a-blog-post-needs">What a blog post needs</h2>
+
+<p>The stated goal was to write a “complete” blog post. So what is that? To really cover
+all the bases, I feel I need to include a number of things in a blog post.</p>
+
+<ol>
+  <li>Good writing. This is rather subjective, and I don’t feel I’m there yet, but
+I expect to improve steadily with time. That’s one muscle that is surely
+being exercised when I blog.</li>
+  <li>Good content. Not only do I need to write well, but I need to pick a subject
+worth writing about, and actually have something to say.</li>
+  <li>Pretty pictures. I’m no artist. But even if I were to dabble here, my blog
+coul become much more visually interesting.</li>
+  <li>Interactivity where needed. I need to take full advantage of the features of
+the medium instead of just working around its challenges. A web post can be
+so much more than a digital piece of paper with writing on it.</li>
+</ol>
+
+<p>What a blog post doesn’t need is a lot of filler text and exposition. I’m guilty
+of overdoing both.</p>
+
+<h2 id="how-jekyll-helped">How Jekyll helped</h2>
+
+<p>The main boon for me was Jekyll’s support for SCSS and Markdown, and the ability
+to define includes and keep the codebase better organized than with a plain HTML
+rough draft. Staying organized is great, and I suppose if I wanted to I could
+reuse any template I create via Jekyll. I doubt I’ll want to though. I like
+building templates.</p>
+
+<p>In terms of magic folders, I used _includes, _layouts, _posts, _data, and _sass.
+None of these were used in an exotic or remarkable way. I went a very conventional
+route.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I feel I am not giving Jekyll the attention it deserves. I am happier with the
+overall quality of this feature demonstration, but once again, I’m running into
+the limit of what I can do in a day sooner than I’d like.</p>
+
+
+END.
+</article>
+        
+    </body>
+</html>
